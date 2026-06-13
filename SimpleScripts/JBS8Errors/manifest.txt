@@ -1,0 +1,10 @@
+001_error_cause.js|number|7
+002_type_error_inherited_cause.js|string|why
+003_error_primitive_options_no_cause.js|boolean|false
+004_message_object_to_string.js|string|coerced
+005_aggregate_error_array_copy.js|boolean|true
+006_aggregate_error_array_like_errors.js|string|ab
+007_aggregate_error_cause.js|number|3
+008_cause_descriptor_non_enumerable.js|boolean|false
+009_errors_descriptor_configurable.js|boolean|true
+010_aggregate_error_undefined_message_uses_prototype.js|string|

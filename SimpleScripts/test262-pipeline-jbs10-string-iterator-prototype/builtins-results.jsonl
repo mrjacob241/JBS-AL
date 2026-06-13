@@ -1,0 +1,24 @@
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/Symbol.toStringTag.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/ancestry.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-call-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-get-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-match-get-0-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-match-get-0-tostring-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-match-get-0-tostring.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec-not-callable.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/custom-regexpexec.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/length.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/name.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/next-iteration-global.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/next-iteration.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/next-missing-internal-slots.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/prop-desc.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/regexp-tolength-lastindex-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/RegExpStringIteratorPrototype/next/this-is-not-object-throws.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/Symbol.toStringTag.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/ancestry.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-iteration-surrogate-pairs.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-iteration.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-missing-internal-slots.js","status":"pass","detail":"Undefined"}

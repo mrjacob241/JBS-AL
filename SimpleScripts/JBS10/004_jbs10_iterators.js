@@ -1,0 +1,1 @@
+Iterator.prototype.constructor === Iterator;

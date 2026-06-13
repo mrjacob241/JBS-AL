@@ -1,0 +1,1 @@
+var count = 0; var iter = { next: function () { count = count + 1; return { value: count, done: count > 2 }; } }; var src = {}; src[Symbol.iterator] = function () { return iter; }; Array.from(src).length === 2;

@@ -1,0 +1,1 @@
+function f(){ var i = 0; while (true) { i = i + 1; if (i === 4) { break; } } return i; } f();

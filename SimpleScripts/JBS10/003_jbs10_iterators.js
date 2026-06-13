@@ -1,0 +1,1 @@
+Iterator.length === 0;

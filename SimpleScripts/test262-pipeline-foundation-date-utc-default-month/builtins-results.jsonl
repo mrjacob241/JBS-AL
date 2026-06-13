@@ -1,0 +1,17 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/coercion-errors.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/coercion-order.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/fp-evaluation-order.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/infinity-make-day.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/infinity-make-time.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/nans.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/no-arg.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/non-integer-values.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/overflow-make-day.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/overflow-make-time.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/return-value.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/time-clip.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/UTC/year-offset.js","status":"fail","detail":"TypeError: assert.sameValue failed"}

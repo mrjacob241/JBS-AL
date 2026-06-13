@@ -1,0 +1,1 @@
+var a = []; a[5] = 2; a.length;

@@ -1,0 +1,1 @@
+var o = {0: 'array', length: 1}; o[Symbol.iterator] = function () { var done = false; return { next: function () { if (done) { return { done: true }; } done = true; return { value: 'iter', done: false }; } }; }; new AggregateError(o, 'many').errors[0];

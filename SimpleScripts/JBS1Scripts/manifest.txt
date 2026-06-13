@@ -1,0 +1,50 @@
+001_object_number_extensible.js|boolean|true
+002_object_string_extensible.js|boolean|true
+003_object_boolean_extensible.js|boolean|true
+004_object_valueOf_returns_object.js|boolean|true
+005_has_own_property_true.js|boolean|true
+006_has_own_property_false.js|boolean|false
+007_has_own_property_inherited_false.js|boolean|false
+008_property_is_enumerable_true.js|boolean|true
+009_property_is_enumerable_false.js|boolean|false
+010_to_string_object.js|string|[object Object]
+011_to_string_null.js|string|[object Null]
+012_to_string_undefined.js|string|[object Undefined]
+013_to_string_number.js|string|[object Number]
+014_to_string_string.js|string|[object String]
+015_to_string_boolean.js|string|[object Boolean]
+016_object_has_own_on_primitive.js|boolean|false
+017_object_keys_on_primitive_length.js|number|0
+018_get_prototype_of_primitive_is_object_proto.js|boolean|true
+019_property_key_null.js|string|null-key
+020_property_key_undefined.js|string|undefined-key
+021_get_own_property_names_length.js|number|2
+022_get_own_property_names_hidden.js|string|hidden
+023_object_values_first.js|number|1
+024_object_values_length.js|number|2
+025_object_entries_key.js|string|x
+026_object_entries_value.js|number|9
+027_define_properties_two_values.js|number|2
+028_object_assign_copies.js|number|3
+029_object_assign_skips_null.js|number|1
+030_object_freeze_is_frozen.js|boolean|true
+031_object_freeze_is_sealed.js|boolean|true
+032_object_seal_is_sealed.js|boolean|true
+033_object_seal_not_frozen.js|boolean|false
+034_object_is_frozen_primitive.js|boolean|true
+035_object_is_sealed_primitive.js|boolean|true
+036_is_prototype_of_true.js|boolean|true
+037_is_prototype_of_false.js|boolean|false
+038_bracket_access_string_key.js|number|4
+039_bracket_access_number_key.js|string|zero
+040_assignment_to_property.js|number|8
+041_equality_strict_true.js|boolean|false
+042_equality_strict_false.js|boolean|false
+043_assignment_to_variable.js|number|6
+044_values_ignore_hidden.js|number|0
+045_entries_length.js|number|1
+046_keys_bracket_numeric.js|string|0
+047_define_property_via_assignment_value.js|number|12
+048_function_call_passes_extra_args.js|string|[object Number]
+049_object_assign_overwrites.js|number|5
+050_define_properties_returns_target.js|boolean|true

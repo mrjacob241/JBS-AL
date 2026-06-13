@@ -1,0 +1,163 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/15.4.4.10-10-c-ii-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.1_T7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.3_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.3_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.3_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.4_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.4_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.4_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.4_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.5_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A1.5_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2.2_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A2_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A3_T1.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A3_T2.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/S15.4.4.10_A4_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/call-with-boolean.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/coerced-start-end-grow.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/coerced-start-end-shrink.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-ctor-non-object.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-ctor-poisoned.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-non-array-invalid-len.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-non-array.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-proto-from-ctor-realm-array.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-proto-from-ctor-realm-non-array.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-proxied-array-invalid-len.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-proxy.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-revoked-proxy.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-neg-zero.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-non-ctor.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-null.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-poisoned.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species-undef.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/create-species.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/length-exceeding-integer-limit-proxied-array.js","status":"fail","detail":"RangeError: invalid array length"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/length-exceeding-integer-limit.js","status":"fail","detail":"RangeError: invalid array length"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/resizable-buffer.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/target-array-non-extensible.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/target-array-with-non-configurable-property.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/slice/target-array-with-non-writable-property.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-zero-count-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-zero-count-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/result-does-not-copy-ordinary-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-different-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-empty-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-same-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-end-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-start-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/set-values-from-different-ctor-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-destination-resizable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length-throws-resizable-arraybuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/tointeger-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/tointeger-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/bit-precision.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/coerced-start-end-grow.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/coerced-start-end-shrink.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-zero-count-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer-zero-count-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/invoked-as-func.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/invoked-as-method.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/name.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/not-a-constructor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/prop-desc.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/resizable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/resize-count-bytes-to-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/result-does-not-copy-ordinary-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/results-with-different-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/results-with-empty-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/results-with-same-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/return-abrupt-from-end-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/return-abrupt-from-start-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/return-abrupt-from-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/set-values-from-different-ctor-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-destination-backed-by-immutable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-destination-resizable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-length-throws-resizable-arraybuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-length-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-resize.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/speciesctor-return-same-buffer-with-offset.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/this-is-not-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/this-is-not-typedarray-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/tointeger-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/tointeger-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}

@@ -1,0 +1,774 @@
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/arithmetic.js","status":"fail","detail":"SyntaxError: invalid numeric literal `cffffffffffffffffffffffffffffffffffffffffffffffffff`"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/asIntN.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bigint-tobigint-errors.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bigint-tobigint-toprimitive.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bigint-tobigint-wrapped-values.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bigint-tobigint.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bits-toindex-errors.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bits-toindex-toprimitive.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bits-toindex-wrapped-values.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/bits-toindex.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asIntN/order-of-steps.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/arithmetic.js","status":"fail","detail":"SyntaxError: invalid numeric literal `bffffffffffffffffffffffffffffffffffffffffffffffffff`"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/asUintN.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bigint-tobigint-errors.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bigint-tobigint-toprimitive.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bigint-tobigint-wrapped-values.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bigint-tobigint.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bits-toindex-errors.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bits-toindex-toprimitive.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bits-toindex-wrapped-values.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/bits-toindex.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/asUintN/order-of-steps.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/call-value-of-when-to-string-present.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-coercion.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-empty-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-binary-string.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-decimal-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-hex-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-octal-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-string-syntax-errors.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-integer.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-trailing-leading-spaces.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/infinity-throws-rangeerror.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/is-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/nan-throws-rangeerror.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/negative-infinity-throws.rangeerror.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/non-integer-rangeerror.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/parseInt/nonexistent.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/Symbol.toStringTag.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/constructor.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toLocaleString/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/a-z.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/default-radix.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/prototype-call.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/radix-2-to-36.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/radix-err.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/radix-tointegerorinfinity-throws-symbol.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/radix-tointegerorinfinity-throws-toprimitive-or-bigint.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/string-is-code-units-of-decimal-digits-only.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/toString/thisbigintvalue-not-valid-throws.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/cross-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/return.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/this-value-invalid-object-throws.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/prototype/valueOf/this-value-invalid-primitive-throws.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/tostring-throws.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/valueof-throws.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/wrapper-object-ordinary-toprimitive.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/detached-buffer-after-toindex-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/detached-buffer-before-outofrange-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/detached-buffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/index-is-out-of-range.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/length.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/name.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/negative-byteoffset-throws.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/not-a-constructor.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/resizable-buffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/return-abrupt-from-tonumber-byteoffset-symbol.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/return-abrupt-from-tonumber-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/return-value-clean-arraybuffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/return-values-custom-offset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/return-values.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/this-has-no-dataview-internal.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/this-is-not-object.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/to-boolean-littleendian.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/toindex-byteoffset-errors.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/toindex-byteoffset-toprimitive.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/toindex-byteoffset-wrapped-values.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/getBigInt64/toindex-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/detached-buffer-after-bigint-value.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/detached-buffer-after-toindex-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/detached-buffer-before-outofrange-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/detached-buffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/immutable-buffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/index-check-before-value-conversion.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/index-is-out-of-range.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/length.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/name.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/negative-byteoffset-throws.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/no-value-arg.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/not-a-constructor.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/range-check-after-value-conversion.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/resizable-buffer.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/return-abrupt-from-tobigint-value-symbol.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/return-abrupt-from-tobigint-value.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/return-abrupt-from-tonumber-byteoffset-symbol.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/return-abrupt-from-tonumber-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/set-values-little-endian-order.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/set-values-return-undefined.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/this-has-no-dataview-internal.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/this-is-not-object.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/to-boolean-littleendian.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/DataView/prototype/setBigInt64/toindex-byteoffset.js","status":"unsupported","detail":"DataView built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/invoked-as-accessor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/invoked-as-func.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/name.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/prop-desc.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/return-typedarrayname.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/this-has-no-typedarrayname-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/Symbol.toStringTag/BigInt/this-is-not-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/at/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/buffer/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/buffer/BigInt/return-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteLength/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteLength/BigInt/resizable-array-buffer-auto.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteLength/BigInt/resizable-array-buffer-fixed.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteLength/BigInt/return-bytelength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteOffset/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteOffset/BigInt/resizable-array-buffer-auto.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteOffset/BigInt/resizable-array-buffer-fixed.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/byteOffset/BigInt/return-byteoffset.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/coerced-values-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/coerced-values-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/coerced-values-target.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-out-of-bounds-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-out-of-bounds-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-out-of-bounds-target.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/negative-target.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/non-negative-out-of-bounds-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/non-negative-out-of-bounds-target-and-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/non-negative-target-and-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/non-negative-target-start-and-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-end-is-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-start-is-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-target-is-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-target.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/return-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/copyWithin/BigInt/undefined-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/entries/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/entries/BigInt/iter-prototype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/entries/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/entries/BigInt/return-itor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-arguments-with-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-arguments-without-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-no-interaction-over-non-integer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-set-value-during-interaction.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/returns-false-if-any-cb-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/returns-true-if-every-cb-returns-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/every/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/coerced-indexes.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-conversion-once.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-custom-start-and-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-non-numeric-throw.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-non-numeric.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-relative-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-relative-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values-symbol-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/fill-values.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-end-as-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-set-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-start-as-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/fill/BigInt/return-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-arguments-with-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-arguments-without-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-called-before-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-called-before-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-no-iteration-over-non-integer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-set-value-during-iteration.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/result-does-not-share-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/result-empty-callbackfn-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/result-full-callbackfn-returns-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-destination-resizable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-length-throws-resizable-arraybuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-length-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/filter/BigInt/values-are-set.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-call-changes-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-call-parameters.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-call-this-non-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-call-this-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-may-detach-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/predicate-not-called-on-empty-array.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/return-abrupt-from-predicate-call.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/return-found-value-predicate-result-is-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/find/BigInt/return-undefined-if-predicate-returns-false-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-call-changes-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-call-parameters.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-call-this-non-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-call-this-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-may-detach-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/predicate-not-called-on-empty-array.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/return-abrupt-from-predicate-call.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/return-index-predicate-result-is-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findIndex/BigInt/return-negative-one-if-predicate-returns-false-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-call-changes-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-call-parameters.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-call-this-non-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-call-this-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-may-detach-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/predicate-not-called-on-empty-array.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/return-abrupt-from-predicate-call.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/return-found-value-predicate-result-is-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLast/BigInt/return-undefined-if-predicate-returns-false-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/get-length-ignores-length-prop.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-call-changes-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-call-parameters.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-call-this-non-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-call-this-strict.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-may-detach-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/predicate-not-called-on-empty-array.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/return-abrupt-from-predicate-call.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/return-index-predicate-result-is-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/findLastIndex/BigInt/return-negative-one-if-predicate-returns-false-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-arguments-with-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-arguments-without-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-is-not-callable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-no-interaction-over-non-integer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-set-value-during-interaction.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/returns-undefined.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/forEach/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/detached-buffer-during-fromIndex-returns-false-for-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/detached-buffer-during-fromIndex-returns-true-for-undefined.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/fromIndex-equal-or-greater-length-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/fromIndex-infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/fromIndex-minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/length-zero-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/return-abrupt-tointeger-fromindex-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/return-abrupt-tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/search-found-returns-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/search-not-found-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/includes/BigInt/tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/detached-buffer-during-fromIndex-returns-minus-one-for-undefined.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/detached-buffer-during-fromIndex-returns-minus-one-for-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/fromIndex-equal-or-greater-length-returns-minus-one.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/fromIndex-infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/fromIndex-minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/length-zero-returns-minus-one.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/no-arg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/return-abrupt-tointeger-fromindex-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/return-abrupt-tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/search-found-returns-index.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/search-not-found-returns-minus-one.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/indexOf/BigInt/tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/custom-separator-result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/detached-buffer-during-fromIndex-returns-single-comma.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/empty-instance-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-separator-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-separator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/keys/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/keys/BigInt/iter-prototype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/keys/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/keys/BigInt/return-itor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/detached-buffer-during-fromIndex-returns-minus-one-for-undefined.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/detached-buffer-during-fromIndex-returns-minus-one-for-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/fromIndex-infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/fromIndex-minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/length-zero-returns-minus-one.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/no-arg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/return-abrupt-tointeger-fromindex-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/return-abrupt-tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/search-found-returns-index.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/search-not-found-returns-minus-one.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/lastIndexOf/BigInt/tointeger-fromindex.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/length/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/length/BigInt/resizable-array-buffer-auto.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/length/BigInt/resizable-array-buffer-fixed.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/length/BigInt/return-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-arguments-with-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-arguments-without-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-is-not-callable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-no-interaction-over-non-integer-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-return-affects-returned-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-return-does-not-copy-non-integer-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-set-value-during-interaction.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/return-new-typedarray-from-empty-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/return-new-typedarray-from-positive-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-destination-resizable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-length-throws-resizable-arraybuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-length-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/map/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-arguments-custom-accumulator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-arguments-default-accumulator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-no-iteration-over-non-integer-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-set-value-during-iteration.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/empty-instance-return-initialvalue.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/empty-instance-with-no-initialvalue-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/result-is-last-callbackfn-return.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/result-of-any-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/return-first-value-without-callbackfn.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduce/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-arguments-custom-accumulator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-arguments-default-accumulator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-is-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-no-iteration-over-non-integer-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-set-value-during-iteration.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/empty-instance-return-initialvalue.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/empty-instance-with-no-initialvalue-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/result-is-last-callbackfn-return.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/result-of-any-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/return-first-value-without-callbackfn.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reduceRight/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/preserves-non-numeric-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/returns-original-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/reverts.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-negative-integer-offset-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-offset-tointeger.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-primitive-toobject.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-get-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-get-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-length-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-tonumber-value-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-src-tonumber-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-tointeger-offset-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-tointeger-offset.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-return-abrupt-from-toobject-offset.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-set-values-in-order.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-set-values.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-src-tonumber-value-type-conversions.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-src-values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-target-arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-targetbuffer-detached-on-tointeger-offset-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/array-arg-targetbuffer-detached-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/bigint-tobigint64.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/bigint-tobiguint64.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/boolean-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/null-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/number-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/src-typedarray-big.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/src-typedarray-not-big-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/string-nan-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/string-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/symbol-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-negative-integer-offset-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-offset-tointeger.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-return-abrupt-from-tointeger-offset-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-return-abrupt-from-tointeger-offset.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-diff-buffer-other-type-sab.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-diff-buffer-other-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-diff-buffer-same-type-sab.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-diff-buffer-same-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-same-buffer-same-type-resized.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-same-buffer-same-type-sab.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-set-values-same-buffer-same-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-src-arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-src-byteoffset-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-src-range-greather-than-target-throws-rangeerror.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-srcbuffer-detached-during-tointeger-offset-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-target-arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-target-byteoffset-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-target-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/typedarray-arg-targetbuffer-detached-during-tointeger-offset-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/set/BigInt/undefined-tobigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-zero-count-custom-ctor-other-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer-zero-count-custom-ctor-same-targettype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/result-does-not-copy-ordinary-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-different-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-empty-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/results-with-same-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-end-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-start-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/set-values-from-different-ctor-type.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-destination-resizable.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length-throws-resizable-arraybuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/tointeger-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/slice/BigInt/tointeger-start.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-arguments-with-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-arguments-without-thisarg.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-detachbuffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-no-interaction-over-non-integer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-not-callable-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-not-called-on-empty.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-return-does-not-change-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-returns-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-set-value-during-interaction.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/callbackfn-this.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/returns-false-if-every-cb-returns-false.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/returns-true-if-any-cb-returns-true.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/some/BigInt/values-are-not-cached.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/arraylength-internal.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/comparefn-call-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/comparefn-calls.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/comparefn-is-undefined.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/comparefn-nonfunction-call-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/return-same-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/sortcompare-with-no-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/sort/BigInt/sorted-values.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/infinity.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/minus-zero.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/result-does-not-copy-ordinary-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/result-is-new-instance-from-same-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/result-is-new-instance-with-shared-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/results-with-different-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/results-with-empty-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/results-with-same-length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/return-abrupt-from-begin-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/return-abrupt-from-begin.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/return-abrupt-from-end-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/return-abrupt-from-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-ctor-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-ctor-inherited.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-ctor-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-abrupt.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-custom-ctor-invocation.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-custom-ctor-returns-another-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-custom-ctor-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-custom-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-returns-throws.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species-use-default-ctor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/speciesctor-get-species.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/tointeger-begin.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/subarray/BigInt/tointeger-end.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-tolocalestring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-tostring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-valueof-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/empty-instance-returns-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-result.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toString/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/values/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/values/BigInt/iter-prototype.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/values/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/values/BigInt/return-itor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/with/BigInt/early-type-coercion-bigint.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/BYTES_PER_ELEMENT.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/constructor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/is-a-constructor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/length.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/name.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prop-desc.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/proto.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prototype/BYTES_PER_ELEMENT.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prototype/constructor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prototype/not-typedarray-object.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prototype/proto.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/BigInt64Array/prototype.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/arylk-get-length-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/arylk-to-length-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/custom-ctor-does-not-instantiate-ta-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/custom-ctor-returns-other-instance.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/custom-ctor-returns-smaller-instance-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/custom-ctor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/inherited.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/invoked-as-func.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/iter-access-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/iter-invoke-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/iter-next-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/iter-next-value-error.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-abrupt-completion.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-arguments.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-is-not-callable.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-this-with-thisarg.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-this-without-thisarg-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/mapfn-this-without-thisarg-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-empty.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-from-ordinary-object.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-from-sparse-array.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-using-custom-ctor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-with-mapfn.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/new-instance-without-mapfn.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/property-abrupt-completion.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/set-value-abrupt-completion.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/source-value-is-symbol-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/from/BigInt/this-is-not-constructor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/desc-value-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/detached-buffer-throws-realm.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/detached-buffer-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-greater-than-last-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-lower-than-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-minus-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-not-canonical-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-not-integer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-not-numeric-index-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-accessor-desc-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-accessor-desc.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-configurable.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-not-configurable-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-not-enumerable-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-not-enumerable.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-not-writable-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex-desc-not-writable.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-numericindex.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/non-extensible-new-key.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/non-extensible-redefine-key.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/set-value.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/this-is-not-extensible.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/DefineOwnProperty/BigInt/tonumber-value-detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/detached-buffer-key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/detached-buffer-key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/detached-buffer-realm.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/indexed-value-ab-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/indexed-value-ab-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/indexed-value-sab-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/indexed-value-sab-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/infinity-detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-canonical-index-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-canonical-index-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-minus-zero-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-minus-zero-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-numeric-index-get-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-numeric-index-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-not-numeric-index-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-out-of-bounds-non-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-out-of-bounds-strict.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Delete/BigInt/key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/detached-buffer-key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/detached-buffer-key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/detached-buffer-realm.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/indexed-value-sab.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/indexed-value.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/infinity-detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-not-canonical-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-not-integer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-not-minus-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-not-numeric-index-get-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-out-of-bounds.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Get/BigInt/key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/detached-buffer-key-is-not-number.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/detached-buffer-key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/detached-buffer-realm.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/enumerate-detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/index-prop-desc.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-minus-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-not-canonical-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-not-integer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-out-of-bounds.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/GetOwnProperty/BigInt/key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/abrupt-from-ordinary-has-parent-hasproperty.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/detached-buffer-key-is-not-number.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/detached-buffer-key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/detached-buffer-realm.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/indexed-value.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/infinity-with-detached-buffer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/inherited-property.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-greater-than-last-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-lower-than-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-minus-zero.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-not-canonical-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-not-integer.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-not-numeric-index.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/HasProperty/BigInt/key-is-symbol.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/OwnPropertyKeys/BigInt/integer-indexes-and-string-and-symbol-keys-.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/OwnPropertyKeys/BigInt/integer-indexes-and-string-keys.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/OwnPropertyKeys/BigInt/integer-indexes.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/OwnPropertyKeys/BigInt/not-enumerable-keys.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/bigint-tobigint64.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/bigint-tobiguint64.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/boolean-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/detached-buffer-key-is-not-numeric-index.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/detached-buffer-key-is-symbol.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/detached-buffer-realm.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/detached-buffer.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/indexed-value.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-canonical-invalid-index-prototype-chain-set.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-canonical-invalid-index-reflect-set.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-minus-zero.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-not-canonical-index.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-not-integer.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-not-numeric-index-set-throws.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-not-numeric-index.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-out-of-bounds.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-symbol.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-valid-index-prototype-chain-set.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/key-is-valid-index-reflect-set.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/null-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/number-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/string-nan-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/string-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/symbol-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/tonumber-value-detached-buffer.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/tonumber-value-throws.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/internals/Set/BigInt/undefined-tobigint.js","status":"unsupported","detail":"Set runtime built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/argument-is-symbol-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/argument-number-value-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/custom-ctor-does-not-instantiate-ta-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/custom-ctor-returns-other-instance.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/custom-ctor-returns-smaller-instance-throws.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/custom-ctor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/inherited.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/invoked-as-func.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/new-instance-empty.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/new-instance-using-custom-ctor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/new-instance.js","status":"unsupported","detail":"typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArrayConstructors/of/BigInt/this-is-not-constructor.js","status":"unsupported","detail":"typed arrays are future JBS surface"}

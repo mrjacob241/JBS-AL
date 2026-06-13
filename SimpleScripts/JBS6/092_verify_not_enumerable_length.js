@@ -1,0 +1,1 @@
+verifyNotEnumerable(Number, "length"); true;

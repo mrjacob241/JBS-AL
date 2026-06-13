@@ -1,0 +1,40 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A4_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/S15.4.4.8_A4_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/array-has-one-entry.js","status":"pass","detail":"Object(ObjectRef(335))"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/call-with-boolean.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/get_if_present_with_delete.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/length-exceeding-integer-limit-with-object.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/length-exceeding-integer-limit-with-proxy.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/reverse/resizable-buffer.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/preserves-non-numeric-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/returns-original-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/BigInt/reverts.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/immutable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/invoked-as-func.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/invoked-as-method.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/name.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/not-a-constructor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/preserves-non-numeric-properties.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/prop-desc.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/resizable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/returns-original-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/reverts.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/this-is-not-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/reverse/this-is-not-typedarray-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}

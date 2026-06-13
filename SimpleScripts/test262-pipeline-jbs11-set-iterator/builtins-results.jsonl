@@ -1,0 +1,11 @@
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/Symbol.toStringTag.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/does-not-have-mapiterator-internal-slots-set.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/does-not-have-mapiterator-internal-slots.js","status":"pass","detail":"Object(ObjectRef(225))"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/iteration-mutable.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/iteration.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/this-not-object-throw-entries.js","status":"pass","detail":"Object(ObjectRef(224))"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/this-not-object-throw-keys.js","status":"pass","detail":"Object(ObjectRef(226))"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/this-not-object-throw-prototype-iterator.js","status":"pass","detail":"Object(ObjectRef(226))"}
+{"path":"ECMAScript/test262-main/test/built-ins/SetIteratorPrototype/next/this-not-object-throw-values.js","status":"pass","detail":"Object(ObjectRef(226))"}

@@ -1,0 +1,1 @@
+"abcd".charAt(2);

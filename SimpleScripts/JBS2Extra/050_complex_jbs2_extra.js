@@ -1,0 +1,1 @@
+function total(data) { var s = 0; for (var i = 0; i < data.length; i = i + 1) { var row = data[i]; var j = 0; while (j < row.length) { if (row[j] > 1) { s = s + row[j]; } j = j + 1; } } return s; } total([[1, 2], [3, 4]]);

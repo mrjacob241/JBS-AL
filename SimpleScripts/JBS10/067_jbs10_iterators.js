@@ -1,0 +1,1 @@
+var count = 0; var iter = { next: function () { return { value: 1, done: count++ > 1 }; } }; var src = {}; src[Symbol.iterator] = function () { return iter; }; var s = 0; for (var v of src) { s = s + v; } s === 2;

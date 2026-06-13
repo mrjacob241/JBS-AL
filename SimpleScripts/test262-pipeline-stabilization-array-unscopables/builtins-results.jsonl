@@ -1,0 +1,4 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/Symbol.unscopables/array-find-from-last.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/Symbol.unscopables/change-array-by-copy.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/Symbol.unscopables/prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/Symbol.unscopables/value.js","status":"unsupported","detail":"template literal"}

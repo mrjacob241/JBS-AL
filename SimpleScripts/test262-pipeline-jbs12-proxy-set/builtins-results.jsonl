@@ -1,0 +1,27 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/boolean-trap-result-is-false-boolean-return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/boolean-trap-result-is-false-null-return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/boolean-trap-result-is-false-number-return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/boolean-trap-result-is-false-string-return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/boolean-trap-result-is-false-undefined-return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/call-parameters-prototype-dunder-proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/call-parameters-prototype-index.js","status":"fail","detail":"ThrowError: thrown value"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/call-parameters-prototype.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/call-parameters.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/null-handler.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/return-is-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/return-true-target-property-accessor-is-configurable-set-is-undefined.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/return-true-target-property-accessor-is-not-configurable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/return-true-target-property-is-not-configurable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/return-true-target-property-is-not-writable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/target-property-is-accessor-not-configurable-set-is-undefined.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/target-property-is-not-configurable-not-writable-not-equal-to-v.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-missing-receiver-multiple-calls-index.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-missing-receiver-multiple-calls.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-missing-target-is-proxy.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-not-callable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-null-receiver.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-null-target-is-proxy.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-undefined-no-property.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-undefined-target-is-proxy.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-undefined.js","status":"pass","detail":"Undefined"}

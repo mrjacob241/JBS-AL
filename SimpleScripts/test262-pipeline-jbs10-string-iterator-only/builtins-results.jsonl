@@ -1,0 +1,7 @@
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/Symbol.toStringTag.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/ancestry.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-iteration-surrogate-pairs.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-iteration.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/StringIteratorPrototype/next/next-missing-internal-slots.js","status":"pass","detail":"Undefined"}

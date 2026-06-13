@@ -1,0 +1,12 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/bigints.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/error-subclass.js","status":"unsupported","detail":"class syntax"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/errors-other-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/errors.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/fake-errors.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/is-a-constructor.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/non-error-objects-other-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/non-error-objects.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/primitives.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Error/isError/symbols.js","status":"pass","detail":"Undefined"}

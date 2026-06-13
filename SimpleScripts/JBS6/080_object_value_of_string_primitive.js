@@ -1,0 +1,1 @@
+Object("jbs").valueOf();

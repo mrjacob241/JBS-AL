@@ -1,0 +1,1 @@
+/word5/.source;

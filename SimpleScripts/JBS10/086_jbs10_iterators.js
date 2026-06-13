@@ -1,0 +1,1 @@
+var closed = 0; var iter = { next: function () { return { value: 1, done: false }; }, return: function () { closed = closed + 1; return {}; } }; var src = {}; src[Symbol.iterator] = function () { return iter; }; try { Array.from(src, function () { throw 'x'; }); } catch (e) {} closed === 1;

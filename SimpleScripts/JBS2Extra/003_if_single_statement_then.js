@@ -1,0 +1,1 @@
+var x = 1; if (true) x = 5; x;

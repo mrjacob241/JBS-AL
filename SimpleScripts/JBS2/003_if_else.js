@@ -1,0 +1,1 @@
+var x = 1; if (false) { x = 2; } else { x = 3; } x;

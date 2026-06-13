@@ -1,0 +1,1 @@
+100 plain ECMAScript scripts for JBS-6 primitive constructors and wrappers, native Test262 helper globals, object literal shorthand/method/computed keys, primitive method dispatch, wrapper property keys, primitive prototype checks, and Error.prototype.toString.

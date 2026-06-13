@@ -1,0 +1,34 @@
+# path|status|reason
+ECMAScript/test262-main/test/built-ins/Object/hasOwn/length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Object/hasOwn/hasown_own_property_exists.js|pass|JBS-4 native assert.sameValue
+ECMAScript/test262-main/test/built-ins/Object/keys/15.2.3.14-0-1.js|pass|JBS-4 typeof and assert.sameValue
+ECMAScript/test262-main/test/built-ins/Object/values/function-name.js|pass|JBS-4 native verifyProperty plus configurable built-in name
+ECMAScript/test262-main/test/built-ins/Object/entries/function-length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Object/assign/assign-length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Function/prototype/S15.3.4_A1.js|pass|Object.prototype.toString classifies Function.prototype as Function
+ECMAScript/test262-main/test/built-ins/Function/prototype/call/S15.3.4.4_A1_T1.js|pass|Block 0-9 stabilization now satisfies Function.prototype.call harness row
+ECMAScript/test262-main/test/built-ins/Function/prototype/apply/S15.3.4.3_A1_T1.js|pass|Block 0-9 stabilization now satisfies Function.prototype.apply harness row
+ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-0-1.js|pass|JBS-4 helper support confirms Function.prototype.bind basics
+ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-1.js|pass|JBS-4 native assert.sameValue
+ECMAScript/test262-main/test/built-ins/Array/isArray/name.js|pass|JBS-4 native verifyProperty plus configurable built-in name
+ECMAScript/test262-main/test/built-ins/Array/prototype/push/length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Array/prototype/pop/length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Array/prototype/slice/length.js|pass|JBS-4 native verifyProperty plus configurable built-in length
+ECMAScript/test262-main/test/built-ins/Error/length.js|pass|JBS-5 Error constructor length and callable assert support
+ECMAScript/test262-main/test/built-ins/Error/name.js|pass|JBS-5 Error prototype name with assert.sameValue
+ECMAScript/test262-main/test/built-ins/Error/prototype/S15.11.4_A1.js|pass|JBS-5 Error prototype object is exposed
+ECMAScript/test262-main/test/built-ins/Error/prototype/S15.11.4_A2.js|pass|JBS-5 Error prototype name property
+ECMAScript/test262-main/test/built-ins/NativeErrors/TypeError/length.js|pass|JBS-5 TypeError constructor length descriptor
+ECMAScript/test262-main/test/built-ins/NativeErrors/TypeError/name.js|pass|JBS-5 TypeError constructor name descriptor
+ECMAScript/test262-main/test/built-ins/NativeErrors/TypeError/prototype/name.js|pass|JBS-5 TypeError prototype name descriptor
+ECMAScript/test262-main/test/built-ins/Boolean/S9.2_A2_T1.js|pass|JBS-6 Boolean callable conversion
+ECMAScript/test262-main/test/built-ins/Boolean/S15.6.3_A1.js|pass|JBS-6 Boolean constructor prototype exposure
+ECMAScript/test262-main/test/built-ins/Boolean/is-a-constructor.js|pass|JBS-6 isConstructor helper plus constructible metadata
+ECMAScript/test262-main/test/built-ins/Number/S9.3_A2_T1.js|pass|JBS-6 Number callable conversion
+ECMAScript/test262-main/test/built-ins/Number/is-a-constructor.js|pass|JBS-6 Number constructible metadata
+ECMAScript/test262-main/test/built-ins/String/is-a-constructor.js|pass|JBS-6 String constructible metadata
+ECMAScript/test262-main/test/built-ins/String/prototype/valueOf/string-primitive.js|pass|JBS-6 String primitive receiver handling
+ECMAScript/test262-main/test/built-ins/Array/is-a-constructor.js|pass|JBS-6 Array constructible metadata
+ECMAScript/test262-main/test/built-ins/Error/is-a-constructor.js|pass|JBS-6 Error constructible metadata
+ECMAScript/test262-main/test/built-ins/Error/prototype/toString/15.11.4.4-6-2.js|pass|JBS-6 Error.prototype.toString name/message formatting
+ECMAScript/test262-main/test/built-ins/NativeErrors/TypeError/is-a-constructor.js|pass|JBS-6 TypeError constructible metadata

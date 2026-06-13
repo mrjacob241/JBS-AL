@@ -1,0 +1,1 @@
+Map.name === 'Map';

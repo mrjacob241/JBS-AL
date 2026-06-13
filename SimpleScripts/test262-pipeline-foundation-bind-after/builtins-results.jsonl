@@ -1,0 +1,100 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-0-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-10-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-11-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-16-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-16-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-10.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-11.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-12.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-13.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-14.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-15.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-16.js","status":"pass","detail":"Object(ObjectRef(297))"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-6.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-8.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-2-9.js","status":"fail","detail":"ReferenceError: Date is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-20-2.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-20-3.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-21-2.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-21-3.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-3-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-10.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-11.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-12.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-8.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-6-9.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-8-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-8-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-9-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5-9-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-10.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-11.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-12.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-13.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-14.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-15.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-8.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.1-4-9.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-10.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-11.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-12.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-13.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-14.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-8.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/15.3.4.5.2-4-9.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/BoundFunction_restricted-properties.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A1.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A13.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A14.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A15.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A16.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A2.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/S15.3.4.5_A5.js","status":"fail","detail":"ReferenceError: Date is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/get-fn-realm-recursive.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/get-fn-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-construct-newtarget-boundtarget-bound.js","status":"fail","detail":"SyntaxError: unexpected token in expression: Punct('.')"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-construct-newtarget-boundtarget.js","status":"fail","detail":"SyntaxError: unexpected token in expression: Punct('.')"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-construct-newtarget-self-new.js","status":"fail","detail":"SyntaxError: unexpected token in expression: Punct('.')"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-construct-newtarget-self-reflect.js","status":"fail","detail":"SyntaxError: unexpected token in expression: Punct('.')"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-default-value.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-exceeds-int32.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-remaining-args.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-tointeger.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-chained.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-error.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-non-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/proto-from-ctor-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}

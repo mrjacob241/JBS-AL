@@ -1,0 +1,7 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/call-parameters.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/null-handler.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/return-false.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/return-is-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/return-true-target-is-extensible.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/return-true-target-is-not-extensible.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/trap-is-missing-target-is-proxy.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}

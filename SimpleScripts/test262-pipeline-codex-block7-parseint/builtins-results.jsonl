@@ -1,0 +1,12 @@
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/parseInt/nonexistent.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseInt/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseInt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/15.1.2.2-2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T7.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T1.js","status":"fail","detail":"TypeError: assert.sameValue failed"}

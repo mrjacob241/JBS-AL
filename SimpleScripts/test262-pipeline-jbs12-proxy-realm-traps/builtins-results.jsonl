@@ -1,0 +1,13 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/apply/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/defineProperty/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/deleteProperty/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/get/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/getOwnPropertyDescriptor/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/getPrototypeOf/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/isExtensible/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/ownKeys/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/preventExtensions/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/setPrototypeOf/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}

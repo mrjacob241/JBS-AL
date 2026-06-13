@@ -1,0 +1,29 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/arguments-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/call-parameters-new-target.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/call-parameters.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/call-result.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/null-handler-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/null-handler.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-is-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-boolean-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-boolean.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-null-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-null.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-number-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-number.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-string-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-symbol-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-symbol.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-undefined-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/return-not-object-throws-undefined.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-missing-target-is-proxy.js","status":"unsupported","detail":"class syntax"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-not-callable-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-not-callable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-null-target-is-proxy.js","status":"unsupported","detail":"class syntax"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-null.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-undefined-no-property.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-undefined-proto-from-cross-realm-newtarget.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-undefined-proto-from-newtarget-realm.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-undefined-target-is-proxy.js","status":"unsupported","detail":"class syntax"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/construct/trap-is-undefined.js","status":"fail","detail":"TypeError: assert.sameValue failed"}

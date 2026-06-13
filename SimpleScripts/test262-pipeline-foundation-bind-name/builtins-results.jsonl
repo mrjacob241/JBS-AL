@@ -1,0 +1,4 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-chained.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-error.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name-non-string.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-name.js","status":"pass","detail":"Undefined"}

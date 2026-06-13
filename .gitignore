@@ -1,0 +1,7 @@
+appdata/
+ECMAScript/
+target/
+docs/
+.*/
+.*
+!.gitignore

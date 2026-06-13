@@ -1,0 +1,51 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/S15.4.4.3_A1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/S15.4.4.3_A3_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/invoke-element-tolocalestring.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/primitive_this_value.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/primitive_this_value_getter.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/resizable-buffer.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/user-provided-tolocalestring-grow.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toLocaleString/user-provided-tolocalestring-shrink.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-tolocalestring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-tostring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/calls-valueof-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/empty-instance-returns-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-firstelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-nextelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/BigInt/return-result.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/calls-tolocalestring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/calls-tostring-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/calls-valueof-from-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/empty-instance-returns-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/invoked-as-func.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/invoked-as-method.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/name.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/not-a-constructor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/prop-desc.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/resizable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-firstelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-firstelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-firstelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-nextelement-tolocalestring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-nextelement-tostring.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-nextelement-valueof.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/return-result.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/this-is-not-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/this-is-not-typedarray-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/user-provided-tolocalestring-grow.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/toLocaleString/user-provided-tolocalestring-shrink.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}

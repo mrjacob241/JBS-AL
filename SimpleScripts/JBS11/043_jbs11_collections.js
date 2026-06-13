@@ -1,0 +1,1 @@
+var m = new Map(); m.set('a', 1); m.set('b', 2); var t = ''; for (var p of m.entries()) { t = t + p[0] + p[1]; } t === 'a1b2';

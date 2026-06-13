@@ -1,0 +1,11 @@
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/Symbol.toStringTag.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/does-not-have-mapiterator-internal-slots-map.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/does-not-have-mapiterator-internal-slots.js","status":"pass","detail":"Object(ObjectRef(228))"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/iteration-mutable.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/iteration.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/this-not-object-throw-entries.js","status":"pass","detail":"Object(ObjectRef(227))"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/this-not-object-throw-keys.js","status":"pass","detail":"Object(ObjectRef(227))"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/this-not-object-throw-prototype-iterator.js","status":"pass","detail":"Object(ObjectRef(227))"}
+{"path":"ECMAScript/test262-main/test/built-ins/MapIteratorPrototype/next/this-not-object-throw-values.js","status":"pass","detail":"Object(ObjectRef(227))"}

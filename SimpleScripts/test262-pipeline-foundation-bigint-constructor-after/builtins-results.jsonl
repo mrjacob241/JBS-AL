@@ -1,0 +1,9 @@
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-coercion.js","status":"fail","detail":"TypeError: cannot convert Object to BigInt"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-empty-string.js","status":"fail","detail":"SyntaxError: invalid BigInt string"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-binary-string.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-decimal-string.js","status":"fail","detail":"TypeError: cannot convert BigInt to number"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-hex-string.js","status":"fail","detail":"SyntaxError: invalid BigInt string"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-octal-string.js","status":"fail","detail":"SyntaxError: invalid BigInt string"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-from-string-syntax-errors.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-integer.js","status":"fail","detail":"TypeError: cannot convert BigInt to number"}
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/constructor-trailing-leading-spaces.js","status":"fail","detail":"SyntaxError: invalid BigInt string"}

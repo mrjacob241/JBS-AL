@@ -1,0 +1,7 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_Infinity.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_InfinityNaN.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_NaN.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_NegInfinity.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_NoArgs.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_Success_2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/hypot/Math.hypot_ToNumberErr.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}

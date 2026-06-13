@@ -1,0 +1,29 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-1.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-0-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-10.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-11.js","status":"fail","detail":"ReferenceError: JSON is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-12.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-13.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-15.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-8.js","status":"fail","detail":"ReferenceError: Math is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-1-9.js","status":"fail","detail":"ReferenceError: Date is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-2-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/15.4.3.2-2-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/descriptor.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/proxy-revoked.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/proxy.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}

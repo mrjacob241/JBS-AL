@@ -1,0 +1,58 @@
+{"path":"ECMAScript/test262-main/test/built-ins/BigInt/parseInt/nonexistent.js","status":"fail","detail":"ReferenceError: BigInt is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseInt/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseInt.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/15.1.2.2-2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A1_T7.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T1.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T10.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T10_U180E.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T2.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T3.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T4.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T5.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T6.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T7.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T8.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A2_T9.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.1_T7.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.2_T1.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A3.2_T3.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A4.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A4.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A4.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A4.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A5.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A5.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A5.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T2.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T3.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T4.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T5.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A6.1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.1_T1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.2_T1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.3_T1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.3_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A7.3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A8.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A9.5.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/S15.1.2.2_A9.6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseInt/prop-desc.js","status":"fail","detail":"TypeError: verifyPrimordialCallableProperty target is not callable"}

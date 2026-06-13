@@ -1,0 +1,25 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/empty-iterable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/evaluation-order.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-closed-for-null-entry.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-closed-for-string-entry.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-closed-for-throwing-entry-key-accessor.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-closed-for-throwing-entry-key-tostring.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-closed-for-throwing-entry-value-accessor.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-not-closed-for-next-returning-non-object.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-not-closed-for-throwing-done-accessor.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-not-closed-for-throwing-next.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/iterator-not-closed-for-uncallable-next.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/key-order.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/prototype.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/requires-argument.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/simple-properties.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/string-entry-object-succeeds.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/string-entry-primitive-throws.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/string-entry-string-object-succeeds.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/supports-symbols.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/to-property-key.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/uses-define-semantics.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/fromEntries/uses-keys-not-iterator.js","status":"pass","detail":"Undefined"}

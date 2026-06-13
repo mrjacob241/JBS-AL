@@ -1,0 +1,55 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A1.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A1.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A1.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A1.3_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A2_T4.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A3.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A3.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A3.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A3.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A4_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A5_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/S15.4.4.5_A6.6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/call-with-boolean.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/coerced-separator-grow.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/coerced-separator-shrink.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/join/resizable-buffer.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/custom-separator-result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/detached-buffer-during-fromIndex-returns-single-comma.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/empty-instance-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-separator-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-separator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/BigInt/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/coerced-separator-grow.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/coerced-separator-shrink.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/custom-separator-result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/custom-separator-result-from-tostring-on-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/detached-buffer-during-fromIndex-returns-single-comma.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/detached-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/empty-instance-empty-string.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/get-length-uses-internal-arraylength.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/invoked-as-func.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/invoked-as-method.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/length.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/name.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/not-a-constructor.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/prop-desc.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/resizable-buffer.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/result-from-tostring-on-each-simple-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/result-from-tostring-on-each-value.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/return-abrupt-from-separator-symbol.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/return-abrupt-from-separator.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/return-abrupt-from-this-out-of-bounds.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/separator-tostring-once-after-resized.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/this-is-not-object.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}
+{"path":"ECMAScript/test262-main/test/built-ins/TypedArray/prototype/join/this-is-not-typedarray-instance.js","status":"unsupported","detail":"TypedArray built-ins are outside JBS-5"}

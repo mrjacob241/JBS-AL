@@ -1,0 +1,2 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/proxy-revoked.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/isArray/proxy.js","status":"fail","detail":"TypeError: assert.sameValue failed"}

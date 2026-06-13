@@ -1,0 +1,1 @@
+Set.prototype.constructor === Set;

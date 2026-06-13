@@ -1,0 +1,5 @@
+001_top_level_this_is_global.js|boolean|true
+002_top_level_this_reads_global_builtin.js|boolean|true
+003_top_level_this_write_visible_as_global.js|number|13
+004_function_call_this_global.js|string|[object Object]
+005_method_call_this_receiver.js|number|9

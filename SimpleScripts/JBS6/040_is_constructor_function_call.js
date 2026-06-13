@@ -1,0 +1,1 @@
+isConstructor(Function.prototype.call);

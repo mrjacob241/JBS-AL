@@ -1,0 +1,1 @@
+var closed = 0; var original = Set.prototype.add; var source = {}; source[Symbol.iterator] = function () { return { next: function () { return { value: 1, done: false }; }, return: function () { closed = closed + 1; return {}; } }; }; Set.prototype.add = function () { throw new Test262Error(); }; try { new Set(source); } catch (e) {} Set.prototype.add = original; closed === 1;

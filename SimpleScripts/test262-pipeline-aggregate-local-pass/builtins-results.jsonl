@@ -1,0 +1,25 @@
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/cause-property.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/errors-iterabletolist-failures.js","status":"unsupported","detail":"async test"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/errors-iterabletolist.js","status":"unsupported","detail":"async test"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/is-a-constructor.js","status":"pass","detail":"Object(ObjectRef(331))"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/message-method-prop-cast.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/message-method-prop.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/message-tostring-abrupt-symbol.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/message-tostring-abrupt.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/message-undefined-no-prop.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/newtarget-is-undefined.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/newtarget-proto-custom.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/newtarget-proto-fallback.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/newtarget-proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/order-of-args-evaluation.js","status":"fail","detail":"SyntaxError: unexpected character ``` in JBS-0 script"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/proto-from-ctor-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/constructor.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/errors-absent-on-prototype.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/message.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/AggregateError/prototype/proto.js","status":"pass","detail":"Undefined"}

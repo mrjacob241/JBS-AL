@@ -1,0 +1,14 @@
+[package]
+name = "just-barely-script"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "jbs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "jbs"
+path = "src/main.rs"
+
+[dependencies]

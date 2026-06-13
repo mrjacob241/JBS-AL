@@ -1,0 +1,5 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseFloat/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Number/parseFloat.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseFloat/15.1.2.3-2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseFloat/S15.1.2.3_A1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/parseFloat/S15.1.2.3_A1_T2.js","status":"fail","detail":"SyntaxError: unexpected token in expression: Punct('.')"}

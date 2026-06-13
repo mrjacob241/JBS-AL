@@ -1,0 +1,5 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Math/imul/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/imul/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/imul/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/imul/prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Math/imul/results.js","status":"pass","detail":"Undefined"}

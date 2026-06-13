@@ -1,0 +1,1 @@
+Map.length === 0;

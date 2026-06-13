@@ -1,0 +1,1 @@
+verifyConfigurable(Boolean, "name"); true;

@@ -1,0 +1,1 @@
+isConstructor(Error.prototype.toString);

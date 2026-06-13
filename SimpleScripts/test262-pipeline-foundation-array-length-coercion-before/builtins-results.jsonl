@@ -1,0 +1,1 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/length/define-own-prop-length-coercion-order.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}

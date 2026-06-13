@@ -1,0 +1,30 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/deleteCount-clamped-between-zero-and-remaining-count.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/deleteCount-missing.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/deleteCount-undefined.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/discarded-element-not-read.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/elements-read-in-order.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/frozen-this-value.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/holes-not-preserved.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/ignores-species.js","status":"pass","detail":"Object(ObjectRef(344))"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/immutable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-casted-to-zero.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-clamped-to-2pow53minus1.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-decreased-while-iterating.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-exceeding-array-length-limit.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-increased-while-iterating.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length-tolength.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/mutate-while-iterating.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/property-descriptor.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-and-deleteCount-missing.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-and-deleteCount-undefineds.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-bigger-than-length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-neg-infinity-is-zero.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-neg-less-than-minus-length-is-zero.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-neg-subtracted-from-length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/start-undefined-and-deleteCount-missing.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/this-value-boolean.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/this-value-nullish.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/toSpliced/unmodified.js","status":"pass","detail":"Boolean(true)"}

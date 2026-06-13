@@ -1,0 +1,1 @@
+isConstructor(Array.isArray);

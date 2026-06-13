@@ -1,0 +1,1 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/set/trap-is-undefined-target-is-proxy.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}

@@ -1,0 +1,1 @@
+var closed = 0; var iter = { next: function () { return { value: 1, done: true }; }, return: function () { closed = closed + 1; return {}; } }; var src = {}; src[Symbol.iterator] = function () { return iter; }; for (var v of src) {} closed === 0;

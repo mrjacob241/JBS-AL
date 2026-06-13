@@ -1,0 +1,5 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-default-value.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-exceeds-int32.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-remaining-args.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Function/prototype/bind/instance-length-tointeger.js","status":"pass","detail":"Undefined"}

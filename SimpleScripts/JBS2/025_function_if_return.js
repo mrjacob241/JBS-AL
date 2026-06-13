@@ -1,0 +1,1 @@
+function abs(x) { if (x < 0) { return -x; } return x; } abs(-7);

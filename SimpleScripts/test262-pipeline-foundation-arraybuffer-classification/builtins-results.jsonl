@@ -1,0 +1,1 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/from/items-is-arraybuffer.js","status":"unsupported","detail":"ArrayBuffer and typed arrays are future JBS surface"}

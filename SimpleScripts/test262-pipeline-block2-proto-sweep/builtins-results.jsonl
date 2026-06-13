@@ -1,0 +1,15 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/get-abrupt.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/get-fn-name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/get-ordinary-obj.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/get-to-obj-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-abrupt.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-cycle-shadowed.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-cycle.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-fn-name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-immutable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-invalid-value.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-non-extensible.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-non-obj-coercible.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-non-object.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Object/prototype/__proto__/set-ordinary-obj.js","status":"pass","detail":"Undefined"}

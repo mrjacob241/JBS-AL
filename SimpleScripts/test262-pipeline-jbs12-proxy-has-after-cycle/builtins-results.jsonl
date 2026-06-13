@@ -1,0 +1,26 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/call-in-prototype-index.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/call-in-prototype.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/call-in.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/call-object-create.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/call-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/null-handler-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/null-handler.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-target-not-extensible-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-target-not-extensible.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-target-prop-exists-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-target-prop-exists.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-targetdesc-not-configurable-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-false-targetdesc-not-configurable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-is-abrupt-in.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-is-abrupt-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-true-target-prop-exists-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-true-target-prop-exists.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/return-true-without-same-target-prop.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-missing-target-is-proxy.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-not-callable-realm.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-not-callable-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-not-callable.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-null-target-is-proxy.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-undefined-target-is-proxy.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-undefined-using-with.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Proxy/has/trap-is-undefined.js","status":"pass","detail":"Undefined"}

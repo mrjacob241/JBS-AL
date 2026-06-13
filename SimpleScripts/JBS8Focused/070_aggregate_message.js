@@ -1,0 +1,1 @@
+new AggregateError([], 'many').message;

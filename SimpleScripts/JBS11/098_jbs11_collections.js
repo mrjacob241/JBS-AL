@@ -1,0 +1,1 @@
+var closed = 0; var source = {}; source[Symbol.iterator] = function () { return { next: function () { return { value: 1, done: false }; }, return: function () { closed = closed + 1; return {}; } }; }; try { new Map(source); } catch (e) {} closed === 1;

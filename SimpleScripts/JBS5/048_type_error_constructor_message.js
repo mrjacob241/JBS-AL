@@ -1,0 +1,1 @@
+TypeError("bad").message;

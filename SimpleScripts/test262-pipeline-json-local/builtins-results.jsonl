@@ -1,0 +1,249 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/builtin.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/called-as-function.js","status":"fail","detail":"TypeError: cannot define property undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/invoke-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/invoke-arguments.js","status":"fail","detail":"TypeError: Date.prototype method receiver is not a Date object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/invoke-result.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/non-finite.js","status":"fail","detail":"TypeError: Date.prototype method receiver is not a Date object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/to-object.js","status":"fail","detail":"TypeError: Date.prototype method receiver must be object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/to-primitive-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/to-primitive-symbol.js","status":"fail","detail":"TypeError: Date.prototype method receiver is not a Date object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Date/prototype/toJSON/to-primitive-value-of.js","status":"fail","detail":"TypeError: Date.prototype method receiver is not a Date object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/15.12-0-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/15.12-0-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/15.12-0-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/15.12-0-4.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/Symbol.toStringTag.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/builtin.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/length.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/name.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/isRawJSON/prop-desc.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-8.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-0-9.js","status":"pass","detail":"Object(ObjectRef(335))"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g1-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g1-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g1-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g1-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g2-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g2-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g2-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g2-4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g2-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g4-1.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g4-2.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g4-3.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g4-4.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g5-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g5-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g5-3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-3.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-4.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.1.1-g6-7.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-10.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-2.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-3.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-4.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-5.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-6.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-7.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-8.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/15.12.2-2-9.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/S15.12.2_A1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/builtin.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/duplicate-proto.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/invalid-whitespace.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/revived-proxy-revoked.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/revived-proxy.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-define-prop-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-delete-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-get-prop-from-prototype.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-length-coerce-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-length-get-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-non-configurable-prop-create.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-array-non-configurable-prop-delete.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-call-args-after-forward-modification.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-call-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-call-order.js","status":"pass","detail":"Boolean(false)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-context-source-array-literal.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-context-source-object-literal.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-context-source-primitive-literal.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-forward-modifies-object.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-get-name-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-define-prop-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-delete-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-get-prop-from-prototype.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-non-configurable-prop-create.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-non-configurable-prop-delete.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-object-own-keys-err.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/reviver-wrapper.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/text-negative-zero.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/text-non-string-primitive.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/text-object-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/parse/text-object.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/basic.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/bigint-raw-json-can-be-stringified.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/builtin.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/illegal-empty-and-start-end-chars.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/invalid-JSON-text.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/length.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/name.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/prop-desc.js","status":"fail","detail":"TypeError: assert failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/rawJSON/returns-expected-object.js","status":"fail","detail":"TypeError: value is not callable"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/builtin.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/length.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/name.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/prop-desc.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/property-order.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-duplicates.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-empty.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-number-object.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-number.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-order.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-proxy-revoked-realm.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-proxy-revoked.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-proxy.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-string-object.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-undefined.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-array-wrong-type.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-arguments.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-array-circular.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-object-circular.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-object-deleted-property.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-result-undefined.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-result.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-tojson.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-function-wrapper.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/replacer-wrong-type.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-number-float.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-number-object.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-number-range.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-number.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-string-object.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-string-range.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-string.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/space-wrong-type.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-array-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-array-circular.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-array-proxy-revoked.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-array-proxy.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint-cross-realm.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint-order.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint-replacer.js","status":"fail","detail":"TypeError: JSON.stringify cannot serialize BigInt"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint-tojson-receiver.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint-tojson.js","status":"fail","detail":"TypeError: assignment target base must be object"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-bigint.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-boolean-object.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-function.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-number-negative-zero.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-number-non-finite.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-number-object.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-object-abrupt.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-object-circular.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-object-proxy-revoked.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-object-proxy.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-primitive-top-level.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-string-escape-ascii.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-string-escape-unicode.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-string-object.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-symbol.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-arguments.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-array-circular.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-not-function.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-object-circular.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/JSON/stringify/value-tojson-result.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/balance-subseconds.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/basic.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/large-with-small-units.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/max-value.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/negative-components.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/options.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Duration/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/fromEpochMilliseconds.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/negative-epochnanoseconds.js","status":"fail","detail":"SyntaxError: expected `,`"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/Instant/prototype/toJSON/year-format.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDate/prototype/toJSON/year-format.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainDateTime/prototype/toJSON/year-format.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainMonthDay/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainTime/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/PlainYearMonth/prototype/toJSON/year-format.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/balance-negative-time-units.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/basic.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/branding.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/builtin.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/length.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/name.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/negative-epochnanoseconds.js","status":"fail","detail":"SyntaxError: expected `,`"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/offset.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/prop-desc.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Temporal/ZonedDateTime/prototype/toJSON/year-format.js","status":"fail","detail":"ReferenceError: Temporal is not defined"}

@@ -1,0 +1,81 @@
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/15.4.4.12-9-a-1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/15.4.4.12-9-c-ii-1.js","status":"unsupported","detail":"possibly unsupported loop form"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.1_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.2_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.3_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.3_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.3_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.3_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.4_T6.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.5_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A1.5_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.1_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.1_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.1_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.1_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2.2_T5.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A2_T4.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A3_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A3_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A4_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A4_T2.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A4_T3.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A6.1_T1.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A6.1_T2.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/S15.4.4.12_A6.1_T3.js","status":"fail","detail":"ThrowError: thrown value"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/call-with-boolean.js","status":"pass","detail":"Boolean(true)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/called_with_one_argument.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/clamps-length-to-integer-limit.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-ctor-non-object.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-ctor-poisoned.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-non-array-invalid-len.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-non-array.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-proto-from-ctor-realm-array.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-proto-from-ctor-realm-non-array.js","status":"fail","detail":"ReferenceError: $262 is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-proxy.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-revoked-proxy.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-abrupt.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-length-exceeding-integer-limit.js","status":"unsupported","detail":"template literal"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-neg-zero.js","status":"fail","detail":"TypeError: cannot convert undefined or null to object"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-non-ctor.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-null.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-poisoned.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-undef-invalid-len.js","status":"fail","detail":"ReferenceError: Proxy is not defined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species-undef.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/create-species.js","status":"fail","detail":"TypeError: assert.sameValue failed"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/length-and-deleteCount-exceeding-integer-limit.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/length-exceeding-integer-limit-shrink-array.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/length-near-integer-limit-grow-array.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/length.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/name.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/not-a-constructor.js","status":"unsupported","detail":"arrow function"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/prop-desc.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/property-traps-order-with-species.js","status":"pass","detail":"Boolean(false)"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/set_length_no_args.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/target-array-non-extensible.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/target-array-with-non-configurable-property.js","status":"fail","detail":"TypeError: assert.throws expected a throw"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/target-array-with-non-writable-property.js","status":"pass","detail":"Undefined"}
+{"path":"ECMAScript/test262-main/test/built-ins/Array/prototype/splice/throws-if-integer-limit-exceeded.js","status":"pass","detail":"Undefined"}
