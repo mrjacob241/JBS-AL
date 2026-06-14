@@ -1,4 +1,7 @@
-use jbs::{Runtime, Value};
+use jbs::{
+    runtime::{Context, Descriptor, InternalMethods, IntrinsicId, PropertyKey},
+    Runtime, Value,
+};
 
 fn eval(source: &str) -> Value {
     let mut runtime = Runtime::new();
@@ -18,6 +21,32 @@ fn assert_true(source: &str) {
 fn assert_error_name(source: &str, expected: &str) {
     let wrapped = format!("try {{ {source}; 'no throw'; }} catch (error) {{ error.name; }}");
     assert_eval(&wrapped, Value::String(expected.to_owned()));
+}
+
+fn eval_with_foreign_array_constructor(source: &str) -> Value {
+    let mut runtime = Runtime::new();
+    let default_realm = runtime.default_realm();
+    let foreign_realm = runtime.create_realm();
+    let foreign_array = runtime
+        .realm(foreign_realm)
+        .unwrap()
+        .intrinsics
+        .get(IntrinsicId::ArrayConstructor)
+        .unwrap();
+    let default_global = runtime.realm(default_realm).unwrap().global_object;
+    {
+        let mut cx = Context::new(&mut runtime, default_realm);
+        default_global
+            .define_own_property_or_throw(
+                &mut cx,
+                PropertyKey::from("ForeignArray"),
+                Descriptor::data(Value::Object(foreign_array), true, true, true),
+            )
+            .unwrap();
+    }
+    runtime
+        .eval_script(source)
+        .unwrap_or_else(|error| panic!("{source} failed: {error}"))
 }
 
 #[test]
@@ -188,6 +217,17 @@ fn generic_array_methods_use_indexed_length_behavior_on_plain_objects() {
          a.constructor[Symbol.species] = undefined;
          var r = a.slice();
          Array.isArray(r) && Object.getPrototypeOf(r) === Array.prototype && r[0] === 1",
+    );
+    assert_eq!(
+        eval_with_foreign_array_constructor(
+            "var a = [1];
+             var calls = 0;
+             Object.defineProperty(ForeignArray, Symbol.species, { get: function () { calls++; } });
+             a.constructor = ForeignArray;
+             var r = a.slice();
+             Object.getPrototypeOf(r) === Array.prototype && r[0] === 1 && calls === 0;"
+        ),
+        Value::Boolean(true)
     );
     assert_true(
         "var o = { length: 9007199254740993 };

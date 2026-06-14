@@ -140,7 +140,7 @@ pub fn regexp_source_flags(cx: &Context, object: ObjectRef) -> Completion<(Strin
     ))
 }
 
-fn validate_regexp_flags(flags: &str) -> Completion<()> {
+pub(crate) fn validate_regexp_flags(flags: &str) -> Completion<()> {
     let mut seen = Vec::new();
     for ch in flags.chars() {
         if !"dgimsuvy".contains(ch) {

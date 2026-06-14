@@ -1,10 +1,12 @@
 use crate::runtime::{Completion, JsError};
+use num_bigint::BigInt;
+use num_traits::ToPrimitive;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
     Identifier(String),
     Number(f64),
-    BigInt(i128),
+    BigInt(BigInt),
     String(String),
     RegExp(String, String),
     Punct(char),
@@ -139,7 +141,7 @@ impl<'src> Lexer<'src> {
         {
             self.bump();
             return value
-                .parse::<i128>()
+                .parse::<BigInt>()
                 .map(Token::BigInt)
                 .map_err(|_| JsError::syntax(format!("invalid BigInt literal `{value}n`")));
         }
@@ -158,13 +160,16 @@ impl<'src> Lexer<'src> {
         if digits.is_empty() {
             return Err(JsError::syntax("invalid numeric literal"));
         }
-        let integer = i128::from_str_radix(&digits, radix)
-            .map_err(|_| JsError::syntax(format!("invalid numeric literal `{digits}`")))?;
+        let integer = BigInt::parse_bytes(digits.as_bytes(), radix)
+            .ok_or_else(|| JsError::syntax(format!("invalid numeric literal `{digits}`")))?;
         if self.peek() == Some('n') {
             self.bump();
             Ok(Token::BigInt(integer))
         } else {
-            Ok(Token::Number(integer as f64))
+            let number = integer
+                .to_f64()
+                .ok_or_else(|| JsError::syntax(format!("invalid numeric literal `{digits}`")))?;
+            Ok(Token::Number(number))
         }
     }
 

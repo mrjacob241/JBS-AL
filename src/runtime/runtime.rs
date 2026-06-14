@@ -1,17 +1,27 @@
-use crate::syntax::parser::{parse_script, Stmt};
+use crate::syntax::parser::{
+    formal_parameter_length, formal_parameter_names, is_simple_parameter_list, parse_script, Expr,
+    FormalParameter, Stmt,
+};
 
-use std::collections::{HashMap, HashSet};
+use num_bigint::BigInt;
+use num_traits::{FromPrimitive, One, Signed, ToPrimitive, Zero};
+use std::{
+    cell::RefCell,
+    collections::{HashMap, HashSet},
+    rc::Rc,
+};
 
 use super::{
-    get_iterator, iterator_close_error, iterator_step_value, number_to_property_string,
-    primitive_wrapper_value, proxy_target, regexp_source_flags, ArgView, Brand, CollectionEntry,
-    CollectionIteratorKind, CollectionKind, Completion, Context, CreateArrayFromList,
-    CreateDataPropertyOrThrow, Descriptor, FromPropertyDescriptor, FunctionData, Heap,
-    InternalMethods, InternalSlot, IntrinsicId, IteratorRecord, JsError, JsObject,
-    LengthOfArrayLike, ObjectKind, ObjectRef, PropertyKey, Realm, RealmId, RegExpCreate, SameValue,
-    SameValueZero, ToNumber, ToPropertyDescriptor, ToString, Value, SYMBOL_IS_CONCAT_SPREADABLE_ID,
-    SYMBOL_ITERATOR_ID, SYMBOL_REPLACE_ID, SYMBOL_SPECIES_ID, SYMBOL_TO_PRIMITIVE_ID,
-    SYMBOL_TO_STRING_TAG_ID, SYMBOL_UNSCOPABLES_ID,
+    get_iterator, iterator_close, iterator_close_error, iterator_close_value, iterator_step_value,
+    number_to_property_string, primitive_wrapper_value, proxy_target, regexp_source_flags,
+    validate_regexp_flags, ArgView, BindingCell, Brand, CollectionEntry, CollectionIteratorKind,
+    CollectionKind, Completion, Context, CreateArrayFromList, CreateDataPropertyOrThrow,
+    Descriptor, FromPropertyDescriptor, FunctionData, FunctionEnvironment, Heap, InternalMethods,
+    InternalSlot, IntrinsicId, IteratorHelperKind, IteratorHelperState, IteratorRecord, JsError,
+    JsObject, LengthOfArrayLike, ObjectKind, ObjectRef, PropertyKey, Realm, RealmId, SameValue,
+    SameValueZero, ToNumber, ToPropertyDescriptor, ToString, Value, SYMBOL_DISPOSE_ID,
+    SYMBOL_HAS_INSTANCE_ID, SYMBOL_IS_CONCAT_SPREADABLE_ID, SYMBOL_ITERATOR_ID, SYMBOL_REPLACE_ID,
+    SYMBOL_SPECIES_ID, SYMBOL_TO_PRIMITIVE_ID, SYMBOL_TO_STRING_TAG_ID, SYMBOL_UNSCOPABLES_ID,
 };
 
 pub struct Runtime {
@@ -34,6 +44,12 @@ impl Runtime {
         runtime
             .symbol_descriptions
             .insert(SYMBOL_ITERATOR_ID, Some("iterator".to_owned()));
+        runtime
+            .symbol_descriptions
+            .insert(SYMBOL_HAS_INSTANCE_ID, Some("hasInstance".to_owned()));
+        runtime
+            .symbol_descriptions
+            .insert(SYMBOL_DISPOSE_ID, Some("dispose".to_owned()));
         runtime
             .symbol_descriptions
             .insert(SYMBOL_REPLACE_ID, Some("replace".to_owned()));
@@ -66,16 +82,13 @@ impl Runtime {
         let object_proto = self.heap.allocate(JsObject::ordinary(None));
         let function_proto = self.heap.allocate(JsObject::function(
             Some(object_proto),
-            FunctionData {
-                name: String::new(),
-                length: 0,
-                callable: false,
-                constructible: false,
-                builtin: None,
-                script: None,
-                bound: None,
-            },
+            FunctionData::builtin("", 0, function_prototype_noop),
         ));
+        if let Ok(object) = self.heap.get_mut(function_proto) {
+            if let ObjectKind::Function(data) = &mut object.kind {
+                data.realm = Some(RealmId(self.realms.len()));
+            }
+        }
         let iterator_proto = self.heap.allocate(JsObject::ordinary(Some(object_proto)));
         let array_iterator_proto = self.heap.allocate(JsObject::ordinary(Some(iterator_proto)));
         let string_iterator_proto = self.heap.allocate(JsObject::ordinary(Some(iterator_proto)));
@@ -110,11 +123,13 @@ impl Runtime {
             self.create_builtin_function("Object", 1, Some(function_proto), object_constructor);
         let function_ctor =
             self.create_builtin_function("Function", 1, Some(function_proto), function_constructor);
+        let throw_type_error = self.create_throw_type_error_function(function_proto);
         let array_ctor =
             self.create_builtin_function("Array", 1, Some(function_proto), array_constructor);
         self.mark_constructible(array_ctor);
         let iterator_ctor =
             self.create_builtin_function("Iterator", 0, Some(function_proto), iterator_constructor);
+        self.mark_constructible(iterator_ctor);
         let map_ctor =
             self.create_builtin_function("Map", 0, Some(function_proto), map_constructor);
         self.mark_constructible(map_ctor);
@@ -293,6 +308,9 @@ impl Runtime {
             .set(IntrinsicId::AggregateErrorPrototype, aggregate_error_proto);
         realm
             .intrinsics
+            .set(IntrinsicId::ThrowTypeError, throw_type_error);
+        realm
+            .intrinsics
             .set(IntrinsicId::ObjectConstructor, object_ctor);
         realm
             .intrinsics
@@ -386,6 +404,7 @@ impl Runtime {
         self.install_string_prototype(string_proto, function_proto);
         self.install_symbol_prototype(symbol_proto, function_proto);
         self.install_symbol_statics(symbol_ctor);
+        self.install_function_prototype_well_knowns(function_proto, throw_type_error);
         self.install_regexp_prototype(regexp_proto, function_proto);
         self.install_date_statics(date_ctor, function_proto);
         self.install_date_prototype(date_proto, function_proto);
@@ -576,15 +595,6 @@ impl Runtime {
             symbol_proto,
             "constructor",
             Value::Object(symbol_ctor),
-            true,
-            false,
-            true,
-        );
-        define_data_with_attrs(
-            &mut self.heap,
-            iterator_proto,
-            "constructor",
-            Value::Object(iterator_ctor),
             true,
             false,
             true,
@@ -1009,6 +1019,37 @@ impl Runtime {
         function
     }
 
+    fn create_throw_type_error_function(&mut self, function_proto: ObjectRef) -> ObjectRef {
+        let function = self.heap.allocate(JsObject::function(
+            Some(function_proto),
+            FunctionData::builtin("", 0, throw_type_error),
+        ));
+        define_data_with_attrs(
+            &mut self.heap,
+            function,
+            "length",
+            Value::Number(0.0),
+            false,
+            false,
+            false,
+        );
+        define_data_with_attrs(
+            &mut self.heap,
+            function,
+            "name",
+            Value::String(String::new()),
+            false,
+            false,
+            false,
+        );
+        if let Ok(object) = self.heap.get_mut(function) {
+            object.extensible = false;
+            object.sealed = true;
+            object.frozen = true;
+        }
+        function
+    }
+
     fn mark_constructible(&mut self, function: ObjectRef) {
         if let Ok(object) = self.heap.get_mut(function) {
             if let super::ObjectKind::Function(data) = &mut object.kind {
@@ -1140,6 +1181,7 @@ impl Runtime {
         );
 
         let methods: &[(&str, u32, super::BuiltinFn)] = &[
+            ("toString", 0, function_proto_to_string),
             ("call", 1, function_proto_call),
             ("apply", 2, function_proto_apply),
             ("bind", 1, function_proto_bind),
@@ -1174,6 +1216,27 @@ impl Runtime {
             ("toArray", 0, iterator_proto_to_array),
         ];
         self.install_methods(iterator_proto, function_proto, methods);
+        let constructor_get = self.create_builtin_function(
+            "get constructor",
+            0,
+            Some(function_proto),
+            iterator_proto_constructor_get,
+        );
+        let constructor_set = self.create_builtin_function(
+            "set constructor",
+            1,
+            Some(function_proto),
+            iterator_proto_constructor_set,
+        );
+        define_accessor_key_with_attrs(
+            &mut self.heap,
+            iterator_proto,
+            PropertyKey::from("constructor"),
+            Some(Value::Object(constructor_get)),
+            Some(Value::Object(constructor_set)),
+            false,
+            true,
+        );
         let iterator_method = self.create_builtin_function(
             "[Symbol.iterator]",
             0,
@@ -1189,12 +1252,39 @@ impl Runtime {
             false,
             true,
         );
+        let dispose_method = self.create_builtin_function(
+            "[Symbol.dispose]",
+            0,
+            Some(function_proto),
+            iterator_proto_dispose,
+        );
         define_data_key_with_attrs(
             &mut self.heap,
             iterator_proto,
-            PropertyKey::Symbol(SYMBOL_TO_STRING_TAG_ID),
-            Value::String("Iterator".to_owned()),
+            PropertyKey::Symbol(SYMBOL_DISPOSE_ID),
+            Value::Object(dispose_method),
+            true,
             false,
+            true,
+        );
+        let to_string_tag_get = self.create_builtin_function(
+            "get [Symbol.toStringTag]",
+            0,
+            Some(function_proto),
+            iterator_proto_to_string_tag_get,
+        );
+        let to_string_tag_set = self.create_builtin_function(
+            "set [Symbol.toStringTag]",
+            1,
+            Some(function_proto),
+            iterator_proto_to_string_tag_set,
+        );
+        define_accessor_key_with_attrs(
+            &mut self.heap,
+            iterator_proto,
+            PropertyKey::Symbol(SYMBOL_TO_STRING_TAG_ID),
+            Some(Value::Object(to_string_tag_get)),
+            Some(Value::Object(to_string_tag_set)),
             false,
             true,
         );
@@ -1492,6 +1582,7 @@ impl Runtime {
             ("unshift", 1, array_proto_unshift),
             ("reverse", 0, array_proto_reverse),
             ("sort", 1, array_proto_sort),
+            ("concat", 1, array_proto_concat),
             ("slice", 2, array_proto_slice),
             ("splice", 2, array_proto_splice),
             ("toReversed", 0, array_proto_to_reversed),
@@ -1719,6 +1810,8 @@ impl Runtime {
 
     fn install_symbol_statics(&mut self, symbol_ctor: ObjectRef) {
         for (name, id) in [
+            ("dispose", SYMBOL_DISPOSE_ID),
+            ("hasInstance", SYMBOL_HAS_INSTANCE_ID),
             ("iterator", SYMBOL_ITERATOR_ID),
             ("replace", SYMBOL_REPLACE_ID),
             ("species", SYMBOL_SPECIES_ID),
@@ -1737,6 +1830,40 @@ impl Runtime {
                 false,
             );
         }
+    }
+
+    fn install_function_prototype_well_knowns(
+        &mut self,
+        function_proto: ObjectRef,
+        throw_type_error: ObjectRef,
+    ) {
+        let thrower = Value::Object(throw_type_error);
+        for name in ["caller", "arguments"] {
+            define_accessor_key_with_attrs(
+                &mut self.heap,
+                function_proto,
+                PropertyKey::from(name),
+                Some(thrower.clone()),
+                Some(thrower.clone()),
+                false,
+                true,
+            );
+        }
+        let has_instance = self.create_builtin_function(
+            "[Symbol.hasInstance]",
+            1,
+            Some(function_proto),
+            function_proto_symbol_has_instance,
+        );
+        define_data_key_with_attrs(
+            &mut self.heap,
+            function_proto,
+            PropertyKey::Symbol(SYMBOL_HAS_INSTANCE_ID),
+            Value::Object(has_instance),
+            false,
+            false,
+            false,
+        );
     }
 
     fn install_symbol_prototype(&mut self, symbol_proto: ObjectRef, function_proto: ObjectRef) {
@@ -2060,9 +2187,35 @@ impl Runtime {
     fn install_test262_helpers(
         &mut self,
         global: ObjectRef,
-        _object_proto: ObjectRef,
+        object_proto: ObjectRef,
         function_proto: ObjectRef,
     ) {
+        let host = self.heap.allocate(JsObject::ordinary(Some(object_proto)));
+        let create_realm = self.create_builtin_function(
+            "createRealm",
+            0,
+            Some(function_proto),
+            test262_create_realm,
+        );
+        define_data_with_attrs(
+            &mut self.heap,
+            host,
+            "createRealm",
+            Value::Object(create_realm),
+            true,
+            false,
+            true,
+        );
+        define_data_with_attrs(
+            &mut self.heap,
+            global,
+            "$262",
+            Value::Object(host),
+            true,
+            false,
+            true,
+        );
+
         let assert = self.heap.allocate(JsObject::function(
             Some(function_proto),
             FunctionData::builtin("assert", 1, test262_assert),
@@ -2143,7 +2296,7 @@ impl Runtime {
     }
 }
 
-fn function_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
+fn function_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
     let (params, body_source) = if args.is_empty() {
         (Vec::new(), String::new())
     } else {
@@ -2164,16 +2317,30 @@ fn function_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Compl
             "Function constructor did not produce a function",
         ));
     };
-    let length = parsed_params.len() as u32;
-    let proto = cx
-        .realm()?
-        .intrinsics
-        .get(IntrinsicId::FunctionPrototype)
-        .ok_or_else(|| JsError::internal("missing Function.prototype intrinsic"))?;
-    let function = cx.heap_mut().allocate(JsObject::function(
-        Some(proto),
-        FunctionData::script("anonymous", parsed_params, parsed_body),
-    ));
+    validate_function_constructor_body(&parsed_params, &parsed_body)?;
+    let length = formal_parameter_length(&parsed_params);
+    let proto = prototype_from_new_target_or_intrinsic(
+        cx,
+        construct_new_target(&this),
+        IntrinsicId::FunctionPrototype,
+    )?;
+    let function_realm = cx.realm_id();
+    let function_environment = FunctionEnvironment {
+        bindings: Rc::new(RefCell::new(HashMap::<String, BindingCell>::new())),
+        global: Some(cx.realm()?.global_object),
+        global_names: Rc::new(RefCell::new(HashSet::new())),
+        strict: false,
+    };
+    let function = cx.heap_mut().allocate(JsObject::function(Some(proto), {
+        let mut data = FunctionData::script_with_environment(
+            "anonymous",
+            parsed_params,
+            parsed_body,
+            function_environment,
+        );
+        data.realm = Some(function_realm);
+        data
+    }));
     function.define_own_property_or_throw(
         cx,
         PropertyKey::from("length"),
@@ -2205,8 +2372,73 @@ fn function_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Compl
     Ok(Value::Object(function))
 }
 
-fn iterator_constructor(_cx: &mut Context, _this: Value, _args: &[Value]) -> Completion<Value> {
-    Err(JsError::type_error("Iterator cannot be called directly"))
+fn validate_function_constructor_body(params: &[FormalParameter], body: &[Stmt]) -> Completion<()> {
+    let simple = is_simple_parameter_list(params);
+    let mut seen = HashSet::new();
+    for param in formal_parameter_names(params) {
+        if !seen.insert(param) && !simple {
+            return Err(JsError::syntax(
+                "non-simple Function constructor parameter list contains duplicate names",
+            ));
+        }
+    }
+    if has_use_strict_directive(body) && !is_simple_parameter_list(params) {
+        return Err(JsError::syntax(
+            "strict Function constructor body cannot have non-simple parameters",
+        ));
+    }
+    if !has_use_strict_directive(body) {
+        return Ok(());
+    }
+    seen.clear();
+    for param in formal_parameter_names(params) {
+        if param == "eval" || param == "arguments" {
+            return Err(JsError::syntax(
+                "strict Function constructor parameter name is restricted",
+            ));
+        }
+        if !seen.insert(param.clone()) {
+            return Err(JsError::syntax(
+                "strict Function constructor parameter list contains duplicate names",
+            ));
+        }
+    }
+    Ok(())
+}
+
+fn has_use_strict_directive(statements: &[Stmt]) -> bool {
+    for statement in statements {
+        match statement {
+            Stmt::Expr(Expr::String(value)) if value == "use strict" => return true,
+            Stmt::Expr(Expr::String(_)) => continue,
+            _ => return false,
+        }
+    }
+    false
+}
+
+fn iterator_constructor(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Some(new_target) = construct_new_target(&this) else {
+        return Err(JsError::type_error("Iterator cannot be called directly"));
+    };
+    let iterator_ctor = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::IteratorConstructor)
+        .ok_or_else(|| JsError::internal("missing Iterator constructor intrinsic"))?;
+    if new_target == iterator_ctor {
+        return Err(JsError::type_error(
+            "Iterator cannot be constructed directly",
+        ));
+    }
+    let proto = prototype_from_new_target_or_intrinsic(
+        cx,
+        Some(new_target),
+        IntrinsicId::IteratorPrototype,
+    )?;
+    Ok(Value::Object(
+        cx.heap_mut().allocate(JsObject::ordinary(Some(proto))),
+    ))
 }
 
 fn map_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -3476,7 +3708,7 @@ fn round_to_f16_like(number: f64) -> f64 {
     sign * (abs / step).round() * step
 }
 
-fn array_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
+fn array_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
     let values = if args.len() == 1 {
         match args[0] {
             Value::Number(length) => {
@@ -3487,7 +3719,8 @@ fn array_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completi
                 {
                     return Err(JsError::range_error("invalid array length"));
                 }
-                let array = create_array_like_value(cx, Vec::new())?;
+                let array =
+                    create_array_for_new_target(cx, construct_new_target(&this), Vec::new())?;
                 array.define_own_property_or_throw(
                     cx,
                     PropertyKey::from("length"),
@@ -3500,7 +3733,7 @@ fn array_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completi
     } else {
         args.to_vec()
     };
-    create_array_like(cx, values)
+    create_array_for_new_target(cx, construct_new_target(&this), values).map(Value::Object)
 }
 
 fn boolean_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -3508,7 +3741,12 @@ fn boolean_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Complet
     if !is_construct_call(&this) {
         return Ok(value);
     }
-    create_primitive_wrapper(cx, IntrinsicId::BooleanPrototype, value)
+    create_primitive_wrapper_for_new_target(
+        cx,
+        IntrinsicId::BooleanPrototype,
+        construct_new_target(&this),
+        value,
+    )
 }
 
 fn number_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -3520,7 +3758,12 @@ fn number_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completi
     if !is_construct_call(&this) {
         return Ok(value);
     }
-    create_primitive_wrapper(cx, IntrinsicId::NumberPrototype, value)
+    create_primitive_wrapper_for_new_target(
+        cx,
+        IntrinsicId::NumberPrototype,
+        construct_new_target(&this),
+        value,
+    )
 }
 
 fn bigint_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -3564,10 +3807,10 @@ fn bigint_proto_to_string(cx: &mut Context, this: Value, args: &[Value]) -> Comp
             number.trunc() as u32
         }
     };
-    Ok(Value::String(format_bigint_radix(value, radix)))
+    Ok(Value::String(format_bigint_radix(value, radix)?))
 }
 
-fn this_bigint_value(cx: &mut Context, value: Value) -> Completion<i128> {
+fn this_bigint_value(cx: &mut Context, value: Value) -> Completion<BigInt> {
     match value {
         Value::BigInt(value) => Ok(value),
         Value::Object(object) => match cx.heap().get(object)?.primitive_value.clone() {
@@ -3582,35 +3825,38 @@ fn this_bigint_value(cx: &mut Context, value: Value) -> Completion<i128> {
     }
 }
 
-fn format_bigint_radix(value: i128, radix: u32) -> String {
+fn format_bigint_radix(value: BigInt, radix: u32) -> Completion<String> {
     debug_assert!((2..=36).contains(&radix));
-    if value == 0 {
-        return "0".to_owned();
+    if value.is_zero() {
+        return Ok("0".to_owned());
     }
-    let negative = value < 0;
-    let mut remaining = value.unsigned_abs();
+    let negative = value.is_negative();
+    let mut remaining = value.abs();
+    let radix_bigint = BigInt::from(radix);
     let mut digits = Vec::new();
-    while remaining > 0 {
-        let digit = (remaining % radix as u128) as u8;
+    while !remaining.is_zero() {
+        let digit = (&remaining % &radix_bigint)
+            .to_u8()
+            .ok_or_else(|| JsError::internal("BigInt digit is out of range"))?;
         let ch = match digit {
             0..=9 => (b'0' + digit) as char,
             _ => (b'a' + digit - 10) as char,
         };
         digits.push(ch);
-        remaining /= radix as u128;
+        remaining /= &radix_bigint;
     }
     if negative {
         digits.push('-');
     }
-    digits.iter().rev().collect()
+    Ok(digits.iter().rev().collect())
 }
 
-fn to_bigint_value(cx: &mut Context, value: Value) -> Completion<i128> {
+fn to_bigint_value(cx: &mut Context, value: Value) -> Completion<BigInt> {
     let primitive = ArgView::new(value).to_primitive(cx)?;
     match primitive {
         Value::BigInt(value) => Ok(value),
-        Value::Boolean(true) => Ok(1),
-        Value::Boolean(false) => Ok(0),
+        Value::Boolean(true) => Ok(BigInt::one()),
+        Value::Boolean(false) => Ok(BigInt::zero()),
         Value::String(value) => string_to_bigint(&value),
         Value::Number(_) => Err(JsError::type_error("cannot convert Number to BigInt")),
         other => Err(JsError::type_error(format!(
@@ -3620,44 +3866,46 @@ fn to_bigint_value(cx: &mut Context, value: Value) -> Completion<i128> {
     }
 }
 
-fn number_to_bigint(value: f64) -> Completion<i128> {
+fn number_to_bigint(value: f64) -> Completion<BigInt> {
     if !value.is_finite() || value.fract() != 0.0 {
         return Err(JsError::range_error(
             "number cannot be converted to BigInt because it is not an integer",
         ));
     }
-    Ok(value as i128)
+    BigInt::from_f64(value).ok_or_else(|| JsError::range_error("number is out of BigInt range"))
 }
 
-fn string_to_bigint(text: &str) -> Completion<i128> {
+fn string_to_bigint(text: &str) -> Completion<BigInt> {
     let trimmed = text.trim();
     if trimmed.is_empty() {
-        return Ok(0);
+        return Ok(BigInt::zero());
     }
     if let Some(digits) = trimmed
         .strip_prefix("0x")
         .or_else(|| trimmed.strip_prefix("0X"))
     {
-        return i128::from_str_radix(digits, 16)
-            .map_err(|_| JsError::syntax("invalid BigInt string"));
+        return parse_bigint_digits(digits, 16);
     }
     if let Some(digits) = trimmed
         .strip_prefix("0o")
         .or_else(|| trimmed.strip_prefix("0O"))
     {
-        return i128::from_str_radix(digits, 8)
-            .map_err(|_| JsError::syntax("invalid BigInt string"));
+        return parse_bigint_digits(digits, 8);
     }
     if let Some(digits) = trimmed
         .strip_prefix("0b")
         .or_else(|| trimmed.strip_prefix("0B"))
     {
-        return i128::from_str_radix(digits, 2)
-            .map_err(|_| JsError::syntax("invalid BigInt string"));
+        return parse_bigint_digits(digits, 2);
     }
     trimmed
-        .parse::<i128>()
+        .parse::<BigInt>()
         .map_err(|_| JsError::syntax("invalid BigInt string"))
+}
+
+fn parse_bigint_digits(digits: &str, radix: u32) -> Completion<BigInt> {
+    BigInt::parse_bytes(digits.as_bytes(), radix)
+        .ok_or_else(|| JsError::syntax("invalid BigInt string"))
 }
 
 fn to_index_i128(cx: &mut Context, value: Value) -> Completion<u32> {
@@ -3674,29 +3922,23 @@ fn to_index_i128(cx: &mut Context, value: Value) -> Completion<u32> {
     Ok(number.trunc() as u32)
 }
 
-fn bigint_wrap_uint(bits: u32, value: i128) -> i128 {
+fn bigint_wrap_uint(bits: u32, value: BigInt) -> BigInt {
     if bits == 0 {
-        return 0;
+        return BigInt::zero();
     }
-    if bits >= 127 {
-        return value;
-    }
-    let modulo = 1_i128 << bits;
-    ((value % modulo) + modulo) % modulo
+    let modulo = BigInt::one() << bits;
+    ((value % &modulo) + &modulo) % &modulo
 }
 
-fn bigint_wrap_int(bits: u32, value: i128) -> i128 {
+fn bigint_wrap_int(bits: u32, value: BigInt) -> BigInt {
     if bits == 0 {
-        return 0;
+        return BigInt::zero();
     }
-    if bits >= 127 {
-        return value;
-    }
-    let modulo = 1_i128 << bits;
-    let mut wrapped = ((value % modulo) + modulo) % modulo;
-    let threshold = 1_i128 << (bits - 1);
+    let modulo = BigInt::one() << bits;
+    let mut wrapped = ((value % &modulo) + &modulo) % &modulo;
+    let threshold = BigInt::one() << (bits - 1);
     if wrapped >= threshold {
-        wrapped -= modulo;
+        wrapped -= &modulo;
     }
     wrapped
 }
@@ -3713,7 +3955,12 @@ fn string_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completi
     if !is_construct_call(&this) {
         return Ok(value);
     }
-    let object = create_primitive_wrapper_ref(cx, IntrinsicId::StringPrototype, value.clone())?;
+    let object = create_primitive_wrapper_ref_for_new_target(
+        cx,
+        IntrinsicId::StringPrototype,
+        construct_new_target(&this),
+        value.clone(),
+    )?;
     if let Value::String(text) = value {
         for (index, ch) in text.chars().enumerate() {
             object.define_own_property_or_throw(
@@ -3748,7 +3995,7 @@ fn symbol_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completi
     Ok(Value::Symbol(symbol))
 }
 
-fn regexp_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
+fn regexp_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
     let pattern = args.first().cloned().unwrap_or(Value::Undefined);
     let flags = args.get(1).cloned().unwrap_or(Value::Undefined);
     if let Value::Object(object) = pattern.clone() {
@@ -3772,7 +4019,41 @@ fn regexp_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Complet
     } else {
         to_string_value(cx, flags)?
     };
-    RegExpCreate(cx, source, flags)
+    create_regexp_for_new_target(cx, construct_new_target(&this), source, flags)
+}
+
+fn create_regexp_for_new_target(
+    cx: &mut Context,
+    new_target: Option<ObjectRef>,
+    source: String,
+    flags: String,
+) -> Completion<Value> {
+    validate_regexp_flags(&flags)?;
+    let proto =
+        prototype_from_new_target_or_intrinsic(cx, new_target, IntrinsicId::RegExpPrototype)?;
+    let object = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
+    cx.heap_mut()
+        .get_mut(object)?
+        .add_slot(InternalSlot::RegExpData {
+            source: source.clone(),
+            flags: flags.clone(),
+        });
+    object.define_own_property_or_throw(
+        cx,
+        PropertyKey::from("lastIndex"),
+        Descriptor::data(Value::Number(0.0), true, false, false),
+    )?;
+    object.define_own_property_or_throw(
+        cx,
+        PropertyKey::from("source"),
+        Descriptor::data(Value::String(source), false, false, true),
+    )?;
+    object.define_own_property_or_throw(
+        cx,
+        PropertyKey::from("flags"),
+        Descriptor::data(Value::String(flags), false, false, true),
+    )?;
+    Ok(Value::Object(object))
 }
 
 fn date_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -4205,24 +4486,23 @@ fn date_utc_string(time: f64) -> Completion<String> {
     ))
 }
 
-fn create_primitive_wrapper(
+fn create_primitive_wrapper_for_new_target(
     cx: &mut Context,
     proto_id: IntrinsicId,
+    new_target: Option<ObjectRef>,
     primitive: Value,
 ) -> Completion<Value> {
-    create_primitive_wrapper_ref(cx, proto_id, primitive).map(Value::Object)
+    create_primitive_wrapper_ref_for_new_target(cx, proto_id, new_target, primitive)
+        .map(Value::Object)
 }
 
-fn create_primitive_wrapper_ref(
+fn create_primitive_wrapper_ref_for_new_target(
     cx: &mut Context,
     proto_id: IntrinsicId,
+    new_target: Option<ObjectRef>,
     primitive: Value,
 ) -> Completion<ObjectRef> {
-    let proto = cx
-        .realm()?
-        .intrinsics
-        .get(proto_id)
-        .ok_or_else(|| JsError::internal("missing primitive wrapper prototype intrinsic"))?;
+    let proto = prototype_from_new_target_or_intrinsic(cx, new_target, proto_id)?;
     let object = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
     let object_data = cx.heap_mut().get_mut(object)?;
     object_data.primitive_value = Some(primitive.clone());
@@ -4376,14 +4656,7 @@ fn prototype_from_new_target_or_intrinsic(
     intrinsic: IntrinsicId,
 ) -> Completion<ObjectRef> {
     if let Some(new_target) = new_target {
-        let proto = new_target.get(
-            cx,
-            &PropertyKey::from("prototype"),
-            Value::Object(new_target),
-        )?;
-        if let Value::Object(proto) = proto {
-            return Ok(proto);
-        }
+        return cx.prototype_from_constructor(new_target, intrinsic);
     }
     cx.realm()?
         .intrinsics
@@ -4420,17 +4693,17 @@ fn define_error_field(
     )
 }
 
-fn object_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
+fn object_constructor(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
     let value = args.first().cloned().unwrap_or(Value::Undefined);
     if let Value::Object(_) = value {
         return Ok(value);
     }
     if matches!(value, Value::Undefined | Value::Null) {
-        let proto = cx
-            .realm()?
-            .intrinsics
-            .get(IntrinsicId::ObjectPrototype)
-            .ok_or_else(|| super::JsError::internal("missing Object.prototype intrinsic"))?;
+        let proto = prototype_from_new_target_or_intrinsic(
+            cx,
+            construct_new_target(&this),
+            IntrinsicId::ObjectPrototype,
+        )?;
         let object = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
         return Ok(Value::Object(object));
     }
@@ -4996,10 +5269,89 @@ fn function_proto_call(cx: &mut Context, this: Value, args: &[Value]) -> Complet
     cx.call_mut(this, this_arg, call_args)
 }
 
+fn function_prototype_noop(_cx: &mut Context, _this: Value, _args: &[Value]) -> Completion<Value> {
+    Ok(Value::Undefined)
+}
+
+fn function_proto_to_string(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    if !cx.is_callable(&this)? {
+        return Err(JsError::type_error(
+            "Function.prototype.toString receiver is not callable",
+        ));
+    }
+    let name = match this {
+        Value::Object(object) => match cx.heap().get(object)?.kind.clone() {
+            ObjectKind::Function(data) => data.name,
+            _ => String::new(),
+        },
+        _ => String::new(),
+    };
+    Ok(Value::String(format!(
+        "function {name}() {{ [native code] }}"
+    )))
+}
+
 fn function_proto_apply(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
     let this_arg = args.first().cloned().unwrap_or(Value::Undefined);
-    let apply_args = collect_array_like(cx, args.get(1).cloned().unwrap_or(Value::Undefined))?;
+    let arg_array = args.get(1).cloned().unwrap_or(Value::Undefined);
+    let apply_args = if matches!(arg_array, Value::Undefined | Value::Null) {
+        Vec::new()
+    } else {
+        create_list_from_array_like(cx, arg_array)?
+    };
     cx.call_mut(this, this_arg, &apply_args)
+}
+
+fn throw_type_error(_cx: &mut Context, _this: Value, _args: &[Value]) -> Completion<Value> {
+    Err(JsError::type_error("restricted function property access"))
+}
+
+fn function_proto_symbol_has_instance(
+    cx: &mut Context,
+    this: Value,
+    args: &[Value],
+) -> Completion<Value> {
+    ordinary_has_instance(cx, this, args.first().cloned().unwrap_or(Value::Undefined))
+        .map(Value::Boolean)
+}
+
+pub(crate) fn ordinary_has_instance(
+    cx: &mut Context,
+    constructor: Value,
+    object: Value,
+) -> Completion<bool> {
+    if !cx.is_callable(&constructor)? {
+        return Ok(false);
+    }
+    if let Value::Object(function) = constructor.clone() {
+        if let ObjectKind::Function(data) = cx.heap().get(function)?.kind.clone() {
+            if let Some(bound) = data.bound {
+                return ordinary_has_instance(cx, bound.target, object);
+            }
+        }
+    }
+    let Value::Object(object) = object else {
+        return Ok(false);
+    };
+    let Value::Object(constructor_object) = constructor else {
+        return Ok(false);
+    };
+    let prototype = constructor_object.get(
+        cx,
+        &PropertyKey::from("prototype"),
+        Value::Object(constructor_object),
+    )?;
+    let Value::Object(target_proto) = prototype else {
+        return Err(JsError::type_error("constructor prototype is not object"));
+    };
+    let mut current = Some(object);
+    while let Some(candidate) = current {
+        if candidate == target_proto {
+            return Ok(true);
+        }
+        current = candidate.get_prototype_of(cx)?;
+    }
+    Ok(false)
 }
 
 fn function_proto_bind(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -5874,6 +6226,100 @@ fn iterator_self(_cx: &mut Context, this: Value, _args: &[Value]) -> Completion<
     Ok(this)
 }
 
+fn iterator_proto_constructor_get(
+    cx: &mut Context,
+    _this: Value,
+    _args: &[Value],
+) -> Completion<Value> {
+    cx.realm()?
+        .intrinsics
+        .get(IntrinsicId::IteratorConstructor)
+        .map(Value::Object)
+        .ok_or_else(|| JsError::internal("missing Iterator constructor intrinsic"))
+}
+
+fn iterator_proto_constructor_set(
+    cx: &mut Context,
+    this: Value,
+    args: &[Value],
+) -> Completion<Value> {
+    setter_that_ignores_iterator_prototype(
+        cx,
+        this,
+        PropertyKey::from("constructor"),
+        args.first().cloned().unwrap_or(Value::Undefined),
+    )
+}
+
+fn iterator_proto_to_string_tag_get(
+    _cx: &mut Context,
+    _this: Value,
+    _args: &[Value],
+) -> Completion<Value> {
+    Ok(Value::String("Iterator".to_owned()))
+}
+
+fn iterator_proto_to_string_tag_set(
+    cx: &mut Context,
+    this: Value,
+    args: &[Value],
+) -> Completion<Value> {
+    setter_that_ignores_iterator_prototype(
+        cx,
+        this,
+        PropertyKey::Symbol(SYMBOL_TO_STRING_TAG_ID),
+        args.first().cloned().unwrap_or(Value::Undefined),
+    )
+}
+
+fn setter_that_ignores_iterator_prototype(
+    cx: &mut Context,
+    this: Value,
+    key: PropertyKey,
+    value: Value,
+) -> Completion<Value> {
+    let Value::Object(receiver) = this.clone() else {
+        return Err(JsError::type_error("setter receiver must be an object"));
+    };
+    let home = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::IteratorPrototype)
+        .ok_or_else(|| JsError::internal("missing Iterator.prototype intrinsic"))?;
+    if receiver == home {
+        return Err(JsError::type_error(
+            "cannot assign Iterator.prototype accessor home property",
+        ));
+    }
+    if receiver.get_own_property(cx, &key)?.is_none() {
+        receiver.define_own_property_or_throw(
+            cx,
+            key,
+            Descriptor::data(value, true, true, true),
+        )?;
+        return Ok(Value::Undefined);
+    }
+    if !receiver.set(cx, key, value, this)? {
+        return Err(JsError::type_error("iterator prototype setter failed"));
+    }
+    Ok(Value::Undefined)
+}
+
+fn iterator_proto_dispose(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let object = ArgView::new(this.clone()).to_object(cx)?;
+    let return_method = object.get(cx, &PropertyKey::from("return"), this.clone())?;
+    if matches!(return_method, Value::Undefined | Value::Null) {
+        return Ok(Value::Undefined);
+    }
+    if !cx.is_callable(&return_method)? {
+        return Err(JsError::type_error(
+            "Iterator.prototype[Symbol.dispose] return is not callable",
+        ));
+    }
+    cx.call_mut(return_method, this, &[])?;
+    Ok(Value::Undefined)
+}
+
 fn iterator_from(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
     let value = args.first().cloned().unwrap_or(Value::Undefined);
     let Value::Object(object) = value.clone() else {
@@ -5882,10 +6328,18 @@ fn iterator_from(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<V
     };
     let next = object.get(cx, &PropertyKey::from("next"), Value::Object(object))?;
     if cx.is_callable(&next)? {
-        return Ok(Value::Object(object));
+        return create_wrapped_iterator(cx, Value::Object(object), Some(next));
     }
-    let values = iterator_values(cx, Value::Object(object))?;
-    iterator_from_values(cx, values)
+    let iterator_method = object.get(
+        cx,
+        &PropertyKey::Symbol(SYMBOL_ITERATOR_ID),
+        Value::Object(object),
+    )?;
+    if cx.is_callable(&iterator_method)? {
+        let record = get_iterator(cx, Value::Object(object))?;
+        return create_wrapped_iterator(cx, record.iterator, Some(record.next_method));
+    }
+    create_wrapped_iterator(cx, Value::Object(object), None)
 }
 
 fn iterator_concat(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
@@ -5910,8 +6364,12 @@ fn iterator_proto_to_array(cx: &mut Context, this: Value, _args: &[Value]) -> Co
 }
 
 fn iterator_proto_map(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback =
-        require_iterator_callback(cx, args.first().cloned().unwrap_or(Value::Undefined), "map")?;
+    let callback = require_iterator_callback_or_close(
+        cx,
+        this.clone(),
+        args.first().cloned().unwrap_or(Value::Undefined),
+        "map",
+    )?;
     let mut out = Vec::new();
     for (index, value) in iterator_values(cx, this)?.into_iter().enumerate() {
         out.push(cx.call_mut(
@@ -5924,8 +6382,9 @@ fn iterator_proto_map(cx: &mut Context, this: Value, args: &[Value]) -> Completi
 }
 
 fn iterator_proto_filter(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "filter",
     )?;
@@ -5944,8 +6403,9 @@ fn iterator_proto_filter(cx: &mut Context, this: Value, args: &[Value]) -> Compl
 }
 
 fn iterator_proto_flat_map(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "flatMap",
     )?;
@@ -5962,26 +6422,23 @@ fn iterator_proto_flat_map(cx: &mut Context, this: Value, args: &[Value]) -> Com
 }
 
 fn iterator_proto_take(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
+    let object = ArgView::new(this.clone()).to_object(cx)?;
     let limit = iterator_limit(cx, args.first().cloned().unwrap_or(Value::Undefined))?;
-    let out = iterator_values(cx, this)?
-        .into_iter()
-        .take(limit)
-        .collect::<Vec<_>>();
-    iterator_from_values(cx, out)
+    let next_method = object.get(cx, &PropertyKey::from("next"), this.clone())?;
+    create_iterator_helper(cx, this, next_method, IteratorHelperKind::Take, limit)
 }
 
 fn iterator_proto_drop(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
+    let object = ArgView::new(this.clone()).to_object(cx)?;
     let limit = iterator_limit(cx, args.first().cloned().unwrap_or(Value::Undefined))?;
-    let out = iterator_values(cx, this)?
-        .into_iter()
-        .skip(limit)
-        .collect::<Vec<_>>();
-    iterator_from_values(cx, out)
+    let next_method = object.get(cx, &PropertyKey::from("next"), this.clone())?;
+    create_iterator_helper(cx, this, next_method, IteratorHelperKind::Drop, limit)
 }
 
 fn iterator_proto_every(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "every",
     )?;
@@ -5999,8 +6456,9 @@ fn iterator_proto_every(cx: &mut Context, this: Value, args: &[Value]) -> Comple
 }
 
 fn iterator_proto_some(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "some",
     )?;
@@ -6018,8 +6476,9 @@ fn iterator_proto_some(cx: &mut Context, this: Value, args: &[Value]) -> Complet
 }
 
 fn iterator_proto_find(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "find",
     )?;
@@ -6037,8 +6496,9 @@ fn iterator_proto_find(cx: &mut Context, this: Value, args: &[Value]) -> Complet
 }
 
 fn iterator_proto_for_each(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "forEach",
     )?;
@@ -6053,8 +6513,9 @@ fn iterator_proto_for_each(cx: &mut Context, this: Value, args: &[Value]) -> Com
 }
 
 fn iterator_proto_reduce(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
-    let callback = require_iterator_callback(
+    let callback = require_iterator_callback_or_close(
         cx,
+        this.clone(),
         args.first().cloned().unwrap_or(Value::Undefined),
         "reduce",
     )?;
@@ -6108,6 +6569,484 @@ fn iterator_from_values(cx: &mut Context, values: Vec<Value>) -> Completion<Valu
     create_indexed_iterator(cx, Value::Object(array), "value")
 }
 
+fn create_iterator_helper(
+    cx: &mut Context,
+    iterator_value: Value,
+    next_method: Value,
+    kind: IteratorHelperKind,
+    remaining: usize,
+) -> Completion<Value> {
+    let proto = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::IteratorPrototype)
+        .ok_or_else(|| JsError::internal("missing Iterator.prototype intrinsic"))?;
+    let function_proto = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::FunctionPrototype)
+        .ok_or_else(|| JsError::internal("missing Function.prototype intrinsic"))?;
+    let helper = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
+    cx.heap_mut()
+        .get_mut(helper)?
+        .add_slot(InternalSlot::IteratorHelperData {
+            iterator: iterator_value,
+            next_method,
+            kind,
+            remaining,
+            state: IteratorHelperState::SuspendedStart,
+        });
+    let next = cx.heap_mut().allocate(JsObject::function(
+        Some(function_proto),
+        FunctionData::builtin("next", 0, iterator_helper_next),
+    ));
+    define_data_with_attrs(
+        cx.heap_mut(),
+        next,
+        "length",
+        Value::Number(0.0),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        next,
+        "name",
+        Value::String("next".to_owned()),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        helper,
+        "next",
+        Value::Object(next),
+        true,
+        false,
+        true,
+    );
+    let return_fn = cx.heap_mut().allocate(JsObject::function(
+        Some(function_proto),
+        FunctionData::builtin("return", 0, iterator_helper_return),
+    ));
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "length",
+        Value::Number(0.0),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "name",
+        Value::String("return".to_owned()),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        helper,
+        "return",
+        Value::Object(return_fn),
+        true,
+        false,
+        true,
+    );
+    Ok(Value::Object(helper))
+}
+
+fn iterator_helper_next(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Value::Object(helper) = this else {
+        return Err(JsError::type_error(
+            "iterator helper receiver is not object",
+        ));
+    };
+    let (iterator, next_method, kind, remaining, state) = iterator_helper_state(cx, helper)?;
+    match state {
+        IteratorHelperState::Completed => {
+            return create_iterator_result(cx, Value::Undefined, true)
+        }
+        IteratorHelperState::Executing => {
+            return Err(JsError::type_error("iterator helper is already executing"));
+        }
+        IteratorHelperState::SuspendedStart | IteratorHelperState::SuspendedYield => {}
+    }
+    if !cx.is_callable(&next_method)? {
+        complete_iterator_helper(cx, helper)?;
+        return Err(JsError::type_error("iterator helper next is not callable"));
+    }
+    update_iterator_helper_state(cx, helper, |slot| {
+        if let InternalSlot::IteratorHelperData { state, .. } = slot {
+            *state = IteratorHelperState::Executing;
+        }
+    })?;
+    let record = IteratorRecord {
+        iterator: iterator.clone(),
+        next_method,
+    };
+    match kind {
+        IteratorHelperKind::Take => {
+            if remaining == 0 {
+                complete_iterator_helper(cx, helper)?;
+                return create_iterator_result(cx, Value::Undefined, true);
+            }
+            let step = match iterator_step_value(cx, &record) {
+                Ok(step) => step,
+                Err(error) => {
+                    complete_iterator_helper(cx, helper)?;
+                    return Err(error);
+                }
+            };
+            let Some(value) = step else {
+                complete_iterator_helper(cx, helper)?;
+                return create_iterator_result(cx, Value::Undefined, true);
+            };
+            update_iterator_helper_state(cx, helper, |slot| {
+                if let InternalSlot::IteratorHelperData {
+                    remaining, state, ..
+                } = slot
+                {
+                    *remaining = remaining.saturating_sub(1);
+                    *state = IteratorHelperState::SuspendedYield;
+                }
+            })?;
+            create_iterator_result(cx, value, false)
+        }
+        IteratorHelperKind::Drop => {
+            let mut remaining_to_drop = remaining;
+            while remaining_to_drop > 0 {
+                let step = match iterator_step_value(cx, &record) {
+                    Ok(step) => step,
+                    Err(error) => {
+                        complete_iterator_helper(cx, helper)?;
+                        return Err(error);
+                    }
+                };
+                if step.is_none() {
+                    complete_iterator_helper(cx, helper)?;
+                    return create_iterator_result(cx, Value::Undefined, true);
+                }
+                remaining_to_drop -= 1;
+            }
+            update_iterator_helper_state(cx, helper, |slot| {
+                if let InternalSlot::IteratorHelperData { remaining, .. } = slot {
+                    *remaining = 0;
+                }
+            })?;
+            let step = match iterator_step_value(cx, &record) {
+                Ok(step) => step,
+                Err(error) => {
+                    complete_iterator_helper(cx, helper)?;
+                    return Err(error);
+                }
+            };
+            let Some(value) = step else {
+                complete_iterator_helper(cx, helper)?;
+                return create_iterator_result(cx, Value::Undefined, true);
+            };
+            update_iterator_helper_state(cx, helper, |slot| {
+                if let InternalSlot::IteratorHelperData { state, .. } = slot {
+                    *state = IteratorHelperState::SuspendedYield;
+                }
+            })?;
+            create_iterator_result(cx, value, false)
+        }
+    }
+}
+
+fn iterator_helper_return(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Value::Object(helper) = this else {
+        return Err(JsError::type_error(
+            "iterator helper receiver is not object",
+        ));
+    };
+    let (iterator, next_method, _, _, state) = iterator_helper_state(cx, helper)?;
+    match state {
+        IteratorHelperState::Completed => {
+            return create_iterator_result(cx, Value::Undefined, true)
+        }
+        IteratorHelperState::Executing => {
+            return Err(JsError::type_error("iterator helper is already executing"));
+        }
+        IteratorHelperState::SuspendedStart | IteratorHelperState::SuspendedYield => {}
+    }
+    update_iterator_helper_state(cx, helper, |slot| {
+        if let InternalSlot::IteratorHelperData { state, .. } = slot {
+            *state = IteratorHelperState::Executing;
+        }
+    })?;
+    let close_result = if cx.is_callable(&next_method)? {
+        iterator_close(
+            cx,
+            &IteratorRecord {
+                iterator,
+                next_method,
+            },
+        )
+    } else {
+        Ok(())
+    };
+    complete_iterator_helper(cx, helper)?;
+    close_result?;
+    create_iterator_result(cx, Value::Undefined, true)
+}
+
+fn iterator_helper_state(
+    cx: &mut Context,
+    helper: ObjectRef,
+) -> Completion<(Value, Value, IteratorHelperKind, usize, IteratorHelperState)> {
+    let object = cx.heap().get(helper)?;
+    let Some(InternalSlot::IteratorHelperData {
+        iterator,
+        next_method,
+        kind,
+        remaining,
+        state,
+    }) = object
+        .internal_slots
+        .iter()
+        .find(|slot| matches!(slot, InternalSlot::IteratorHelperData { .. }))
+    else {
+        return Err(JsError::type_error(
+            "iterator helper receiver is missing state",
+        ));
+    };
+    Ok((
+        iterator.clone(),
+        next_method.clone(),
+        kind.clone(),
+        *remaining,
+        state.clone(),
+    ))
+}
+
+fn update_iterator_helper_state(
+    cx: &mut Context,
+    helper: ObjectRef,
+    update: impl FnOnce(&mut InternalSlot),
+) -> Completion<()> {
+    let object = cx.heap_mut().get_mut(helper)?;
+    let Some(slot) = object
+        .internal_slots
+        .iter_mut()
+        .find(|slot| matches!(slot, InternalSlot::IteratorHelperData { .. }))
+    else {
+        return Err(JsError::type_error(
+            "iterator helper receiver is missing state",
+        ));
+    };
+    update(slot);
+    Ok(())
+}
+
+fn complete_iterator_helper(cx: &mut Context, helper: ObjectRef) -> Completion<()> {
+    update_iterator_helper_state(cx, helper, |slot| {
+        if let InternalSlot::IteratorHelperData { state, .. } = slot {
+            *state = IteratorHelperState::Completed;
+        }
+    })
+}
+
+fn create_wrapped_iterator(
+    cx: &mut Context,
+    iterator_value: Value,
+    next_method: Option<Value>,
+) -> Completion<Value> {
+    let proto = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::IteratorPrototype)
+        .ok_or_else(|| JsError::internal("missing Iterator.prototype intrinsic"))?;
+    let function_proto = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::FunctionPrototype)
+        .ok_or_else(|| JsError::internal("missing Function.prototype intrinsic"))?;
+    let wrapper = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
+    cx.heap_mut()
+        .get_mut(wrapper)?
+        .add_slot(InternalSlot::WrappedIteratorData {
+            iterator: iterator_value,
+            next_method,
+            done: false,
+        });
+    let next = cx.heap_mut().allocate(JsObject::function(
+        Some(function_proto),
+        FunctionData::builtin("next", 0, wrapped_iterator_next),
+    ));
+    define_data_with_attrs(
+        cx.heap_mut(),
+        next,
+        "length",
+        Value::Number(0.0),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        next,
+        "name",
+        Value::String("next".to_owned()),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        wrapper,
+        "next",
+        Value::Object(next),
+        true,
+        false,
+        true,
+    );
+    let return_fn = cx.heap_mut().allocate(JsObject::function(
+        Some(function_proto),
+        FunctionData::builtin("return", 0, wrapped_iterator_return),
+    ));
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "length",
+        Value::Number(0.0),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "name",
+        Value::String("return".to_owned()),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        wrapper,
+        "return",
+        Value::Object(return_fn),
+        true,
+        false,
+        true,
+    );
+    Ok(Value::Object(wrapper))
+}
+
+fn wrapped_iterator_next(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Value::Object(wrapper) = this else {
+        return Err(JsError::type_error(
+            "wrapped iterator receiver is not object",
+        ));
+    };
+    let (iterator, next_method, done) = wrapped_iterator_state(cx, wrapper)?;
+    if done {
+        return create_iterator_result(cx, Value::Undefined, true);
+    }
+    let Some(next_method) = next_method else {
+        return Err(JsError::type_error("wrapped iterator next is not callable"));
+    };
+    let result = cx.call_mut(next_method, iterator, &[])?;
+    let Value::Object(result_object) = result.clone() else {
+        return Err(JsError::type_error(
+            "wrapped iterator next must return an object",
+        ));
+    };
+    let done = result_object.get(cx, &PropertyKey::from("done"), result.clone())?;
+    if truthy(done) {
+        update_wrapped_iterator_state(cx, wrapper, |slot| {
+            if let InternalSlot::WrappedIteratorData { done, .. } = slot {
+                *done = true;
+            }
+        })?;
+    }
+    Ok(result)
+}
+
+fn wrapped_iterator_return(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Value::Object(wrapper) = this else {
+        return Err(JsError::type_error(
+            "wrapped iterator receiver is not object",
+        ));
+    };
+    let (iterator, _, done) = wrapped_iterator_state(cx, wrapper)?;
+    if done {
+        return create_iterator_result(cx, Value::Undefined, true);
+    }
+    update_wrapped_iterator_state(cx, wrapper, |slot| {
+        if let InternalSlot::WrappedIteratorData { done, .. } = slot {
+            *done = true;
+        }
+    })?;
+    let Value::Object(iterator_object) = iterator.clone() else {
+        return create_iterator_result(cx, Value::Undefined, true);
+    };
+    let return_method = iterator_object.get(cx, &PropertyKey::from("return"), iterator.clone())?;
+    if matches!(return_method, Value::Undefined | Value::Null) {
+        return create_iterator_result(cx, Value::Undefined, true);
+    }
+    if !cx.is_callable(&return_method)? {
+        return Err(JsError::type_error(
+            "wrapped iterator return is not callable",
+        ));
+    }
+    let result = cx.call_mut(return_method, iterator, &[])?;
+    if !matches!(result, Value::Object(_)) {
+        return Err(JsError::type_error(
+            "wrapped iterator return must return an object",
+        ));
+    }
+    Ok(result)
+}
+
+fn wrapped_iterator_state(
+    cx: &mut Context,
+    wrapper: ObjectRef,
+) -> Completion<(Value, Option<Value>, bool)> {
+    let object = cx.heap().get(wrapper)?;
+    let Some(InternalSlot::WrappedIteratorData {
+        iterator,
+        next_method,
+        done,
+    }) = object
+        .internal_slots
+        .iter()
+        .find(|slot| matches!(slot, InternalSlot::WrappedIteratorData { .. }))
+    else {
+        return Err(JsError::type_error(
+            "wrapped iterator receiver is missing state",
+        ));
+    };
+    Ok((iterator.clone(), next_method.clone(), *done))
+}
+
+fn update_wrapped_iterator_state(
+    cx: &mut Context,
+    wrapper: ObjectRef,
+    update: impl FnOnce(&mut InternalSlot),
+) -> Completion<()> {
+    let object = cx.heap_mut().get_mut(wrapper)?;
+    let Some(slot) = object
+        .internal_slots
+        .iter_mut()
+        .find(|slot| matches!(slot, InternalSlot::WrappedIteratorData { .. }))
+    else {
+        return Err(JsError::type_error(
+            "wrapped iterator receiver is missing state",
+        ));
+    };
+    update(slot);
+    Ok(())
+}
+
 fn create_concat_iterator(cx: &mut Context, iterables: Vec<Value>) -> Completion<Value> {
     let proto = cx
         .realm()?
@@ -6127,6 +7066,7 @@ fn create_concat_iterator(cx: &mut Context, iterables: Vec<Value>) -> Completion
             outer_index: 0,
             active_iterator: None,
             active_next_method: None,
+            state: IteratorHelperState::SuspendedStart,
         });
     let next = cx.heap_mut().allocate(JsObject::function(
         Some(function_proto),
@@ -6159,6 +7099,37 @@ fn create_concat_iterator(cx: &mut Context, iterables: Vec<Value>) -> Completion
         false,
         true,
     );
+    let return_fn = cx.heap_mut().allocate(JsObject::function(
+        Some(function_proto),
+        FunctionData::builtin("return", 0, concat_iterator_return),
+    ));
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "length",
+        Value::Number(0.0),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        return_fn,
+        "name",
+        Value::String("return".to_owned()),
+        false,
+        false,
+        true,
+    );
+    define_data_with_attrs(
+        cx.heap_mut(),
+        iterator,
+        "return",
+        Value::Object(return_fn),
+        true,
+        false,
+        true,
+    );
     Ok(Value::Object(iterator))
 }
 
@@ -6169,13 +7140,14 @@ fn concat_iterator_next(cx: &mut Context, this: Value, _args: &[Value]) -> Compl
         ));
     };
     loop {
-        let (iterables, outer_index, active_iterator, active_next_method) = {
+        let (iterables, outer_index, active_iterator, active_next_method, state) = {
             let object = cx.heap().get(iterator)?;
             let Some(InternalSlot::ConcatIteratorData {
                 iterables,
                 outer_index,
                 active_iterator,
                 active_next_method,
+                state,
             }) = object
                 .internal_slots
                 .iter()
@@ -6190,11 +7162,31 @@ fn concat_iterator_next(cx: &mut Context, this: Value, _args: &[Value]) -> Compl
                 *outer_index,
                 active_iterator.clone(),
                 active_next_method.clone(),
+                state.clone(),
             )
         };
+        match state {
+            IteratorHelperState::Completed => {
+                return create_iterator_result(cx, Value::Undefined, true);
+            }
+            IteratorHelperState::Executing => {
+                return Err(JsError::type_error("iterator helper is already executing"));
+            }
+            IteratorHelperState::SuspendedStart | IteratorHelperState::SuspendedYield => {}
+        }
         if outer_index >= iterables.len() {
+            update_concat_iterator_state(cx, iterator, |slot| {
+                if let InternalSlot::ConcatIteratorData { state, .. } = slot {
+                    *state = IteratorHelperState::Completed;
+                }
+            })?;
             return create_iterator_result(cx, Value::Undefined, true);
         }
+        update_concat_iterator_state(cx, iterator, |slot| {
+            if let InternalSlot::ConcatIteratorData { state, .. } = slot {
+                *state = IteratorHelperState::Executing;
+            }
+        })?;
         let record =
             if let (Some(iterator), Some(next_method)) = (active_iterator, active_next_method) {
                 IteratorRecord {
@@ -6202,7 +7194,13 @@ fn concat_iterator_next(cx: &mut Context, this: Value, _args: &[Value]) -> Compl
                     next_method,
                 }
             } else {
-                let record = get_iterator(cx, iterables[outer_index].clone())?;
+                let record = match get_iterator(cx, iterables[outer_index].clone()) {
+                    Ok(record) => record,
+                    Err(error) => {
+                        complete_concat_iterator(cx, iterator)?;
+                        return Err(error);
+                    }
+                };
                 update_concat_iterator_state(cx, iterator, |slot| {
                     if let InternalSlot::ConcatIteratorData {
                         active_iterator,
@@ -6216,23 +7214,118 @@ fn concat_iterator_next(cx: &mut Context, this: Value, _args: &[Value]) -> Compl
                 })?;
                 record
             };
-        if let Some(value) = iterator_step_value(cx, &record)? {
+        let step = match iterator_step_value(cx, &record) {
+            Ok(step) => step,
+            Err(error) => {
+                complete_concat_iterator(cx, iterator)?;
+                return Err(error);
+            }
+        };
+        if let Some(value) = step {
+            update_concat_iterator_state(cx, iterator, |slot| {
+                if let InternalSlot::ConcatIteratorData { state, .. } = slot {
+                    *state = IteratorHelperState::SuspendedYield;
+                }
+            })?;
             return create_iterator_result(cx, value, false);
         }
         update_concat_iterator_state(cx, iterator, |slot| {
             if let InternalSlot::ConcatIteratorData {
+                iterables,
                 outer_index,
                 active_iterator,
                 active_next_method,
+                state,
                 ..
             } = slot
             {
                 *outer_index += 1;
                 *active_iterator = None;
                 *active_next_method = None;
+                *state = if *outer_index >= iterables.len() {
+                    IteratorHelperState::Completed
+                } else {
+                    IteratorHelperState::SuspendedStart
+                };
             }
         })?;
     }
+}
+
+fn concat_iterator_return(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
+    let Value::Object(iterator) = this else {
+        return Err(JsError::type_error(
+            "concat iterator receiver is not object",
+        ));
+    };
+    let (active_iterator, active_next_method, state) = {
+        let object = cx.heap().get(iterator)?;
+        let Some(InternalSlot::ConcatIteratorData {
+            active_iterator,
+            active_next_method,
+            state,
+            ..
+        }) = object
+            .internal_slots
+            .iter()
+            .find(|slot| matches!(slot, InternalSlot::ConcatIteratorData { .. }))
+        else {
+            return Err(JsError::type_error(
+                "concat iterator receiver is missing state",
+            ));
+        };
+        (
+            active_iterator.clone(),
+            active_next_method.clone(),
+            state.clone(),
+        )
+    };
+    match state {
+        IteratorHelperState::Completed | IteratorHelperState::SuspendedStart => {
+            complete_concat_iterator(cx, iterator)?;
+            return create_iterator_result(cx, Value::Undefined, true);
+        }
+        IteratorHelperState::Executing => {
+            return Err(JsError::type_error("iterator helper is already executing"));
+        }
+        IteratorHelperState::SuspendedYield => {}
+    }
+    update_concat_iterator_state(cx, iterator, |slot| {
+        if let InternalSlot::ConcatIteratorData { state, .. } = slot {
+            *state = IteratorHelperState::Executing;
+        }
+    })?;
+    let close_result =
+        if let (Some(iterator_value), Some(next_method)) = (active_iterator, active_next_method) {
+            iterator_close(
+                cx,
+                &IteratorRecord {
+                    iterator: iterator_value,
+                    next_method,
+                },
+            )
+        } else {
+            Ok(())
+        };
+    complete_concat_iterator(cx, iterator)?;
+    close_result?;
+    create_iterator_result(cx, Value::Undefined, true)
+}
+
+fn complete_concat_iterator(cx: &mut Context, iterator: ObjectRef) -> Completion<()> {
+    update_concat_iterator_state(cx, iterator, |slot| {
+        if let InternalSlot::ConcatIteratorData {
+            active_iterator,
+            active_next_method,
+            state,
+            ..
+        } = slot
+        {
+            *active_iterator = None;
+            *active_next_method = None;
+            *state = IteratorHelperState::Completed;
+        }
+    })
 }
 
 fn update_concat_iterator_state(
@@ -6254,22 +7347,34 @@ fn update_concat_iterator_state(
     Ok(())
 }
 
-fn require_iterator_callback(
-    cx: &Context,
+fn require_iterator_callback_or_close(
+    cx: &mut Context,
+    iterator: Value,
     callback: Value,
     method_name: &str,
 ) -> Completion<Value> {
-    if !cx.is_callable(&callback)? {
-        return Err(JsError::type_error(format!(
-            "Iterator.prototype.{method_name} callback is not callable"
-        )));
+    if cx.is_callable(&callback)? {
+        return Ok(callback);
     }
-    Ok(callback)
+    let error = JsError::type_error(format!(
+        "Iterator.prototype.{method_name} callback is not callable"
+    ));
+    let close_error = match ArgView::new(iterator.clone()).to_object(cx) {
+        Ok(_) => iterator_close_value(cx, iterator).err(),
+        Err(error) => Some(error),
+    };
+    Err(close_error.unwrap_or(error))
 }
 
 fn iterator_limit(cx: &mut Context, value: Value) -> Completion<usize> {
     let number = to_number_value(cx, value)?;
-    if number.is_nan() || number <= 0.0 {
+    if number.is_nan() {
+        return Err(JsError::range_error("iterator limit is NaN"));
+    }
+    if number < 0.0 {
+        return Err(JsError::range_error("iterator limit is negative"));
+    }
+    if number == 0.0 {
         return Ok(0);
     }
     if !number.is_finite() {
@@ -6598,6 +7703,59 @@ fn array_proto_sort(cx: &mut Context, this: Value, args: &[Value]) -> Completion
     let len = length_of_array_like(cx, object)?;
     sort_array_like(cx, object, len, comparator)?;
     Ok(Value::Object(object))
+}
+
+fn array_proto_concat(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
+    let this_object = require_object_value(cx, this)?;
+    let result = create_array_like_value(cx, Vec::new())?;
+    let mut index = 0_u32;
+    let mut items = Vec::with_capacity(args.len() + 1);
+    items.push(Value::Object(this_object));
+    items.extend_from_slice(args);
+
+    for item in items {
+        if should_concat_spread(cx, item.clone())? {
+            let object = ArgView::new(item).to_object(cx)?;
+            let len = length_of_array_like(cx, object)?;
+            for source_index in 0..len {
+                let key = PropertyKey::array_index(source_index as u64);
+                if object.has_property(cx, &key)? {
+                    let value = object.get(cx, &key, Value::Object(object))?;
+                    CreateDataPropertyOrThrow(
+                        cx,
+                        result,
+                        PropertyKey::array_index(index as u64),
+                        value,
+                    )?;
+                }
+                index += 1;
+            }
+        } else {
+            CreateDataPropertyOrThrow(cx, result, PropertyKey::array_index(index as u64), item)?;
+            index += 1;
+        }
+    }
+    result.define_own_property_or_throw(
+        cx,
+        PropertyKey::from("length"),
+        Descriptor::data(Value::Number(index as f64), true, false, false),
+    )?;
+    Ok(Value::Object(result))
+}
+
+fn should_concat_spread(cx: &mut Context, value: Value) -> Completion<bool> {
+    let Value::Object(object) = value else {
+        return Ok(false);
+    };
+    let spreadable = object.get(
+        cx,
+        &PropertyKey::Symbol(SYMBOL_IS_CONCAT_SPREADABLE_ID),
+        Value::Object(object),
+    )?;
+    if !matches!(spreadable, Value::Undefined) {
+        return Ok(truthy(spreadable));
+    }
+    is_array_object(cx, object)
 }
 
 fn array_proto_slice(cx: &mut Context, this: Value, args: &[Value]) -> Completion<Value> {
@@ -7260,6 +8418,16 @@ fn array_species_create(
                 "Array species constructor must be object or undefined",
             ));
         };
+        if cx.is_constructor(&constructor)?
+            && cx
+                .intrinsic_realm(IntrinsicId::ArrayConstructor, constructor_object)
+                .is_some_and(|realm| realm != cx.realm_id())
+        {
+            constructor = Value::Undefined;
+        }
+        if matches!(constructor, Value::Undefined) {
+            return create_empty_array_with_length(cx, length);
+        }
         let species = constructor_object.get(
             cx,
             &PropertyKey::Symbol(SYMBOL_SPECIES_ID),
@@ -9025,6 +10193,17 @@ fn simple_regexp_find(source: &str, flags: &str, input: &str) -> Option<(usize, 
     if pattern == "." {
         return input.chars().next().map(|ch| (0, ch.len_utf8()));
     }
+    if pattern
+        .chars()
+        .any(|ch| matches!(ch, '(' | '[' | '{' | '|' | '+' | '?' | '*'))
+    {
+        let subset_pattern = if ignore_case {
+            pattern.to_ascii_lowercase()
+        } else {
+            pattern.to_owned()
+        };
+        return find_regex_subset(&haystack, &subset_pattern, anchored_start, anchored_end);
+    }
     if pattern.contains('.') {
         return find_dot_pattern(&haystack, &needle, anchored_start, anchored_end);
     }
@@ -9099,6 +10278,259 @@ fn find_dot_pattern(
         }
     }
     None
+}
+
+#[derive(Clone)]
+enum RegexNode {
+    Literal(char),
+    Any,
+    Digit,
+    Class(Vec<(char, char)>),
+    Group(Vec<Vec<RegexPiece>>),
+}
+
+#[derive(Clone)]
+struct RegexPiece {
+    node: RegexNode,
+    min: usize,
+    max: Option<usize>,
+}
+
+fn find_regex_subset(
+    haystack: &str,
+    pattern: &str,
+    anchored_start: bool,
+    anchored_end: bool,
+) -> Option<(usize, usize)> {
+    let mut parser = RegexSubsetParser::new(pattern);
+    let alternatives = parser.parse_alternatives('\0')?;
+    let starts: Vec<usize> = if anchored_start {
+        vec![0]
+    } else {
+        haystack
+            .char_indices()
+            .map(|(index, _)| index)
+            .chain(std::iter::once(haystack.len()))
+            .collect()
+    };
+    for start in starts {
+        for sequence in &alternatives {
+            for end in match_regex_sequence(sequence, haystack, start) {
+                if !anchored_end || end == haystack.len() {
+                    return Some((start, end));
+                }
+            }
+        }
+    }
+    None
+}
+
+struct RegexSubsetParser {
+    chars: Vec<char>,
+    index: usize,
+}
+
+impl RegexSubsetParser {
+    fn new(pattern: &str) -> Self {
+        Self {
+            chars: pattern.chars().collect(),
+            index: 0,
+        }
+    }
+
+    fn parse_alternatives(&mut self, terminator: char) -> Option<Vec<Vec<RegexPiece>>> {
+        let mut alternatives = vec![Vec::new()];
+        while self.index < self.chars.len() {
+            let ch = self.chars[self.index];
+            if terminator != '\0' && ch == terminator {
+                self.index += 1;
+                return Some(alternatives);
+            }
+            if ch == '|' {
+                self.index += 1;
+                alternatives.push(Vec::new());
+                continue;
+            }
+            let piece = self.parse_piece()?;
+            alternatives.last_mut()?.push(piece);
+        }
+        if terminator == '\0' {
+            Some(alternatives)
+        } else {
+            None
+        }
+    }
+
+    fn parse_piece(&mut self) -> Option<RegexPiece> {
+        let node = match *self.chars.get(self.index)? {
+            '(' => {
+                self.index += 1;
+                RegexNode::Group(self.parse_alternatives(')')?)
+            }
+            '[' => RegexNode::Class(self.parse_class()?),
+            '.' => {
+                self.index += 1;
+                RegexNode::Any
+            }
+            '\\' => {
+                self.index += 1;
+                let ch = *self.chars.get(self.index)?;
+                self.index += 1;
+                if ch == 'd' {
+                    RegexNode::Digit
+                } else {
+                    RegexNode::Literal(ch)
+                }
+            }
+            ch => {
+                self.index += 1;
+                RegexNode::Literal(ch)
+            }
+        };
+        let (min, max) = self.parse_quantifier();
+        Some(RegexPiece { node, min, max })
+    }
+
+    fn parse_class(&mut self) -> Option<Vec<(char, char)>> {
+        self.index += 1;
+        let mut ranges = Vec::new();
+        while self.index < self.chars.len() {
+            let start = self.parse_class_char()?;
+            if start == ']' {
+                return Some(ranges);
+            }
+            if self.chars.get(self.index) == Some(&'-')
+                && self.chars.get(self.index + 1).is_some()
+                && self.chars.get(self.index + 1) != Some(&']')
+            {
+                self.index += 1;
+                let end = self.parse_class_char()?;
+                ranges.push((start, end));
+            } else {
+                ranges.push((start, start));
+            }
+        }
+        None
+    }
+
+    fn parse_class_char(&mut self) -> Option<char> {
+        let ch = *self.chars.get(self.index)?;
+        self.index += 1;
+        if ch == '\\' {
+            let escaped = *self.chars.get(self.index)?;
+            self.index += 1;
+            Some(escaped)
+        } else {
+            Some(ch)
+        }
+    }
+
+    fn parse_quantifier(&mut self) -> (usize, Option<usize>) {
+        match self.chars.get(self.index).copied() {
+            Some('?') => {
+                self.index += 1;
+                (0, Some(1))
+            }
+            Some('*') => {
+                self.index += 1;
+                (0, None)
+            }
+            Some('+') => {
+                self.index += 1;
+                (1, None)
+            }
+            Some('{') => {
+                let saved = self.index;
+                self.index += 1;
+                let start = self.index;
+                while matches!(self.chars.get(self.index), Some('0'..='9')) {
+                    self.index += 1;
+                }
+                if self.chars.get(self.index) != Some(&'}') || self.index == start {
+                    self.index = saved;
+                    return (1, Some(1));
+                }
+                let count = self.chars[start..self.index]
+                    .iter()
+                    .collect::<String>()
+                    .parse::<usize>()
+                    .unwrap_or(1);
+                self.index += 1;
+                (count, Some(count))
+            }
+            _ => (1, Some(1)),
+        }
+    }
+}
+
+fn match_regex_sequence(sequence: &[RegexPiece], input: &str, start: usize) -> Vec<usize> {
+    if sequence.is_empty() {
+        return vec![start];
+    }
+    let piece = &sequence[0];
+    let mut ends = Vec::new();
+    for position in match_regex_repetitions(piece, input, start, 0) {
+        ends.extend(match_regex_sequence(&sequence[1..], input, position));
+    }
+    ends
+}
+
+fn match_regex_repetitions(
+    piece: &RegexPiece,
+    input: &str,
+    position: usize,
+    count: usize,
+) -> Vec<usize> {
+    let mut results = Vec::new();
+    if count >= piece.min {
+        results.push(position);
+    }
+    if piece.max.is_some_and(|max| count >= max) {
+        return results;
+    }
+    for next in match_regex_node(&piece.node, input, position) {
+        if next == position {
+            continue;
+        }
+        results.extend(match_regex_repetitions(piece, input, next, count + 1));
+    }
+    results
+}
+
+fn match_regex_node(node: &RegexNode, input: &str, position: usize) -> Vec<usize> {
+    match node {
+        RegexNode::Literal(expected) => input[position..]
+            .chars()
+            .next()
+            .filter(|actual| actual == expected)
+            .map(|ch| vec![position + ch.len_utf8()])
+            .unwrap_or_default(),
+        RegexNode::Any => input[position..]
+            .chars()
+            .next()
+            .map(|ch| vec![position + ch.len_utf8()])
+            .unwrap_or_default(),
+        RegexNode::Digit => input[position..]
+            .chars()
+            .next()
+            .filter(|actual| actual.is_ascii_digit())
+            .map(|ch| vec![position + ch.len_utf8()])
+            .unwrap_or_default(),
+        RegexNode::Class(ranges) => input[position..]
+            .chars()
+            .next()
+            .filter(|actual| {
+                ranges
+                    .iter()
+                    .any(|(start, end)| start <= actual && actual <= end)
+            })
+            .map(|ch| vec![position + ch.len_utf8()])
+            .unwrap_or_default(),
+        RegexNode::Group(alternatives) => alternatives
+            .iter()
+            .flat_map(|sequence| match_regex_sequence(sequence, input, position))
+            .collect(),
+    }
 }
 
 fn error_proto_to_string(cx: &mut Context, this: Value, _args: &[Value]) -> Completion<Value> {
@@ -9327,6 +10759,28 @@ fn test262_assert(_cx: &mut Context, _this: Value, args: &[Value]) -> Completion
     }
 }
 
+fn test262_create_realm(cx: &mut Context, _this: Value, _args: &[Value]) -> Completion<Value> {
+    let object_proto = cx
+        .realm()?
+        .intrinsics
+        .get(IntrinsicId::ObjectPrototype)
+        .ok_or_else(|| JsError::internal("missing Object.prototype intrinsic"))?;
+    let result = cx
+        .heap_mut()
+        .allocate(JsObject::ordinary(Some(object_proto)));
+    let global = cx.create_realm_global_object()?;
+    define_data_with_attrs(
+        cx.heap_mut(),
+        result,
+        "global",
+        Value::Object(global),
+        true,
+        true,
+        true,
+    );
+    Ok(Value::Object(result))
+}
+
 fn test262_assert_same_value(_cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
     let actual = args.first().cloned().unwrap_or(Value::Undefined);
     let expected = args.get(1).cloned().unwrap_or(Value::Undefined);
@@ -9525,14 +10979,8 @@ fn verify_descriptor_flag(
 }
 
 fn test262_is_constructor(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
-    let Some(Value::Object(object)) = args.first() else {
-        return Ok(Value::Boolean(false));
-    };
-    let is_constructor = matches!(
-        &cx.heap().get(*object)?.kind,
-        super::ObjectKind::Function(data) if data.constructible
-    );
-    Ok(Value::Boolean(is_constructor))
+    cx.is_constructor(&args.first().cloned().unwrap_or(Value::Undefined))
+        .map(Value::Boolean)
 }
 
 fn test262_check_sequence(cx: &mut Context, _this: Value, args: &[Value]) -> Completion<Value> {
@@ -9623,7 +11071,7 @@ fn truthy(value: Value) -> bool {
         Value::Boolean(value) => value,
         Value::Number(value) => value != 0.0 && !value.is_nan(),
         Value::String(value) => !value.is_empty(),
-        Value::BigInt(value) => value != 0,
+        Value::BigInt(value) => !value.is_zero(),
         Value::Symbol(_) | Value::Object(_) => true,
     }
 }
@@ -9654,6 +11102,26 @@ fn create_array_like(cx: &mut Context, values: Vec<Value>) -> Completion<Value> 
 
 fn create_array_like_value(cx: &mut Context, values: Vec<Value>) -> Completion<ObjectRef> {
     CreateArrayFromList(cx, values)
+}
+
+fn create_array_for_new_target(
+    cx: &mut Context,
+    new_target: Option<ObjectRef>,
+    values: Vec<Value>,
+) -> Completion<ObjectRef> {
+    let proto =
+        prototype_from_new_target_or_intrinsic(cx, new_target, IntrinsicId::ArrayPrototype)?;
+    let object = cx.heap_mut().allocate(JsObject::array(Some(proto)));
+    let len = values.len();
+    for (index, value) in values.into_iter().enumerate() {
+        CreateDataPropertyOrThrow(cx, object, PropertyKey::array_index(index as u64), value)?;
+    }
+    object.define_own_property_or_throw(
+        cx,
+        PropertyKey::from("length"),
+        Descriptor::data(Value::Number(len as f64), true, false, false),
+    )?;
+    Ok(object)
 }
 
 fn collect_array_like(cx: &mut Context, value: Value) -> Completion<Vec<Value>> {

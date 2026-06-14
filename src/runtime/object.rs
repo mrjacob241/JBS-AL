@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+use num_traits::Zero;
+
 use super::descriptor::{validate_and_apply, ToPropertyDescriptor};
 use super::{
     ArgView, Completion, Context, Descriptor, FromPropertyDescriptor, FunctionData, JsError,
@@ -40,6 +42,20 @@ pub enum CollectionIteratorKind {
     Key,
     Value,
     KeyAndValue,
+}
+
+#[derive(Clone, Debug, PartialEq)]
+pub enum IteratorHelperState {
+    SuspendedStart,
+    Executing,
+    SuspendedYield,
+    Completed,
+}
+
+#[derive(Clone, Debug, PartialEq)]
+pub enum IteratorHelperKind {
+    Take,
+    Drop,
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -86,6 +102,19 @@ pub enum InternalSlot {
         outer_index: usize,
         active_iterator: Option<Value>,
         active_next_method: Option<Value>,
+        state: IteratorHelperState,
+    },
+    WrappedIteratorData {
+        iterator: Value,
+        next_method: Option<Value>,
+        done: bool,
+    },
+    IteratorHelperData {
+        iterator: Value,
+        next_method: Value,
+        kind: IteratorHelperKind,
+        remaining: usize,
+        state: IteratorHelperState,
     },
     RegExpData {
         source: String,
@@ -202,10 +231,12 @@ impl JsObject {
                         .iter()
                         .any(|slot| matches!(slot, InternalSlot::PrimitiveValue(_)))
             }
-            Brand::Iterator => self
-                .internal_slots
-                .iter()
-                .any(|slot| matches!(slot, InternalSlot::IteratorData { .. })),
+            Brand::Iterator => self.internal_slots.iter().any(|slot| {
+                matches!(
+                    slot,
+                    InternalSlot::IteratorData { .. } | InternalSlot::WrappedIteratorData { .. }
+                )
+            }),
             Brand::Map => self
                 .internal_slots
                 .iter()
@@ -667,7 +698,7 @@ fn to_boolean(value: Value) -> bool {
         Value::Boolean(value) => value,
         Value::Number(value) => value != 0.0 && !value.is_nan(),
         Value::String(value) => !value.is_empty(),
-        Value::BigInt(value) => value != 0,
+        Value::BigInt(value) => !value.is_zero(),
         Value::Symbol(_) | Value::Object(_) => true,
     }
 }

@@ -1,8 +1,8 @@
 use crate::runtime::abstract_ops::CreateArrayFromList;
 
 use super::{
-    Completion, FunctionData, Heap, InternalMethods, InternalSlot, JsError, ObjectKind, ObjectRef,
-    PropertyKey, Realm, RealmId, Runtime, Value,
+    Completion, FunctionData, Heap, InternalMethods, InternalSlot, IntrinsicId, JsError,
+    ObjectKind, ObjectRef, PropertyKey, Realm, RealmId, Runtime, Value,
 };
 
 pub struct Context<'rt> {
@@ -32,6 +32,109 @@ impl<'rt> Context<'rt> {
             .realms
             .get(self.realm.0)
             .ok_or_else(|| JsError::internal(format!("invalid realm {}", self.realm.0)))
+    }
+
+    pub fn realm_intrinsic(&self, realm: RealmId, intrinsic: IntrinsicId) -> Completion<ObjectRef> {
+        self.runtime
+            .realms
+            .get(realm.0)
+            .and_then(|realm| realm.intrinsics.get(intrinsic))
+            .ok_or_else(|| JsError::internal("missing realm intrinsic"))
+    }
+
+    pub fn intrinsic_realm(&self, id: IntrinsicId, object: ObjectRef) -> Option<RealmId> {
+        self.runtime
+            .realms
+            .iter()
+            .enumerate()
+            .find_map(|(index, realm)| {
+                (realm.intrinsics.get(id) == Some(object)).then_some(RealmId(index))
+            })
+    }
+
+    pub fn create_realm_global_object(&mut self) -> Completion<ObjectRef> {
+        let realm = self.runtime.create_realm();
+        self.runtime
+            .realms
+            .get(realm.0)
+            .map(|realm| realm.global_object)
+            .ok_or_else(|| JsError::internal("created realm is not registered"))
+    }
+
+    fn intrinsic_owner_realm(&self, object: ObjectRef) -> Option<RealmId> {
+        self.runtime
+            .realms
+            .iter()
+            .enumerate()
+            .find_map(|(index, realm)| realm.intrinsics.contains(object).then_some(RealmId(index)))
+    }
+
+    pub fn function_realm(&self, object: ObjectRef) -> Completion<RealmId> {
+        if let Some((target, _)) = self.proxy_parts(object)? {
+            return self.function_realm(target);
+        }
+        match &self.heap().get(object)?.kind {
+            ObjectKind::Function(FunctionData {
+                realm: Some(realm), ..
+            }) => Ok(*realm),
+            ObjectKind::Function(FunctionData {
+                bound: Some(bound), ..
+            }) => {
+                let Value::Object(target) = bound.target else {
+                    return Err(JsError::type_error("bound target is not a function"));
+                };
+                self.function_realm(target)
+            }
+            ObjectKind::Function(_) => self
+                .intrinsic_owner_realm(object)
+                .ok_or_else(|| JsError::internal("function object has no associated realm")),
+            _ => Err(JsError::type_error("object is not a function")),
+        }
+    }
+
+    pub fn prototype_from_constructor(
+        &mut self,
+        constructor: ObjectRef,
+        intrinsic: IntrinsicId,
+    ) -> Completion<ObjectRef> {
+        let proto = constructor.get(
+            self,
+            &PropertyKey::from("prototype"),
+            Value::Object(constructor),
+        )?;
+        if let Value::Object(proto) = proto {
+            return Ok(proto);
+        }
+        let realm = self.function_realm(constructor)?;
+        self.realm_intrinsic(realm, intrinsic)
+    }
+
+    fn with_function_realm<T>(
+        &mut self,
+        function_object: ObjectRef,
+        body: impl FnOnce(&mut Context<'rt>) -> Completion<T>,
+    ) -> Completion<T> {
+        let previous = self.realm;
+        if let Some(realm) = self.intrinsic_owner_realm(function_object) {
+            self.realm = realm;
+        }
+        let result = body(self);
+        self.realm = previous;
+        result
+    }
+
+    fn with_realm<T>(
+        &mut self,
+        realm: Option<RealmId>,
+        body: impl FnOnce(&mut Context<'rt>) -> Completion<T>,
+    ) -> Completion<T> {
+        let previous = self.realm;
+        if let Some(realm) = realm {
+            self.realm = realm;
+        }
+        let result = body(self);
+        self.realm = previous;
+        result
     }
 
     pub fn call(&self, callee: Value, _this_value: Value, _args: &[Value]) -> Completion<Value> {
@@ -86,10 +189,12 @@ impl<'rt> Context<'rt> {
             return self.call_mut(bound.target, bound.this_value, &bound_args);
         }
         if let Some(function) = data.builtin {
-            return function(self, this_value, args);
+            return self.with_function_realm(object, |cx| function(cx, this_value, args));
         }
         if data.script.is_some() {
-            return crate::syntax::call_script_function(self, data, this_value, args);
+            return self.with_realm(data.realm, |cx| {
+                crate::syntax::call_script_function(cx, data, this_value, args)
+            });
         }
         Err(JsError::type_error("function has no executable body"))
     }
@@ -153,13 +258,15 @@ impl<'rt> Context<'rt> {
             let Value::Object(new_target_object) = new_target else {
                 return Err(JsError::type_error("newTarget is not an object"));
             };
-            return crate::syntax::construct_script_function(
-                self,
-                Value::Object(new_target_object),
-                new_target_object,
-                data,
-                args,
-            );
+            return self.with_realm(data.realm, |cx| {
+                crate::syntax::construct_script_function(
+                    cx,
+                    Value::Object(new_target_object),
+                    new_target_object,
+                    data,
+                    args,
+                )
+            });
         }
         if data.builtin.is_some() {
             let Value::Object(new_target_object) = new_target else {
@@ -252,7 +359,16 @@ impl<'rt> Context<'rt> {
     fn proxy_callable(&self, object: ObjectRef) -> Completion<Option<bool>> {
         let object_data = self.heap().get(object)?;
         for slot in &object_data.internal_slots {
-            if let InternalSlot::ProxyData { callable, .. } = slot {
+            if let InternalSlot::ProxyData {
+                target,
+                handler,
+                callable,
+                ..
+            } = slot
+            {
+                if target.is_none() || handler.is_none() {
+                    return Err(JsError::type_error("proxy has been revoked"));
+                }
                 return Ok(Some(*callable));
             }
         }
@@ -262,7 +378,16 @@ impl<'rt> Context<'rt> {
     fn proxy_constructible(&self, object: ObjectRef) -> Completion<Option<bool>> {
         let object_data = self.heap().get(object)?;
         for slot in &object_data.internal_slots {
-            if let InternalSlot::ProxyData { constructible, .. } = slot {
+            if let InternalSlot::ProxyData {
+                target,
+                handler,
+                constructible,
+                ..
+            } = slot
+            {
+                if target.is_none() || handler.is_none() {
+                    return Err(JsError::type_error("proxy has been revoked"));
+                }
                 return Ok(Some(*constructible));
             }
         }

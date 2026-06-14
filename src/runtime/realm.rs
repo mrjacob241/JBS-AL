@@ -41,6 +41,7 @@ pub enum IntrinsicId {
     URIErrorPrototype,
     Test262ErrorPrototype,
     AggregateErrorPrototype,
+    ThrowTypeError,
     ObjectConstructor,
     FunctionConstructor,
     ArrayConstructor,
@@ -80,6 +81,10 @@ impl IntrinsicRegistry {
 
     pub fn get(&self, id: IntrinsicId) -> Option<ObjectRef> {
         self.objects.get(&id).copied()
+    }
+
+    pub fn contains(&self, object: ObjectRef) -> bool {
+        self.objects.values().any(|candidate| *candidate == object)
     }
 }
 

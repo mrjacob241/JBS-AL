@@ -2,6 +2,7 @@ use super::{
     Completion, Context, InternalMethods, JsError, JsObject, ObjectRef, PropertyKey, SameValue,
     Value,
 };
+use num_traits::Zero;
 
 #[derive(Clone, Debug)]
 pub struct Descriptor {
@@ -328,7 +329,7 @@ fn to_boolean(value: Value) -> bool {
         Value::Boolean(value) => value,
         Value::Number(value) => value != 0.0 && !value.is_nan(),
         Value::String(value) => !value.is_empty(),
-        Value::BigInt(value) => value != 0,
+        Value::BigInt(value) => !value.is_zero(),
         Value::Symbol(_) | Value::Object(_) => true,
     }
 }

@@ -1,1 +1,1 @@
-!isConstructor(Iterator);
+isConstructor(Iterator);

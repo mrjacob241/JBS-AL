@@ -68,9 +68,44 @@ fn indexed_iterator_next_requires_internal_iterator_state() {
 
 #[test]
 fn iterator_global_is_abstract_scaffold() {
-    assert_true("!isConstructor(Iterator)");
+    assert_true("isConstructor(Iterator)");
     assert_true("var threw = false; try { Iterator(); } catch (e) { threw = e instanceof TypeError; } threw");
     assert_true(
         "var threw = false; try { new Iterator(); } catch (e) { threw = e instanceof TypeError; } threw",
+    );
+    assert_true(
+        "function NewTarget() {}
+         var object = Reflect.construct(Iterator, [], NewTarget);
+         Object.getPrototypeOf(object) === NewTarget.prototype",
+    );
+}
+
+#[test]
+fn iterator_prototype_modern_accessors_are_installed() {
+    assert_true(
+        "var d = Object.getOwnPropertyDescriptor(Iterator.prototype, 'constructor');
+         typeof d.get === 'function' &&
+         typeof d.set === 'function' &&
+         d.enumerable === false &&
+         d.configurable === true &&
+         d.value === undefined &&
+         d.writable === undefined &&
+         Iterator.prototype.constructor === Iterator",
+    );
+    assert_true(
+        "var d = Object.getOwnPropertyDescriptor(Iterator.prototype, Symbol.toStringTag);
+         typeof d.get === 'function' &&
+         typeof d.set === 'function' &&
+         d.enumerable === false &&
+         d.configurable === true &&
+         d.value === undefined &&
+         d.writable === undefined &&
+         Iterator.prototype[Symbol.toStringTag] === 'Iterator'",
+    );
+    assert_true(
+        "var child = Object.create(Iterator.prototype);
+         child.constructor = 1;
+         child[Symbol.toStringTag] = 'Child';
+         child.constructor === 1 && child[Symbol.toStringTag] === 'Child'",
     );
 }

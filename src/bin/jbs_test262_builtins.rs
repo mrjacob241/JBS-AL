@@ -376,12 +376,7 @@ fn prepare_test262_source(path: &Path, source: &str) -> Result<String, String> {
 }
 
 fn test262_host_prelude() -> &'static str {
-    "var $262 = {
-  createRealm: function () {
-    return { global: globalThis };
-  }
-};
-"
+    ""
 }
 
 fn test262_promise_helper_legacy_subset() -> &'static str {
@@ -544,7 +539,27 @@ fn unsupported_reason(path: &str, metadata: &str, source: &str) -> Option<String
         ("module", "module test"),
         ("async", "async test"),
         ("features: [async", "async feature"),
+        (
+            "features: [caller",
+            "legacy function caller stack introspection",
+        ),
         ("features: [generators", "generator feature"),
+        (
+            "features: [Temporal",
+            "Temporal built-ins are future JBS surface",
+        ),
+        (
+            "features: [joint-iteration",
+            "Iterator joint iteration helpers are future JBS surface",
+        ),
+        (
+            "nativeFunctionMatcher.js",
+            "native Function.prototype.toString matcher uses unsupported syntax",
+        ),
+        (
+            "temporalHelpers.js",
+            "Temporal helper harness uses unsupported parser/runtime surface",
+        ),
     ];
     for (needle, reason) in meta_needles {
         if metadata.contains(needle) {
@@ -644,7 +659,7 @@ features: [Proxy]
         let source = fs::read_to_string(path).unwrap();
         let prepared = prepare_test262_source(path, &source).unwrap();
 
-        assert!(prepared.contains("var $262 ="));
+        assert!(!prepared.contains("var $262 ="));
         assert!(prepared.contains("function allowProxyTraps(overrides)"));
         assert!(!prepared.contains("includes: [proxyTrapsHelper.js]"));
     }
@@ -699,6 +714,51 @@ features: [Proxy]
             )
             .as_deref(),
             Some("Temporal built-ins are future JBS surface")
+        );
+        assert_eq!(
+            unsupported_reason(
+                "ECMAScript/test262-main/test/built-ins/Date/prototype/toTemporalInstant/length.js",
+                "features: [Temporal]",
+                ""
+            )
+            .as_deref(),
+            Some("Temporal built-ins are future JBS surface")
+        );
+        assert_eq!(
+            unsupported_reason(
+                "ECMAScript/test262-main/test/built-ins/Function/15.3.5.4_2-12gs.js",
+                "features: [caller]",
+                ""
+            )
+            .as_deref(),
+            Some("legacy function caller stack introspection")
+        );
+        assert_eq!(
+            unsupported_reason(
+                "ECMAScript/test262-main/test/built-ins/Function/prototype/toString/Function.js",
+                "includes: [nativeFunctionMatcher.js]",
+                ""
+            )
+            .as_deref(),
+            Some("native Function.prototype.toString matcher uses unsupported syntax")
+        );
+        assert_eq!(
+            unsupported_reason(
+                "ECMAScript/test262-main/test/built-ins/Iterator/from/get-return-method-when-call-return.js",
+                "features: [iterator-helpers]\nincludes: [temporalHelpers.js, compareArray.js]",
+                ""
+            )
+            .as_deref(),
+            Some("Temporal helper harness uses unsupported parser/runtime surface")
+        );
+        assert_eq!(
+            unsupported_reason(
+                "ECMAScript/test262-main/test/built-ins/Iterator/zip/basic-shortest.js",
+                "includes: [compareArray.js, propertyHelper.js, iteratorZipUtils.js]\nfeatures: [joint-iteration]",
+                ""
+            )
+            .as_deref(),
+            Some("Iterator joint iteration helpers are future JBS surface")
         );
     }
 }

@@ -4,15 +4,18 @@ use std::{
     rc::Rc,
 };
 
+use num_traits::Zero;
+
 use crate::runtime::{
-    get_iterator, iterator_close_error, iterator_step_value, ArgView, BindingCell, Completion,
-    Context, Descriptor, FunctionData, FunctionEnvironment, InternalMethods, JsError, JsObject,
-    ObjectKind, ObjectRef, PropertyKey, RegExpCreate, Runtime, Value,
+    get_iterator, iterator_close_error, iterator_step_value, ordinary_has_instance, ArgView,
+    BindingCell, Completion, Context, Descriptor, FunctionData, FunctionEnvironment, GetMethod,
+    InternalMethods, JsError, JsObject, ObjectKind, ObjectRef, PropertyKey, RegExpCreate, Runtime,
+    Value, SYMBOL_HAS_INSTANCE_ID,
 };
 
 use super::parser::{
-    parse_script, AssignOp, BinaryOp, BindingPattern, Expr, ForInit, LogicalOp, ObjectPropertyKind,
-    Stmt, SwitchCase,
+    is_simple_parameter_list, parse_script, AssignOp, BinaryOp, BindingPattern, Expr, ForInit,
+    FormalParameter, LogicalOp, ObjectPropertyKind, Stmt, SwitchCase,
 };
 
 pub fn eval_script(runtime: &mut Runtime, source: &str) -> Completion<Value> {
@@ -25,6 +28,7 @@ pub fn eval_script(runtime: &mut Runtime, source: &str) -> Completion<Value> {
     if has_use_strict_directive(&statements) {
         env.strict = true;
     }
+    instantiate_var_declarations(&mut cx, &mut env, &statements)?;
     instantiate_function_declarations(&mut cx, &mut env, &statements)?;
     let mut last = Value::Undefined;
     for stmt in statements {
@@ -139,6 +143,23 @@ impl Env {
         Ok(())
     }
 
+    fn declare_hoisted_var(&self, cx: &mut Context, name: String) -> Completion<()> {
+        if self.is_local_name(&name) {
+            return Ok(());
+        }
+        if self.is_global_frame {
+            self.insert_local(name.clone(), Value::Undefined);
+            self.global_names.borrow_mut().insert(name.clone());
+            self.define_or_update_global(cx, &name, Value::Undefined)?;
+        } else {
+            self.local_names.borrow_mut().insert(name.clone());
+            self.bindings
+                .borrow_mut()
+                .insert(name, Rc::new(RefCell::new(Value::Undefined)));
+        }
+        Ok(())
+    }
+
     fn set_identifier(&self, cx: &mut Context, name: String, value: Value) -> Completion<()> {
         if !self.is_shadow_name(&name) {
             if let Some(object) = self.with_binding_object(cx, &name)? {
@@ -165,6 +186,16 @@ impl Env {
         let existing = self.bindings.borrow().get(&name).cloned();
         if let Some(cell) = existing {
             *cell.borrow_mut() = value.clone();
+        } else if !self.is_local_name(&name) {
+            if let Some(global) = self.global {
+                let key = PropertyKey::from(name.as_str());
+                if global.has_property(cx, &key)? {
+                    let ok = global.set(cx, key, value, Value::Object(global))?;
+                    self.require_set_success(ok)?;
+                    return Ok(());
+                }
+            }
+            self.insert_local(name.clone(), value.clone());
         } else {
             self.insert_local(name.clone(), value.clone());
         }
@@ -550,6 +581,15 @@ fn declare_binding(
             }
             Ok(())
         }
+        BindingPattern::Object(names) => {
+            let object = ArgView::new(value).to_object(cx)?;
+            for name in names {
+                let value =
+                    object.get(cx, &PropertyKey::from(name.as_str()), Value::Object(object))?;
+                env.declare_var(cx, name, value)?;
+            }
+            Ok(())
+        }
     }
 }
 
@@ -597,6 +637,89 @@ fn instantiate_function_declarations(
         }
     }
     Ok(())
+}
+
+fn instantiate_var_declarations(
+    cx: &mut Context,
+    env: &mut Env,
+    statements: &[Stmt],
+) -> Completion<()> {
+    for stmt in statements {
+        instantiate_var_declaration_from_stmt(cx, env, stmt)?;
+    }
+    Ok(())
+}
+
+fn instantiate_var_declaration_from_stmt(
+    cx: &mut Context,
+    env: &mut Env,
+    stmt: &Stmt,
+) -> Completion<()> {
+    match stmt {
+        Stmt::Var(pattern, _) => instantiate_var_binding_pattern(cx, env, pattern)?,
+        Stmt::Block(body) => instantiate_var_declarations(cx, env, body)?,
+        Stmt::If(_, consequent, alternate) => {
+            instantiate_var_declaration_from_stmt(cx, env, consequent)?;
+            if let Some(alternate) = alternate {
+                instantiate_var_declaration_from_stmt(cx, env, alternate)?;
+            }
+        }
+        Stmt::While(_, body) => instantiate_var_declaration_from_stmt(cx, env, body)?,
+        Stmt::Switch(_, cases) => {
+            for case in cases {
+                instantiate_var_declarations(cx, env, &case.consequent)?;
+            }
+        }
+        Stmt::With(_, body) => instantiate_var_declaration_from_stmt(cx, env, body)?,
+        Stmt::For(init, _, _, body) => {
+            if let Some(ForInit::Var(pattern, _)) = init {
+                instantiate_var_binding_pattern(cx, env, pattern)?;
+            }
+            instantiate_var_declaration_from_stmt(cx, env, body)?;
+        }
+        Stmt::Try(try_body, catch, finally_body) => {
+            instantiate_var_declarations(cx, env, try_body)?;
+            if let Some((_, catch_body)) = catch {
+                instantiate_var_declarations(cx, env, catch_body)?;
+            }
+            if let Some(finally_body) = finally_body {
+                instantiate_var_declarations(cx, env, finally_body)?;
+            }
+        }
+        Stmt::ForOf(name, _, body) | Stmt::ForIn(name, _, body) => {
+            env.declare_hoisted_var(cx, name.clone())?;
+            instantiate_var_declaration_from_stmt(cx, env, body)?;
+        }
+        Stmt::Function(..)
+        | Stmt::Break
+        | Stmt::Continue
+        | Stmt::Return(_)
+        | Stmt::Throw(_)
+        | Stmt::Expr(_) => {}
+    }
+    Ok(())
+}
+
+fn instantiate_var_binding_pattern(
+    cx: &mut Context,
+    env: &mut Env,
+    pattern: &BindingPattern,
+) -> Completion<()> {
+    match pattern {
+        BindingPattern::Identifier(name) => env.declare_hoisted_var(cx, name.clone()),
+        BindingPattern::Array(names) => {
+            for name in names.iter().flatten() {
+                env.declare_hoisted_var(cx, name.clone())?;
+            }
+            Ok(())
+        }
+        BindingPattern::Object(names) => {
+            for name in names {
+                env.declare_hoisted_var(cx, name.clone())?;
+            }
+            Ok(())
+        }
+    }
 }
 
 fn run_catch(
@@ -660,7 +783,52 @@ fn eval_expr(cx: &mut Context, env: &mut Env, expr: Expr) -> Completion<Value> {
                 let key = ArgView::new(eval_expr(cx, env, property.key)?).to_property_key(cx)?;
                 let desc = match property.kind {
                     ObjectPropertyKind::Data(expr) => {
-                        Descriptor::data(eval_expr(cx, env, expr)?, true, true, true)
+                        let value = eval_expr(cx, env, expr)?;
+                        if matches!(key, PropertyKey::String(ref name) if name == "__proto__") {
+                            match value {
+                                Value::Object(proto) => {
+                                    object.set_prototype_of(cx, Some(proto))?;
+                                    continue;
+                                }
+                                Value::Null => {
+                                    object.set_prototype_of(cx, None)?;
+                                    continue;
+                                }
+                                value => Descriptor::data(value, true, true, true),
+                            }
+                        } else {
+                            Descriptor::data(value, true, true, true)
+                        }
+                    }
+                    ObjectPropertyKind::Get(Expr::Function(name, params, body)) => {
+                        Descriptor::accessor(
+                            Some(create_script_function_with_constructibility(
+                                cx,
+                                env,
+                                name.unwrap_or_default(),
+                                params,
+                                body,
+                                false,
+                            )?),
+                            None,
+                            true,
+                            true,
+                        )
+                    }
+                    ObjectPropertyKind::Set(Expr::Function(name, params, body)) => {
+                        Descriptor::accessor(
+                            None,
+                            Some(create_script_function_with_constructibility(
+                                cx,
+                                env,
+                                name.unwrap_or_default(),
+                                params,
+                                body,
+                                false,
+                            )?),
+                            true,
+                            true,
+                        )
                     }
                     ObjectPropertyKind::Get(expr) => {
                         Descriptor::accessor(Some(eval_expr(cx, env, expr)?), None, true, true)
@@ -677,6 +845,14 @@ fn eval_expr(cx: &mut Context, env: &mut Env, expr: Expr) -> Completion<Value> {
         Expr::Function(name, params, body) => {
             create_script_function(cx, env, name.unwrap_or_default(), params, body)
         }
+        Expr::Arrow(params, body) => create_script_function_with_constructibility(
+            cx,
+            env,
+            String::new(),
+            params,
+            body,
+            false,
+        ),
         Expr::NewTarget => Ok(env.new_target.clone()),
         Expr::Array(elements) => {
             let proto = cx
@@ -850,6 +1026,12 @@ fn loose_equal(cx: &mut Context, left: Value, right: Value) -> Completion<bool> 
         | (Value::String(_), Value::Number(_))
         | (Value::Boolean(_), _)
         | (_, Value::Boolean(_)) => Ok(to_number(cx, left)? == to_number(cx, right)?),
+        (Value::Object(_), Value::String(_) | Value::Number(_) | Value::BigInt(_))
+        | (Value::String(_) | Value::Number(_) | Value::BigInt(_), Value::Object(_)) => {
+            let left = ArgView::new(left).to_primitive(cx)?;
+            let right = ArgView::new(right).to_primitive(cx)?;
+            loose_equal(cx, left, right)
+        }
         _ => Ok(false),
     }
 }
@@ -877,38 +1059,25 @@ fn eval_delete(cx: &mut Context, env: &mut Env, expr: Expr) -> Completion<Value>
 }
 
 fn eval_instanceof(cx: &mut Context, left: Value, right: Value) -> Completion<Value> {
-    let Value::Object(object) = left else {
-        return Ok(Value::Boolean(false));
-    };
-    let Value::Object(constructor) = right else {
+    if !matches!(right, Value::Object(_)) {
         return Err(JsError::type_error(
             "right side of instanceof must be callable",
         ));
     };
-    let ObjectKind::Function(data) = cx.heap().get(constructor)?.kind.clone() else {
-        return Err(JsError::type_error(
-            "right side of instanceof must be callable",
-        ));
-    };
-    if let Some(bound) = data.bound {
-        return eval_instanceof(cx, Value::Object(object), bound.target);
-    }
-    let prototype = constructor.get(
+    if let Some(method) = GetMethod(
         cx,
-        &PropertyKey::from("prototype"),
-        Value::Object(constructor),
-    )?;
-    let Value::Object(target_proto) = prototype else {
-        return Err(JsError::type_error("constructor prototype is not object"));
-    };
-    let mut current = Some(object);
-    while let Some(candidate) = current {
-        if candidate == target_proto {
-            return Ok(Value::Boolean(true));
-        }
-        current = candidate.get_prototype_of(cx)?;
+        right.clone(),
+        PropertyKey::Symbol(SYMBOL_HAS_INSTANCE_ID),
+    )? {
+        let result = cx.call_mut(method, right, &[left])?;
+        return Ok(Value::Boolean(to_boolean(result)));
     }
-    Ok(Value::Boolean(false))
+    if !cx.is_callable(&right)? {
+        return Err(JsError::type_error(
+            "right side of instanceof must be callable",
+        ));
+    }
+    ordinary_has_instance(cx, right, left).map(Value::Boolean)
 }
 
 fn enumerable_property_names(
@@ -1082,15 +1251,17 @@ pub(crate) fn call_script_function(
     if has_use_strict_directive(&script.body) {
         fn_env.strict = true;
     }
+    let strict = fn_env.strict;
+    let poison_arguments_callee = strict || !is_simple_parameter_list(&script.params);
     let this_value = non_strict_this_value(cx, &fn_env, this_value)?;
     fn_env.declare_local("this".to_owned(), this_value);
-    fn_env.declare_local("arguments".to_owned(), create_arguments_object(cx, args)?);
-    for (index, param) in script.params.iter().enumerate() {
-        fn_env.declare_local(
-            param.clone(),
-            args.get(index).cloned().unwrap_or(Value::Undefined),
-        );
-    }
+    fn_env.declare_local(
+        "arguments".to_owned(),
+        create_arguments_object(cx, args, poison_arguments_callee)?,
+    );
+    bind_formal_parameters(cx, &mut fn_env, &script.params, args)?;
+    instantiate_var_declarations(cx, &mut fn_env, &script.body)?;
+    instantiate_function_declarations(cx, &mut fn_env, &script.body)?;
     match eval_block(cx, &mut fn_env, script.body)? {
         Flow::Return(value) => Ok(value),
         Flow::Normal(_) => Ok(Value::Undefined),
@@ -1111,28 +1282,27 @@ pub(crate) fn construct_script_function(
     let Some(script) = data.script else {
         return Err(JsError::type_error("function has no script body"));
     };
-    let proto_value = constructor.get(cx, &PropertyKey::from("prototype"), callee.clone())?;
-    let proto = match proto_value {
-        Value::Object(proto) => Some(proto),
-        _ => cx
-            .realm()?
-            .intrinsics
-            .get(crate::runtime::IntrinsicId::ObjectPrototype),
-    };
-    let instance = cx.heap_mut().allocate(JsObject::ordinary(proto));
+    let proto =
+        cx.prototype_from_constructor(constructor, crate::runtime::IntrinsicId::ObjectPrototype)?;
+    let instance = cx.heap_mut().allocate(JsObject::ordinary(Some(proto)));
     let captured = script
         .environment
         .unwrap_or_else(empty_function_environment);
     let mut fn_env = Env::function_frame(captured);
     fn_env.new_target = callee.clone();
-    fn_env.declare_local("this".to_owned(), Value::Object(instance));
-    fn_env.declare_local("arguments".to_owned(), create_arguments_object(cx, args)?);
-    for (index, param) in script.params.iter().enumerate() {
-        fn_env.declare_local(
-            param.clone(),
-            args.get(index).cloned().unwrap_or(Value::Undefined),
-        );
+    if has_use_strict_directive(&script.body) {
+        fn_env.strict = true;
     }
+    let strict = fn_env.strict;
+    let poison_arguments_callee = strict || !is_simple_parameter_list(&script.params);
+    fn_env.declare_local("this".to_owned(), Value::Object(instance));
+    fn_env.declare_local(
+        "arguments".to_owned(),
+        create_arguments_object(cx, args, poison_arguments_callee)?,
+    );
+    bind_formal_parameters(cx, &mut fn_env, &script.params, args)?;
+    instantiate_var_declarations(cx, &mut fn_env, &script.body)?;
+    instantiate_function_declarations(cx, &mut fn_env, &script.body)?;
     match eval_block(cx, &mut fn_env, script.body)? {
         Flow::Return(Value::Object(object)) => Ok(Value::Object(object)),
         Flow::Return(_) | Flow::Normal(_) => Ok(Value::Object(instance)),
@@ -1158,7 +1328,25 @@ fn non_strict_this_value(cx: &mut Context, env: &Env, value: Value) -> Completio
     }
 }
 
-fn create_arguments_object(cx: &mut Context, args: &[Value]) -> Completion<Value> {
+fn bind_formal_parameters(
+    cx: &mut Context,
+    env: &mut Env,
+    params: &[FormalParameter],
+    args: &[Value],
+) -> Completion<()> {
+    for (index, param) in params.iter().enumerate() {
+        let mut value = args.get(index).cloned().unwrap_or(Value::Undefined);
+        if matches!(value, Value::Undefined) {
+            if let Some(default) = &param.default {
+                value = eval_expr(cx, env, default.clone())?;
+            }
+        }
+        env.declare_local(param.name.clone(), value);
+    }
+    Ok(())
+}
+
+fn create_arguments_object(cx: &mut Context, args: &[Value], strict: bool) -> Completion<Value> {
     let proto = cx
         .realm()?
         .intrinsics
@@ -1177,6 +1365,23 @@ fn create_arguments_object(cx: &mut Context, args: &[Value]) -> Completion<Value
         PropertyKey::from("length"),
         Descriptor::data(Value::Number(args.len() as f64), true, false, true),
     )?;
+    if strict {
+        let throw_type_error = cx
+            .realm()?
+            .intrinsics
+            .get(crate::runtime::IntrinsicId::ThrowTypeError)
+            .ok_or_else(|| JsError::internal("missing %ThrowTypeError% intrinsic"))?;
+        object.define_own_property_or_throw(
+            cx,
+            PropertyKey::from("callee"),
+            Descriptor::accessor(
+                Some(Value::Object(throw_type_error)),
+                Some(Value::Object(throw_type_error)),
+                false,
+                false,
+            ),
+        )?;
+    }
     Ok(Value::Object(object))
 }
 
@@ -1184,40 +1389,56 @@ fn create_script_function(
     cx: &mut Context,
     env: &Env,
     name: String,
-    params: Vec<String>,
+    params: Vec<FormalParameter>,
     body: Vec<Stmt>,
 ) -> Completion<Value> {
+    create_script_function_with_constructibility(cx, env, name, params, body, true)
+}
+
+fn create_script_function_with_constructibility(
+    cx: &mut Context,
+    env: &Env,
+    name: String,
+    params: Vec<FormalParameter>,
+    body: Vec<Stmt>,
+    constructible: bool,
+) -> Completion<Value> {
+    validate_function_parameters(&params, &body)?;
     let proto = cx
         .realm()?
         .intrinsics
         .get(crate::runtime::IntrinsicId::FunctionPrototype)
         .ok_or_else(|| JsError::internal("missing Function.prototype intrinsic"))?;
+    let function_realm = cx.realm_id();
     let function = cx.heap_mut().allocate(JsObject::function(Some(proto), {
         let mut data =
             FunctionData::script_with_environment(name.clone(), params, body, env.capture());
-        data.constructible = true;
+        data.constructible = constructible;
+        data.realm = Some(function_realm);
         data
     }));
-    let object_proto = cx
-        .realm()?
-        .intrinsics
-        .get(crate::runtime::IntrinsicId::ObjectPrototype)
-        .ok_or_else(|| JsError::internal("missing Object.prototype intrinsic"))?;
-    let prototype_object = cx
-        .heap_mut()
-        .allocate(JsObject::ordinary(Some(object_proto)));
-    prototype_object.define_own_property_or_throw(
-        cx,
-        PropertyKey::from("constructor"),
-        Descriptor::data(Value::Object(function), true, false, true),
-    )?;
-    define_data(
-        cx,
-        function,
-        "prototype",
-        Value::Object(prototype_object),
-        true,
-    )?;
+    if constructible {
+        let object_proto = cx
+            .realm()?
+            .intrinsics
+            .get(crate::runtime::IntrinsicId::ObjectPrototype)
+            .ok_or_else(|| JsError::internal("missing Object.prototype intrinsic"))?;
+        let prototype_object = cx
+            .heap_mut()
+            .allocate(JsObject::ordinary(Some(object_proto)));
+        prototype_object.define_own_property_or_throw(
+            cx,
+            PropertyKey::from("constructor"),
+            Descriptor::data(Value::Object(function), true, false, true),
+        )?;
+        define_data(
+            cx,
+            function,
+            "prototype",
+            Value::Object(prototype_object),
+            true,
+        )?;
+    }
     define_function_metadata(
         cx,
         function,
@@ -1226,6 +1447,40 @@ fn create_script_function(
     )?;
     define_function_metadata(cx, function, "name", Value::String(name))?;
     Ok(Value::Object(function))
+}
+
+fn validate_function_parameters(params: &[FormalParameter], body: &[Stmt]) -> Completion<()> {
+    let simple = is_simple_parameter_list(params);
+    let mut seen = HashSet::new();
+    for param in params {
+        if !seen.insert(param.name.clone()) && !simple {
+            return Err(JsError::syntax(
+                "non-simple function parameter list contains duplicate names",
+            ));
+        }
+    }
+    if !has_use_strict_directive(body) {
+        return Ok(());
+    }
+    if !simple {
+        return Err(JsError::syntax(
+            "strict function body cannot have non-simple parameters",
+        ));
+    }
+    seen.clear();
+    for param in params {
+        if param.name == "eval" || param.name == "arguments" {
+            return Err(JsError::syntax(
+                "strict function parameter name is restricted",
+            ));
+        }
+        if !seen.insert(param.name.clone()) {
+            return Err(JsError::syntax(
+                "strict function parameter list contains duplicate names",
+            ));
+        }
+    }
+    Ok(())
 }
 
 fn empty_function_environment() -> FunctionEnvironment {
@@ -1362,8 +1617,10 @@ fn resolve_identifier(cx: &mut Context, env: &Env, name: &str) -> Completion<Val
         return Ok(value.clone());
     }
     let global = cx.realm()?.global_object;
-    let value = global.get(cx, &PropertyKey::from(name), Value::Object(global))?;
-    if matches!(value, Value::Undefined) && name != "undefined" {
+    let key = PropertyKey::from(name);
+    let has_global_property = global.has_property(cx, &key)?;
+    let value = global.get(cx, &key, Value::Object(global))?;
+    if matches!(value, Value::Undefined) && name != "undefined" && !has_global_property {
         return Err(JsError::reference(format!("{name} is not defined")));
     }
     Ok(value)
@@ -1457,7 +1714,7 @@ fn to_boolean(value: Value) -> bool {
         Value::Boolean(value) => value,
         Value::Number(value) => value != 0.0 && !value.is_nan(),
         Value::String(value) => !value.is_empty(),
-        Value::BigInt(value) => value != 0,
+        Value::BigInt(value) => !value.is_zero(),
         Value::Symbol(_) | Value::Object(_) => true,
     }
 }

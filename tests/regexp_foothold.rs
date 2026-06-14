@@ -43,5 +43,6 @@ fn regexp_test_and_exec_use_basic_general_matcher() {
     assert_eval("/^abc/.test('abcdef');", Value::Boolean(true));
     assert_eval("/abc$/.test('xxabc');", Value::Boolean(true));
     assert_eval("/a.c/.exec('xxabc')[0];", Value::String("abc".to_owned()));
+    assert_eval("/^(jan|feb)$/i.test('FEB');", Value::Boolean(true));
     assert_eval("/abc/.exec('xxabcyy').index;", Value::Number(2.0));
 }

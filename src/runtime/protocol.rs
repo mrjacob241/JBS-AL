@@ -2,6 +2,7 @@ use super::{
     Brand, Completion, Context, InternalMethods, InternalSlot, JsError, JsObject, ObjectRef,
     PropertyKey, SameValueZero, Value,
 };
+use num_traits::Zero;
 
 pub const SYMBOL_ITERATOR_ID: u64 = 1;
 pub const SYMBOL_TO_STRING_TAG_ID: u64 = 2;
@@ -10,6 +11,8 @@ pub const SYMBOL_REPLACE_ID: u64 = 4;
 pub const SYMBOL_SPECIES_ID: u64 = 5;
 pub const SYMBOL_TO_PRIMITIVE_ID: u64 = 6;
 pub const SYMBOL_IS_CONCAT_SPREADABLE_ID: u64 = 7;
+pub const SYMBOL_HAS_INSTANCE_ID: u64 = 8;
+pub const SYMBOL_DISPOSE_ID: u64 = 9;
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 enum PrimitiveHint {
@@ -37,7 +40,7 @@ impl ArgView {
             Value::Boolean(value) => *value,
             Value::Number(value) => *value != 0.0 && !value.is_nan(),
             Value::String(value) => !value.is_empty(),
-            Value::BigInt(value) => *value != 0,
+            Value::BigInt(value) => !value.is_zero(),
             Value::Symbol(_) | Value::Object(_) => true,
         }
     }
@@ -391,6 +394,17 @@ pub fn iterator_close(cx: &mut Context, record: &IteratorRecord) -> Completion<(
     let Value::Object(iterator) = record.iterator.clone() else {
         return Err(JsError::type_error("iterator record target is not object"));
     };
+    iterator_close_object(cx, iterator)
+}
+
+pub fn iterator_close_value(cx: &mut Context, iterator: Value) -> Completion<()> {
+    let Value::Object(iterator) = iterator else {
+        return Err(JsError::type_error("iterator target is not object"));
+    };
+    iterator_close_object(cx, iterator)
+}
+
+fn iterator_close_object(cx: &mut Context, iterator: ObjectRef) -> Completion<()> {
     let return_method = iterator.get(cx, &PropertyKey::from("return"), Value::Object(iterator))?;
     if matches!(return_method, Value::Undefined | Value::Null) {
         return Ok(());

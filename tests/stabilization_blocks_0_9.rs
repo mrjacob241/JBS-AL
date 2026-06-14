@@ -1,5 +1,9 @@
 use jbs::{Runtime, Value};
 
+fn bigint(value: i128) -> Value {
+    Value::BigInt(value.into())
+}
+
 fn eval(source: &str) -> Value {
     let mut runtime = Runtime::new();
     runtime
@@ -75,6 +79,18 @@ fn block0_try_finally_and_check_sequence_harness_paths_run() {
         "var o = { set val(v) { this.saved = v + 1; } }; o.val = 4; o.saved;",
         Value::Number(5.0),
     );
+    assert_eval("var inc = x => x + 1; inc(4);", Value::Number(5.0));
+    assert_eval("var add = (x, y) => x + y; add(2, 3);", Value::Number(5.0));
+    assert_eval("var fortyTwo = () => 42; fortyTwo();", Value::Number(42.0));
+    assert_eval(
+        "var twice = x => { return x * 2; }; twice(6);",
+        Value::Number(12.0),
+    );
+    assert_eval(
+        "[1, 2, 3].map(x => x + 1).join(',');",
+        Value::String("2,3,4".to_owned()),
+    );
+    assert_error_name("new (x => x)()", "TypeError");
 }
 
 #[test]
@@ -137,15 +153,23 @@ fn block2_descriptor_targets_are_strict_but_property_bags_are_to_object() {
 #[test]
 fn block7_math_and_global_numeric_functions_are_installed_as_globals() {
     assert_true("Array.isArray(Math) === false");
-    assert_eval("BigInt(3) + BigInt(4);", Value::BigInt(7));
+    assert_eval("BigInt(3) + BigInt(4);", bigint(7));
     assert_eval("typeof BigInt(1);", Value::String("bigint".to_owned()));
-    assert_eval("BigInt('')", Value::BigInt(0));
-    assert_eval("BigInt('0x10')", Value::BigInt(16));
-    assert_eval("BigInt('0o10')", Value::BigInt(8));
-    assert_eval("BigInt('0b10')", Value::BigInt(2));
-    assert_eval("BigInt.asIntN(2, 3n)", Value::BigInt(-1));
-    assert_eval("BigInt.asUintN(2, -1n)", Value::BigInt(3));
-    assert_eval("-1n", Value::BigInt(-1));
+    assert_eval("BigInt('')", bigint(0));
+    assert_eval("BigInt('0x10')", bigint(16));
+    assert_eval("BigInt('0o10')", bigint(8));
+    assert_eval("BigInt('0b10')", bigint(2));
+    assert_eval("BigInt.asIntN(2, 3n)", bigint(-1));
+    assert_eval("BigInt.asUintN(2, -1n)", bigint(3));
+    assert_eval(
+        "BigInt.asUintN(8, 0xcffffffffffffffffffffffffffffffffffffffffffffffffffn).toString(16);",
+        Value::String("ff".to_owned()),
+    );
+    assert_eval(
+        "BigInt.asIntN(200, 0xffffffffffffffffffffffffffffffffffffffffffffffffffn).toString();",
+        Value::String("-1".to_owned()),
+    );
+    assert_eval("-1n", bigint(-1));
     assert_error_name("BigInt.asIntN(-1, 1n)", "RangeError");
     assert_error_name("BigInt.asIntN(1, 1)", "TypeError");
     assert_true(
@@ -169,10 +193,7 @@ fn block7_math_and_global_numeric_functions_are_installed_as_globals() {
         "BigInt.prototype.constructor === BigInt &&
          Object.prototype.toString.call(BigInt.prototype) === '[object BigInt]'",
     );
-    assert_eval(
-        "BigInt.prototype.valueOf.call(Object(3n))",
-        Value::BigInt(3),
-    );
+    assert_eval("BigInt.prototype.valueOf.call(Object(3n))", bigint(3));
     assert_eval("(255n).toString(16)", Value::String("ff".to_owned()));
     assert_eval("(-10n).toString()", Value::String("-10".to_owned()));
     assert_eval("Math.max(1, 4, 2);", Value::Number(4.0));
@@ -343,6 +364,11 @@ fn block8_string_statics_common_paths() {
 #[test]
 fn block4_global_readonly_undefined_assignment_is_ignored() {
     assert_eval("undefined = 1; undefined;", Value::Undefined);
+    assert_eval(
+        "Infinity = true; typeof Infinity;",
+        Value::String("number".to_owned()),
+    );
+    assert_true("NaN = 1; NaN !== NaN");
 }
 
 #[test]
@@ -436,6 +462,173 @@ fn block5_bound_constructor_path() {
     assert_eval(
         "Function('return Object.prototype.toString.call(this);').call(7);",
         Value::String("[object Number]".to_owned()),
+    );
+    assert_eval(
+        "try { Function('a', 'a', '\"use strict\";'); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
+    );
+    assert_eval(
+        "try { Function('eval', '\"use strict\";'); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
+    );
+    assert_eval(
+        "try { Function('arguments', '\"use strict\";'); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
+    );
+    assert_eval("Function('a', 'a', 'return a;')(1, 2);", Value::Number(2.0));
+    assert_true(
+        "var caller = Object.getOwnPropertyDescriptor(Function.prototype, 'caller');
+         var args = Object.getOwnPropertyDescriptor(Function.prototype, 'arguments');
+         typeof caller.get === 'function' && caller.get === caller.set &&
+         args.get === caller.get && args.set === caller.get &&
+         caller.enumerable === false && caller.configurable === true",
+    );
+    assert_eval(
+        "try { Function.prototype.caller; 'bad'; } catch (e) { e.name; }",
+        Value::String("TypeError".to_owned()),
+    );
+    assert_eval(
+        "(function () { 'use strict'; try { return arguments.callee; } catch (e) { return e.name; } })();",
+        Value::String("TypeError".to_owned()),
+    );
+    assert_true(
+        "var d = (function () { 'use strict'; return Object.getOwnPropertyDescriptor(arguments, 'callee'); })();
+         typeof d.get === 'function' && d.get === d.set && d.enumerable === false && d.configurable === false",
+    );
+    assert_true("typeof Symbol.hasInstance === 'symbol'");
+    assert_true(
+        "var h = Function.prototype[Symbol.hasInstance];
+         typeof h === 'function' && h.length === 1 && h.name === '[Symbol.hasInstance]'",
+    );
+    assert_true("function C() {} var o = new C(); C[Symbol.hasInstance](o)");
+    assert_true("Function.prototype[Symbol.hasInstance].call({}, {}) === false");
+    assert_true("function C() {} var B = C.bind(null); new C() instanceof B");
+    assert_error_name("(function () {}).apply(null, true)", "TypeError");
+    assert_true("(function () { return arguments.length; }).apply(null, null) === 0");
+    assert_true("Object.bind(null)(42) == 42");
+    assert_true(
+        "var BoundDate = Function.prototype.bind.apply(Date, [null, 1957, 4, 27]);
+         Object.prototype.toString.call(new BoundDate()) === '[object Date]'",
+    );
+    assert_error_name("Function(null, 'return true;')", "SyntaxError");
+    assert_error_name("Function.prototype.toString.call({})", "TypeError");
+    assert_true("Function.prototype.toString.call(Array).indexOf('[native code]') >= 0");
+    assert_true(
+        "var f = Function.call(this, 'return planet;');
+         var before = f();
+         var planet = 'mars';
+         before === undefined && f() === 'mars'",
+    );
+    assert_error_name(
+        "var handle = Proxy.revocable(function () {}, { get: function () { handle.revoke(); } });
+         new handle.proxy();",
+        "TypeError",
+    );
+    assert_true(
+        "var C = {};
+         Object.defineProperty(C, Symbol.hasInstance, { value: function (value) { return value === 42; } });
+         42 instanceof C",
+    );
+    assert_true(
+        "var f = Object.getOwnPropertyDescriptor({ get f() {} }, 'f').get;
+         !Object.hasOwn(f, 'prototype') &&
+         Object.defineProperty(f, 'prototype', { get: function () { throw new Test262Error(); } }) === f",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         other.Array !== Array && other.Function !== Function",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var a = [1];
+         var calls = 0;
+         Object.defineProperty(other.Array, Symbol.species, { get: function () { calls++; } });
+         a.constructor = other.Array;
+         var r = a.slice();
+         Object.getPrototypeOf(r) === Array.prototype && r[0] === 1 && calls === 0",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var localArgs = function () { 'use strict'; return arguments; }();
+         var otherArgs = (new other.Function('\"use strict\"; return arguments;'))();
+         Object.getOwnPropertyDescriptor(localArgs, 'callee').get !==
+         Object.getOwnPropertyDescriptor(otherArgs, 'callee').get",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.Array.prototype;
+         other.Array.prototype = 1;
+         Object.getPrototypeOf(Reflect.construct(Array, [], other.Array)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.Error.prototype;
+         other.Error.prototype = undefined;
+         Object.getPrototypeOf(Reflect.construct(Error, ['x'], other.Error)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.Date.prototype;
+         other.Date.prototype = null;
+         Object.getPrototypeOf(Reflect.construct(Date, [], other.Date)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.Boolean.prototype;
+         other.Boolean.prototype = 7;
+         Object.getPrototypeOf(Reflect.construct(Boolean, [true], other.Boolean)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.Object.prototype;
+         other.Object.prototype = false;
+         Object.getPrototypeOf(Reflect.construct(Object, [], other.Object)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var expected = other.RegExp.prototype;
+         other.RegExp.prototype = 'not-object';
+         Object.getPrototypeOf(Reflect.construct(RegExp, ['a'], other.RegExp)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var NewTarget = other.Function('return function NewTarget() {}')();
+         var expected = other.Function.prototype;
+         NewTarget.prototype = 1;
+         Object.getPrototypeOf(Reflect.construct(Function, [], NewTarget)) === expected",
+    );
+    assert_true(
+        "var other = $262.createRealm().global;
+         var f = Reflect.construct(other.Function, ['return 1;'], Function);
+         Object.getPrototypeOf(f) === Function.prototype &&
+         Object.getPrototypeOf(f.prototype) === other.Object.prototype",
+    );
+    assert_eval("function f(a = 0) { return a; } f();", Value::Number(0.0));
+    assert_eval("function f(a = 0) { return a; } f(3);", Value::Number(3.0));
+    assert_eval(
+        "function f(a, b = a + 1) { return b; } f(4);",
+        Value::Number(5.0),
+    );
+    assert_eval("function f(a, b = 0, c) {} f.length;", Value::Number(1.0));
+    assert_eval("Function('a = 1', 'return a;')();", Value::Number(1.0));
+    assert_true("Function('a', 'b = 1', 'c', 'return 0;').length === 1");
+    assert_true(
+        "var t = Object.getOwnPropertyDescriptor(function () { 'use strict'; return arguments; }(), 'callee').get;
+         function nonSimple(a = 0) { return arguments; }
+         var d = Object.getOwnPropertyDescriptor(nonSimple(), 'callee');
+         t === d.get && t === d.set",
+    );
+    assert_eval(
+        "try { (function(a = 1) { 'use strict'; return a; }); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
+    );
+    assert_eval(
+        "try { Function('a = 1', '\"use strict\"; return a;'); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
+    );
+    assert_eval(
+        "try { (function(a, a = 1) { return a; }); 'bad'; } catch (e) { e.name; }",
+        Value::String("SyntaxError".to_owned()),
     );
     assert_eval("Number.bind(null)(42);", Value::Number(42.0));
     assert_eval(

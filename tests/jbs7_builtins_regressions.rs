@@ -196,6 +196,16 @@ fn date_call_construct_and_object_tag_have_minimal_ecmascript_shape() {
         "new Date(0).toTimeString()",
         Value::String("00:00:00 GMT+0000".to_owned()),
     );
+    assert_true("/^(Sun|Mon|Tue)$/.test('Tue')");
+    assert_true("/^[0-9]{2}$/.test('07')");
+    assert_true("!(/^[0-9]{2}$/.test('7'))");
+    assert_true("/^(Sun|Mon|Tue), [0-9]{2} (Jan|Feb|Mar) [0-9]{4}$/.test('Sun, 23 Mar 2014')");
+    assert_true(
+        "/^(Sun|Mon|Tue|Wed|Thu|Fri|Sat), [0-9]{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$/.test(new Date(0).toUTCString())",
+    );
+    assert_true(
+        "/^[0-9]{2}:[0-9]{2}:[0-9]{2} GMT[+-][0-9]{4}( \\(.+\\))?$/.test(new Date(0).toTimeString())",
+    );
     assert_eval(
         "var d = new Date(0); Date.parse(d.toString()) + Date.parse(d.toUTCString()) + Date.parse(d.toISOString());",
         Value::Number(0.0),

@@ -4,9 +4,9 @@ use std::{
     rc::Rc,
 };
 
-use crate::syntax::parser::Stmt;
+use crate::syntax::parser::{formal_parameter_length, FormalParameter, Stmt};
 
-use super::{Completion, Context, ObjectRef, Value};
+use super::{Completion, Context, ObjectRef, RealmId, Value};
 
 pub type BuiltinFn = fn(&mut Context, Value, &[Value]) -> Completion<Value>;
 pub type BindingCell = Rc<RefCell<Value>>;
@@ -28,11 +28,12 @@ pub struct FunctionData {
     pub builtin: Option<BuiltinFn>,
     pub script: Option<ScriptFunction>,
     pub bound: Option<BoundFunction>,
+    pub realm: Option<RealmId>,
 }
 
 #[derive(Clone, Debug)]
 pub struct ScriptFunction {
-    pub params: Vec<String>,
+    pub params: Vec<FormalParameter>,
     pub body: Vec<Stmt>,
     pub environment: Option<FunctionEnvironment>,
 }
@@ -54,11 +55,12 @@ impl FunctionData {
             builtin: Some(function),
             script: None,
             bound: None,
+            realm: None,
         }
     }
 
-    pub fn script(name: impl Into<String>, params: Vec<String>, body: Vec<Stmt>) -> Self {
-        let length = params.len() as u32;
+    pub fn script(name: impl Into<String>, params: Vec<FormalParameter>, body: Vec<Stmt>) -> Self {
+        let length = formal_parameter_length(&params);
         Self {
             name: name.into(),
             length,
@@ -71,12 +73,24 @@ impl FunctionData {
                 environment: None,
             }),
             bound: None,
+            realm: None,
         }
+    }
+
+    pub fn script_in_realm(
+        name: impl Into<String>,
+        params: Vec<FormalParameter>,
+        body: Vec<Stmt>,
+        realm: RealmId,
+    ) -> Self {
+        let mut data = Self::script(name, params, body);
+        data.realm = Some(realm);
+        data
     }
 
     pub fn script_with_environment(
         name: impl Into<String>,
-        params: Vec<String>,
+        params: Vec<FormalParameter>,
         body: Vec<Stmt>,
         environment: FunctionEnvironment,
     ) -> Self {
@@ -106,6 +120,7 @@ impl FunctionData {
                 this_value,
                 args,
             }),
+            realm: None,
         }
     }
 }

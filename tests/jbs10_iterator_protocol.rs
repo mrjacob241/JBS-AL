@@ -63,6 +63,215 @@ fn iterator_result_objects_have_value_then_done_properties() {
 }
 
 #[test]
+fn iterator_from_wraps_valid_iterator_like_return_protocol() {
+    assert_true(
+        "var wrapper = Iterator.from({});
+         var result = wrapper.return();
+         result.hasOwnProperty('value') &&
+         result.value === undefined &&
+         result.done === true",
+    );
+    assert_eval(
+        "var called = 0;
+         var base = {
+           next: function () { return { value: 1, done: false }; },
+           return: function () { called = called + 1; return { value: 5, done: true }; }
+         };
+         var result = Iterator.from(base).return();
+         called + result.value;",
+        Value::Number(6.0),
+    );
+    assert_eval(
+        "var base = { next: function () { return { value: 9, done: false }; } };
+         Iterator.from(base).next().value;",
+        Value::Number(9.0),
+    );
+}
+
+#[test]
+fn iterator_prototype_symbol_dispose_calls_return_protocol() {
+    assert_true("typeof Symbol.dispose === 'symbol'");
+    assert_true(
+        "var d = Object.getOwnPropertyDescriptor(Iterator.prototype, Symbol.dispose);
+         typeof d.value === 'function' &&
+         d.value.name === '[Symbol.dispose]' &&
+         d.value.length === 0 &&
+         d.writable === true &&
+         d.enumerable === false &&
+         d.configurable === true",
+    );
+    assert_eval(
+        "var seenThis;
+         var seenArgs = 9;
+         var iter = {
+           return: function () { seenThis = this; seenArgs = arguments.length; return { done: true }; }
+         };
+         var result = Iterator.prototype[Symbol.dispose].call(iter);
+         (result === undefined) + ':' + (seenThis === iter) + ':' + seenArgs;",
+        Value::String("true:true:0".to_owned()),
+    );
+    assert_eval(
+        "Iterator.prototype[Symbol.dispose].call({});",
+        Value::Undefined,
+    );
+}
+
+#[test]
+fn iterator_concat_return_uses_helper_lifecycle_state() {
+    assert_eval(
+        "var returnCount = 0;
+         var inner = {
+           next: function () { return { value: 1, done: false }; },
+           return: function () { returnCount = returnCount + 1; return {}; }
+         };
+         var source = {};
+         source[Symbol.iterator] = function () { return inner; };
+         var iterator = Iterator.concat(source);
+         iterator.next();
+         iterator.return();
+         iterator.return();
+         returnCount;",
+        Value::Number(1.0),
+    );
+    assert_eval(
+        "var touched = 0;
+         var inner = {
+           next: function () { touched = touched + 10; throw 'bad'; },
+           return: function () { touched = touched + 100; return {}; }
+         };
+         var source = {};
+         source[Symbol.iterator] = function () { touched = touched + 1; return inner; };
+         var iterator = Iterator.concat(source);
+         iterator.return();
+         iterator.next().done === true && touched === 0;",
+        Value::Boolean(true),
+    );
+    assert_eval(
+        "var returnCount = 0;
+         var inner = {
+           next: function () { return { value: undefined, done: true }; },
+           return: function () { returnCount = returnCount + 1; throw 'bad'; }
+         };
+         var source = {};
+         source[Symbol.iterator] = function () { return inner; };
+         var iterator = Iterator.concat(source);
+         iterator.next();
+         iterator.return();
+         returnCount;",
+        Value::Number(0.0),
+    );
+    assert_eval(
+        "var argc = 9;
+         var inner = {
+           next: function () { return { value: 1, done: false }; },
+           return: function () { argc = arguments.length; return {}; }
+         };
+         var source = {};
+         source[Symbol.iterator] = function () { return inner; };
+         var iterator = Iterator.concat(source);
+         iterator.next();
+         iterator.return(1, 2);
+         argc;",
+        Value::Number(0.0),
+    );
+    assert_eval(
+        "var iterator;
+         var saw = '';
+         var inner = {
+           next: function () {
+             try { iterator.next(); } catch (error) { saw = error.name; }
+             return { value: 1, done: false };
+           }
+         };
+         var source = {};
+         source[Symbol.iterator] = function () { return inner; };
+         iterator = Iterator.concat(source);
+         iterator.next();
+         saw;",
+        Value::String("TypeError".to_owned()),
+    );
+}
+
+#[test]
+fn iterator_take_drop_are_direct_lazy_helpers() {
+    assert_eval(
+        "var obj = { done: false, value: 7 };
+         var { done, value } = obj;
+         done === false && value === 7;",
+        Value::Boolean(true),
+    );
+    assert_eval(
+        "var effects = [];
+         Iterator.prototype.take.call({
+           get next() {
+             effects.push('get next');
+             return function () { return { done: true, value: undefined }; };
+           }
+         }, {
+           valueOf: function () { effects.push('ToNumber limit'); return 0; }
+         });
+         effects.join(',');",
+        Value::String("ToNumber limit,get next".to_owned()),
+    );
+    assert_eval(
+        "var effects = [];
+         try {
+           Iterator.prototype.drop.call({
+             get next() {
+               effects.push('get next');
+               return function () { return { done: true, value: undefined }; };
+             }
+           }, NaN);
+         } catch (e) {}
+         effects.join(',');",
+        Value::String(String::new()),
+    );
+    assert_eval(
+        "var helper = Iterator.prototype.take.call({ next: 0 }, 1);
+         try { helper.next(); 'bad'; } catch (e) { e.name; }",
+        Value::String("TypeError".to_owned()),
+    );
+    assert_eval(
+        "var i = 0;
+         var source = { next: function () { i = i + 1; return { value: i, done: i > 3 }; } };
+         Iterator.prototype.drop.call(source, 1).next().value;",
+        Value::Number(2.0),
+    );
+    assert_eval(
+        "var i = 0;
+         var source = { next: function () { i = i + 1; return { value: i, done: i > 2 }; } };
+         var { done, value } = Iterator.prototype.take.call(source, 1).next();
+         done === false && value === 1;",
+        Value::Boolean(true),
+    );
+}
+
+#[test]
+fn iterator_callback_validation_closes_without_reading_next() {
+    assert_eval(
+        "var o = { __proto__: Iterator.prototype };
+         typeof o.map;",
+        Value::String("function".to_owned()),
+    );
+    assert_eval(
+        "var methods = ['map', 'filter', 'find', 'flatMap', 'forEach', 'reduce', 'some', 'every'];
+         var closed = 0;
+         var nextReads = 0;
+         for (var i = 0; i < methods.length; i++) {
+           var iterator = {
+             get next() { nextReads = nextReads + 1; throw 'bad'; },
+             return() { closed = closed + 1; return {}; }
+           };
+           iterator.__proto__ = Iterator.prototype;
+           try { iterator[methods[i]](); } catch (e) {}
+           try { iterator[methods[i]]({}); } catch (e) {}
+         }
+         closed + ':' + nextReads;",
+        Value::String("16:0".to_owned()),
+    );
+}
+
+#[test]
 fn for_of_closes_iterators_on_break() {
     assert_eval(
         "var closed = 0;

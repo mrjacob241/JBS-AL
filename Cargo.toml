@@ -12,3 +12,5 @@ name = "jbs"
 path = "src/main.rs"
 
 [dependencies]
+num-bigint = "0.4"
+num-traits = "0.2"

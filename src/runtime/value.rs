@@ -1,5 +1,7 @@
 use super::object::ObjectRef;
 
+pub type JsBigInt = num_bigint::BigInt;
+
 #[derive(Clone, Debug)]
 pub enum Value {
     InternalConstruct,
@@ -10,7 +12,7 @@ pub enum Value {
     String(String),
     Symbol(u64),
     Number(f64),
-    BigInt(i128),
+    BigInt(JsBigInt),
     Object(ObjectRef),
 }
 

@@ -1,11 +1,12 @@
 use crate::runtime::{Completion, JsError};
+use num_bigint::BigInt;
 
 use super::lexer::{Lexer, Token};
 
 #[derive(Clone, Debug)]
 pub enum Stmt {
     Var(BindingPattern, Expr),
-    Function(String, Vec<String>, Vec<Stmt>),
+    Function(String, Vec<FormalParameter>, Vec<Stmt>),
     Block(Vec<Stmt>),
     If(Expr, Box<Stmt>, Option<Box<Stmt>>),
     While(Expr, Box<Stmt>),
@@ -42,20 +43,21 @@ pub enum ForInit {
 pub enum BindingPattern {
     Identifier(String),
     Array(Vec<Option<String>>),
+    Object(Vec<String>),
 }
 
 impl BindingPattern {
     pub fn identifier_name(&self) -> Option<&str> {
         match self {
             BindingPattern::Identifier(name) => Some(name),
-            BindingPattern::Array(_) => None,
+            BindingPattern::Array(_) | BindingPattern::Object(_) => None,
         }
     }
 
     pub fn into_identifier(self) -> Option<String> {
         match self {
             BindingPattern::Identifier(name) => Some(name),
-            BindingPattern::Array(_) => None,
+            BindingPattern::Array(_) | BindingPattern::Object(_) => None,
         }
     }
 }
@@ -64,7 +66,7 @@ impl BindingPattern {
 pub enum Expr {
     Identifier(String),
     Number(f64),
-    BigInt(i128),
+    BigInt(BigInt),
     String(String),
     RegExp(String, String),
     Boolean(bool),
@@ -73,7 +75,8 @@ pub enum Expr {
     ArrayHole,
     Object(Vec<ObjectProperty>),
     Array(Vec<Expr>),
-    Function(Option<String>, Vec<String>, Vec<Stmt>),
+    Function(Option<String>, Vec<FormalParameter>, Vec<Stmt>),
+    Arrow(Vec<FormalParameter>, Vec<Stmt>),
     NewTarget,
     Member(Box<Expr>, Box<Expr>),
     Call(Box<Expr>, Vec<Expr>),
@@ -105,6 +108,40 @@ pub enum ObjectPropertyKind {
     Get(Expr),
     Set(Expr),
     Spread(Expr),
+}
+
+#[derive(Clone, Debug)]
+pub struct FormalParameter {
+    pub name: String,
+    pub default: Option<Expr>,
+}
+
+impl FormalParameter {
+    pub fn simple(name: String) -> Self {
+        Self {
+            name,
+            default: None,
+        }
+    }
+
+    pub fn is_simple(&self) -> bool {
+        self.default.is_none()
+    }
+}
+
+pub fn formal_parameter_names(params: &[FormalParameter]) -> Vec<String> {
+    params.iter().map(|param| param.name.clone()).collect()
+}
+
+pub fn is_simple_parameter_list(params: &[FormalParameter]) -> bool {
+    params.iter().all(FormalParameter::is_simple)
+}
+
+pub fn formal_parameter_length(params: &[FormalParameter]) -> u32 {
+    params
+        .iter()
+        .take_while(|param| param.default.is_none())
+        .count() as u32
 }
 
 #[derive(Clone, Debug)]
@@ -329,13 +366,14 @@ impl Parser {
             || self.consume_ident("const")
         {
             let binding = self.binding_pattern()?;
-            let name = binding_identifier_name(binding.clone())?;
             if self.consume_ident("in") {
+                let name = binding_identifier_name(binding.clone())?;
                 let object = self.expression()?;
                 self.expect_punct(')')?;
                 return Ok(Stmt::ForIn(name, object, Box::new(self.statement()?)));
             }
             if self.consume_ident("of") {
+                let name = binding_identifier_name(binding.clone())?;
                 let iterable = self.expression()?;
                 self.expect_punct(')')?;
                 return Ok(Stmt::ForOf(name, iterable, Box::new(self.statement()?)));
@@ -423,6 +461,11 @@ impl Parser {
 
     fn assignment(&mut self) -> Completion<Expr> {
         let left = self.conditional()?;
+        if self.peek_punct('=') && self.peek_next_punct('>') {
+            self.expect_punct('=')?;
+            self.expect_punct('>')?;
+            return self.arrow_function(left);
+        }
         let op = if self.consume_punct('=') {
             Some(AssignOp::Simple)
         } else if self.consume_punct('+') {
@@ -808,6 +851,12 @@ impl Parser {
             Token::String(value) => Ok(Expr::String(value)),
             Token::RegExp(pattern, flags) => Ok(Expr::RegExp(pattern, flags)),
             Token::Punct('(') => {
+                if self.consume_punct(')') {
+                    if self.peek_punct('=') && self.peek_next_punct('>') {
+                        return Ok(Expr::Comma(Vec::new()));
+                    }
+                    return Err(JsError::syntax("expected expression in parentheses"));
+                }
                 let expr = self.expression()?;
                 self.expect_punct(')')?;
                 Ok(expr)
@@ -840,12 +889,23 @@ impl Parser {
         Ok(Expr::Function(name, params, body))
     }
 
-    fn function_tail(&mut self, body_error: &str) -> Completion<(Vec<String>, Vec<Stmt>)> {
+    fn function_tail(&mut self, body_error: &str) -> Completion<(Vec<FormalParameter>, Vec<Stmt>)> {
         self.expect_punct('(')?;
         let mut params = Vec::new();
         if !self.consume_punct(')') {
             loop {
-                params.push(self.expect_identifier()?);
+                let name = self.expect_identifier()?;
+                if is_reserved_formal_parameter_name(&name) {
+                    return Err(JsError::syntax(format!(
+                        "reserved word `{name}` cannot be used as a formal parameter"
+                    )));
+                }
+                let default = if self.consume_punct('=') {
+                    Some(self.assignment()?)
+                } else {
+                    None
+                };
+                params.push(FormalParameter { name, default });
                 if self.consume_punct(')') {
                     break;
                 }
@@ -859,6 +919,19 @@ impl Parser {
             return Err(JsError::syntax(body_error));
         };
         Ok((params, body))
+    }
+
+    fn arrow_function(&mut self, head: Expr) -> Completion<Expr> {
+        let params = arrow_parameters(head)?;
+        let body = if self.peek_punct('{') {
+            let Stmt::Block(body) = self.statement()? else {
+                return Err(JsError::syntax("arrow function body must be a block"));
+            };
+            body
+        } else {
+            vec![Stmt::Return(Some(self.assignment()?))]
+        };
+        Ok(Expr::Arrow(params, body))
     }
 
     fn object_literal(&mut self) -> Completion<Expr> {
@@ -1048,9 +1121,7 @@ impl Parser {
         match self.peek() {
             Token::Identifier(_) => Ok(BindingPattern::Identifier(self.expect_identifier()?)),
             Token::Punct('[') => self.array_binding_pattern(),
-            Token::Punct('{') => Err(JsError::syntax(
-                "object binding patterns are reserved for the next parser block",
-            )),
+            Token::Punct('{') => self.object_binding_pattern(),
             token => Err(JsError::syntax(format!(
                 "expected binding pattern, found {token:?}"
             ))),
@@ -1081,6 +1152,25 @@ impl Parser {
             }
         }
         Ok(BindingPattern::Array(names))
+    }
+
+    fn object_binding_pattern(&mut self) -> Completion<BindingPattern> {
+        self.expect_punct('{')?;
+        let mut names = Vec::new();
+        if self.consume_punct('}') {
+            return Ok(BindingPattern::Object(names));
+        }
+        loop {
+            names.push(self.expect_identifier()?);
+            if self.consume_punct('}') {
+                break;
+            }
+            self.expect_punct(',')?;
+            if self.consume_punct('}') {
+                break;
+            }
+        }
+        Ok(BindingPattern::Object(names))
     }
 
     fn consume_ident(&mut self, expected: &str) -> bool {
@@ -1142,6 +1232,75 @@ fn number_key(value: f64) -> String {
     } else {
         value.to_string()
     }
+}
+
+fn is_reserved_formal_parameter_name(name: &str) -> bool {
+    matches!(
+        name,
+        "break"
+            | "case"
+            | "catch"
+            | "class"
+            | "const"
+            | "continue"
+            | "debugger"
+            | "default"
+            | "delete"
+            | "do"
+            | "else"
+            | "export"
+            | "extends"
+            | "finally"
+            | "for"
+            | "function"
+            | "if"
+            | "import"
+            | "in"
+            | "instanceof"
+            | "new"
+            | "return"
+            | "super"
+            | "switch"
+            | "this"
+            | "throw"
+            | "try"
+            | "typeof"
+            | "var"
+            | "void"
+            | "while"
+            | "with"
+            | "yield"
+            | "null"
+            | "true"
+            | "false"
+    )
+}
+
+fn arrow_parameters(head: Expr) -> Completion<Vec<FormalParameter>> {
+    let names = match head {
+        Expr::Identifier(name) => vec![name],
+        Expr::Comma(exprs) => {
+            let mut names = Vec::new();
+            for expr in exprs {
+                let Expr::Identifier(name) = expr else {
+                    return Err(JsError::syntax("arrow parameter must be an identifier"));
+                };
+                names.push(name);
+            }
+            names
+        }
+        _ => return Err(JsError::syntax("invalid arrow parameter list")),
+    };
+    let mut params = Vec::new();
+    for name in names {
+        if is_reserved_formal_parameter_name(&name) {
+            return Err(JsError::syntax(format!(
+                "reserved word `{name}` cannot be used as a formal parameter"
+            )));
+        }
+        params.push(FormalParameter::simple(name));
+    }
+    Ok(params)
 }
 
 fn binding_identifier_name(binding: BindingPattern) -> Completion<String> {
